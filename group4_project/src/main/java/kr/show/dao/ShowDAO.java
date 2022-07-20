@@ -1,4 +1,4 @@
-package kr.member.dao;
+package kr.show.dao;
 
 public class ShowDAO {
 
