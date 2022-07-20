@@ -19,6 +19,25 @@ public class BoardDAO {
 	private BoardDAO() {}
 	
 	//글등록(관리자 임의 작성)
+	public void insertBoard(BoardVO board)throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			sql = "";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.executeUpdate();
+			
+		}catch(Exception e){
+			throw new Exception(e);
+		}finally {
+			//자원정리
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}
 	//총 레코드 수(검색 레코드 수)
 	//글목록(검색글 목록)
 	//글상세
