@@ -11,7 +11,7 @@
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<h2>공연 등록하기</h2>
+	<h4>&nbsp;&nbsp;&nbsp;공연 등록하기</h4>
 	<div class="align-center">
 	<form action="showInsert.do" method="post" id="showInsertForm">
 		<ul class="">
