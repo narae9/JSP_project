@@ -14,7 +14,7 @@ public class showInsertFormAction implements Action{
 		Integer me_num = (Integer)session.getAttribute("me_num");
 		
 		if(me_num==null) {
-			return "redirect:/views/show/showInsertForm.jsp";
+			return "/WEB-INF/views/show/showInsertForm.jsp";
 		}
 		return "redirect:/views/member/login.do";
 		
