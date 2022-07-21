@@ -8,17 +8,26 @@ public class ShowVO {
  private String sh_title;
  private String sh_place; //장소
  private String sh_detail; //상세정보
- private Date sh_Date;
+ private String sh_date;
+ private String sh_time;
  private String sh_img;
  private int sre_gpa; //평점
  private String sre_review; //리뷰
  
-public Date getSh_Date() {
-	return sh_Date;
+ 
+public String getSh_date() {
+	return sh_date;
 }
-public void setSh_Date(Date sh_Date) {
-	this.sh_Date = sh_Date;
+public void setSh_date(String sh_date) {
+	this.sh_date = sh_date;
 }
+public String getSh_time() {
+	return sh_time;
+}
+public void setSh_time(String sh_time) {
+	this.sh_time = sh_time;
+}
+
 public int getSh_key() {
 	return sh_key;
 }
