@@ -18,29 +18,46 @@ public class BoardDAO {
 	}
 	private BoardDAO() {}
 	
-	//글등록(관리자 임의 작성)
-	public void insertBoard(BoardVO board)throws Exception{
+	//총 레코드 수(검색 레코드 수)
+	public int getBoardCount(String keyfield,String keyword)
+			throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		String sql = null;
-		
+		String sub_sql = "";
+		int count = 0;
+
 		try {
 			conn = DBUtil.getConnection();
-			sql = "";
+
+			if(keyword!=null && !"".equals(keyword)) {
+				if(keyfield.equals("1")) sub_sql = "WHERE b.bo_title LIKE ?";
+			}
+			
+			sql = "SELECT COUNT(*) FROM board b " + sub_sql;
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.executeUpdate();
+			if(keyword!=null && !"".equals(keyword)) {
+				pstmt.setString(1, "%"+keyword+"%");
+			}
 			
-		}catch(Exception e){
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+		}catch(Exception e) {
 			throw new Exception(e);
 		}finally {
-			//자원정리
-			DBUtil.executeClose(null, pstmt, conn);
+			DBUtil.executeClose(rs, pstmt, conn);
 		}
+		return count;
 	}
-	//총 레코드 수(검색 레코드 수)
 	//글목록(검색글 목록)
 	//글상세
+	
 	
 	//댓글 등록
 	//댓글 개수
