@@ -10,8 +10,8 @@
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
+	<jsp:include page="/WEB-INF/views/common/slider.jsp"/>
 	<div class="content-main">
-		<h4>게시판 최신글</h4>
 	</div>
 </div>
 </body>

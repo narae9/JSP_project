@@ -50,7 +50,7 @@
 		</c:if>
 	</ul>
 </div>
-<hr size="1" noshade="noshade" width="100%">
+<hr size="1" noshade="noshade" width="100%" color="white">
 <nav class="second_nav">
 	<ul>
 		<li class="dropdown">
