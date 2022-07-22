@@ -6,12 +6,13 @@
 <meta charset="UTF-8">
 <title>메인</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/slider.css" type="text/css">
 </head>
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
+	<jsp:include page="/WEB-INF/views/common/slider.jsp"/>
 	<div class="content-main">
-		<h4>게시판 최신글</h4>
 	</div>
 </div>
 </body>
