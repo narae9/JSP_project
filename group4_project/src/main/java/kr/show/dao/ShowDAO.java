@@ -3,6 +3,7 @@ package kr.show.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import kr.show.vo.ShowVO;
@@ -61,26 +62,41 @@ public class ShowDAO {
 		List<ShowVO> list = null;
 		String sql = null;
 		String sub_sql="";
-		int cnt =0;
+
 		
 		try {
-			
+			//1,2단계
 			conn = DBUtil.getConnection();
 			
+			//keyword가 있으면 검색
 			if(keyword!=null&&!"".equals(keyword)) {
-				sub_sql = "WHERE s.title LIKE %"+keyword+"%";
-				pstmt.setString(++cnt, sub_sql);
+				sub_sql = "WHERE sh_title LIKE '%"+keyword+"%'";
 			}
-			
+			//sql
 			sql ="SELECT * FROM show "+sub_sql;
+			//3단계
+			pstmt = conn.prepareStatement(sql);
 			
+			
+			list = new ArrayList<ShowVO>();
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ShowVO show = new ShowVO();
+				show.setSh_title(rs.getString("sh_title"));
+				show.setSh_place(rs.getString("sh_place"));
+				show.setSh_date(rs.getString("sh_date"));
+				show.setSh_time(rs.getString("sh_time"));
+				show.setSh_img(rs.getString("sh_img"));
+				//show.setSre_gpa(rs.getInt("sh_gpa"));
+
+				list.add(show);
+			}
 			
 		}catch(Exception e) {
 			throw new Exception(e);
 		}finally {
 			DBUtil.executeClose(rs, pstmt, conn);
 		}
-		
 		
 		return list;
 	}

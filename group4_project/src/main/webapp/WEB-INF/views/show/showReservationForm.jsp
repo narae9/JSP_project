@@ -11,28 +11,26 @@
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	
+	<div style="float:right;">
+	<!-- 지역별 찾기, 검색창 -->
+	<form id="search_form" action ="findTitleList.do" method ="get" > <!-- 검색할땐 get을 주로 씀 -->
+	<br><br>
+		<ul class="search" >
+			<li>
+				<input type="search" name="keyword" id="keyword" placeholder="제목검색">
+			</li>
+			<li>
+				<input type="submit" value="검색" id="keyword_btn">
+			</li>
+		</ul>
+	<br>
+	</form>
+	</div>
 	<ul>
-		<li>
-		<!-- 지역별 찾기, 검색창 -->
-		<form id="search_form" action ="list.do" method ="get"> <!-- 검색할땐 get을 주로 씀 -->
-		<br><br><br>
-			<ul class="search">
-				<li>
-					<input type="search" size="16" name="keyword" id="keyword" 
-					value="${param.keyword}" placeholder="제목검색">
-				</li>
-				<li>
-					<input type="submit" value="검색">
-				</li>
-			</ul>
-		<br>
-		</form>
-		</li>
-		
+
 		<li>
 		<!-- 리스트 띄우기 -->
-		<table style="border-collapse: collapse">
+		<table style="border-collapse:collapse;">
 			<tr>
 				<th>대표이미지</th>
 				<th>제목</th>
@@ -42,11 +40,11 @@
 			</tr>
 			<c:forEach var="show" items="${list }"> 
 			<tr>
-				<td>${show.image }</td>
-				<td>${show.title }</td>
-				<td>${show.place }</td>
-				<td>${show.date } 시간[${show.time }]</td>
-				<td>${show.gpa }</td>
+				<td><a href="">${show.sh_img }</a></td>
+				<td><a href="">${show.sh_title }</a></td>
+				<td>${show.sh_place }</td>
+				<td>${show.sh_date } 시간[${show.sh_time }]</td>
+				<td>d<%-- ${show.sh_gpa } --%></td>
 			</tr>
 			</c:forEach>
 		</table>
