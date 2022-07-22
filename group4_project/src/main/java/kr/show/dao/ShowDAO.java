@@ -2,6 +2,8 @@ package kr.show.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
 
 import kr.show.vo.ShowVO;
 import kr.util.DBUtil;
@@ -47,10 +49,41 @@ public class ShowDAO {
 			DBUtil.executeClose(null, pstmt, conn);
 		}
 		
-		
 	}
 	
 	//공연 예매
+	
+	//공연 리스트
+	public List<ShowVO> getListShow(String keyword) throws Exception{
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<ShowVO> list = null;
+		String sql = null;
+		String sub_sql="";
+		int cnt =0;
+		
+		try {
+			
+			conn = DBUtil.getConnection();
+			
+			if(keyword!=null&&!"".equals(keyword)) {
+				sub_sql = "WHERE s.title LIKE %"+keyword+"%";
+				pstmt.setString(++cnt, sub_sql);
+			}
+			
+			sql ="SELECT * FROM show "+sub_sql;
+			
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		
+		return list;
+	}
 	
 	//공연 상세보기
 	

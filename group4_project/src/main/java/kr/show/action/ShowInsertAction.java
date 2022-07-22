@@ -1,6 +1,5 @@
 package kr.show.action;
 
-import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +9,7 @@ import kr.controller.Action;
 import kr.show.dao.ShowDAO;
 import kr.show.vo.ShowVO;
 
-public class showInsertAction implements Action{
+public class ShowInsertAction implements Action{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
