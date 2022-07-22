@@ -11,7 +11,6 @@
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<div style="float:right;">
 	<!-- 지역별 찾기, 검색창 -->
 	<form id="search_form" action ="findTitleList.do" method ="get" > <!-- 검색할땐 get을 주로 씀 -->
 	<br><br>
@@ -25,7 +24,7 @@
 		</ul>
 	<br>
 	</form>
-	</div>
+	<div class="align-center">
 	<ul>
 
 		<li>
@@ -50,6 +49,7 @@
 		</table>
 		</li>
 	</ul>
+	</div>
 	
 	
 	
