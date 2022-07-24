@@ -58,6 +58,7 @@
 			<div class="dropdown-content">
 				<a href="#">공연 예매하기</a>
 				<a href="${pageContext.request.contextPath }/show/showInsertForm.do">공연 등록하기</a>
+				<a href="${pageContext.request.contextPath }/calendar/calendar.do">공연 캘린더</a>
 				<a href="#">예매 취소</a>
 			</div>
 		</li>
