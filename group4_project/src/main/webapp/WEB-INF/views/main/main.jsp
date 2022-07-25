@@ -13,12 +13,22 @@
 >>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
 </head>
 <body>
-	<div class="page-main">
+<div id="contents">
+		<div class="main-slider">
+			<div class="ticket_logo"
+				onclick="location.href='${pageContext.request.contextPath}/board/list.do'">
+
+			</div>
+			<div class="arrow_logo" id="test1" onclick="location.href='main.do'"></div>
+		</div>
+		<div class="page-main">
 		<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 		<jsp:include page="/WEB-INF/views/common/slider.jsp"/>
 		<div class="content-main">
 		</div>
+		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	</div>
+</div>
 </body>
 </html>
 
