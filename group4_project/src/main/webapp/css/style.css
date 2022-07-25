@@ -1,65 +1,17 @@
 @charset "UTF-8";
 
-
-
-	
-/*show 시작*/
-
-#keyword:focus{   
-	border-color:rgba(82,168,236,0.8);
-	/* outline : border 바깥 외곽선 */
-	outline:0;
-	box-shadow:inset 0 1px 1px rgba(0,0,0,0.05);
-}
-
-#keyword_btn{
-	width:50px;
-	height: 26px;
-	border-radius:0 15px 15px 0;
-	border:1px solid #CCCCCC;
-	margin-left:-1px;
-}
-#keyword{
-	display:block;
-	float:left;
-	background-color:gray;
-	border:1px solid #CCCCCC;
-	/*            상좌 상우 하우 하좌 */
-	border-radius:15px 0 0 15px;
-	box-shadow:inset 0 1px 1px rgba(0,0,0,0.05);   /* 파인듯이 들어감 */
-	width:120px;
-	height:26px;
-	padding:0 0 0 10px;
-	font-size:12px; 
-	color:#666666; 
-}
-
-.page-left{
-	float:left;
-	text-align:center;
-}
-.page-right{
-	float:right;
-	text-align:center;
-}
-
-/*show 끝*/
-
-
 /*공통*/
 body{
 	width:960px;
 	margin:0 auto;
-	background:#04343e;
+	background:black;
 }
 .page-main{
-	background:#003f4d;
+	background:black;
 	margin:40px 0;
 	border-radius:5px;
-	box-shadow:0 2px 6px rgba(10,10,10,0.3);
+	box-shadow:0 2px 6px rgba(100,100,100,0.3);
 	min-height:650px;
-	color:white;
-	border:1px solid white;
 }
 /* header */
 #main_logo{
@@ -129,9 +81,38 @@ body{
 	color: darkorange;
 }
 /* end of header */
+
+
+/*상세글*/
 .content-main{
 	padding:10px 20px;
+	margin: 100px 0;
+	color:white;
 }
+#title_s{
+	text-align: center;
+	background-color: gray;
+}
+#write_s{
+	margin: 80px 0;
+	text-align: center;
+}
+.detail-info{
+	margin: 20px 0;
+	text-align: right;
+	font-size: 11.5px;
+}
+#nickname{
+	margin: 85px 0 35px 0;
+}
+#bom_regdate{
+	font-size: 11px;
+}
+#reply_div{
+	text-align: center;
+}
+/**/
+
 .result-display{
 	width:400px;
 	height:200px;
@@ -160,6 +141,9 @@ a:hover{
 	color:#6C6C6C;
 }
 /*목록*/
+h3{
+	color: white;
+}
 form#search_form{
 	border:none;
 }
@@ -174,30 +158,27 @@ ul.search li{
 	padding:0;
 	display:inline;
 }
-li.search{
-	margin:0 0 9px 0;
-	padding:0;
-	display:inline;
-}
 .list-space{
 	margin-bottom:10px;
 }
 table{
 	width:100%;
-	border:1px solid #FFFFFF;
+	border:1px solid #fff;
 	border-collapse:collapse;
-	margin-top:5px;
+	margin-top:35px;
 	
 }
 table td, table th{
-	border:1px solid #FFFFFF;
-	padding:5px;
+	border:1px solid #fff;
+	padding:10px;
+	color: white;
 }
+
 /*등록, 수정폼*/
 form{
 	width:600px;
 	margin:0 auto;
-	border:1px solid #FFFFFF;
+	border:1px solid #000;
 	padding:10px 10px 10px 30px;
 }
 ul{
@@ -238,3 +219,44 @@ input[id="zipcode"]{
 .content-main{
 	padding:10px 20px;
 }
+/*show 시작*/
+
+#keyword:focus{   
+	border-color:rgba(82,168,236,0.8);
+	/* outline : border 바깥 외곽선 */
+	outline:0;
+	box-shadow:inset 0 1px 1px rgba(0,0,0,0.05);
+}
+
+#keyword_btn{
+	width:50px;
+	height: 26px;
+	border-radius:0 15px 15px 0;
+	border:1px solid #CCCCCC;
+	margin-left:-1px;
+}
+#keyword{
+	display:block;
+	float:left;
+	background-color:gray;
+	border:1px solid #CCCCCC;
+	/*            상좌 상우 하우 하좌 */
+	border-radius:15px 0 0 15px;
+	box-shadow:inset 0 1px 1px rgba(0,0,0,0.05);   /* 파인듯이 들어감 */
+	width:120px;
+	height:26px;
+	padding:0 0 0 10px;
+	font-size:12px; 
+	color:#666666; 
+}
+
+.page-left{
+	float:left;
+	text-align:center;
+}
+.page-right{
+	float:right;
+	text-align:center;
+}
+
+/*show 끝*/

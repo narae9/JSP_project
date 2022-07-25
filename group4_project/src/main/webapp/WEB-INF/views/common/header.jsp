@@ -58,6 +58,7 @@
 			<div class="dropdown-content">
 				<a href="${pageContext.request.contextPath }/show/showReservationForm.do">공연 예매하기</a>
 				<a href="${pageContext.request.contextPath }/show/showInsertForm.do">공연 등록하기</a>
+				<a href="${pageContext.request.contextPath }/calendar/calendar.do">공연 캘린더</a>
 				<a href="#">예매 취소</a>
 			</div>
 		</li>
@@ -65,7 +66,9 @@
 			<div class="dropdown-menu">COMMUNITY</div>
 		</li>
 		<li class="dropdown">
-			<div class="dropdown-menu">FAQ</div>
+			<div class="dropdown-menu">
+			<a href="${pageContext.request.contextPath}/board/list.do">FAQ</a>
+			</div>
 		</li>
 	</ul>
 </nav>

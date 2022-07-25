@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시판 목록</title>
+<title>문의게시판</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/board.js"></script>
@@ -14,7 +14,9 @@
 <div class="board-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<div class="content-main">
-		<h2>게시판 목록</h2>
+		<br><br><br><br>
+		<h3>문의게시판</h3>
+		<hr size="4" noshade="noshade" width="10%" align="left">
 		<form id="search_form" action="list.do" 
 		                                    method="get">
 			<ul class="search">
@@ -43,23 +45,23 @@
 		</div>
 		<c:if test="${count == 0}">
 		<div class="result-display">
-			표시할 게시물이 없습니다.
+			표시된 게시물이 없습니다.
 		</div>
 		</c:if>
 		<c:if test="${count > 0}">
 		<table>
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성일</th>
-				<th>수정일</th>
+			<tr bgcolor="495057">
+				<th width="10%">번호</th>
+				<th width="50%">제목</th>
+				<th width="20%">작성일</th>
+				<th width="20%">수정일</th>
 			</tr>
 			<c:forEach var="board" items="${list}">
 			<tr>
-				<td>${board.board_num}</td>
-				<td><a href="detail.do?board_num=${board.bo_key}">${board.bo_title}</a></td>
-				<td>${board.bo_reg_date}</td>
-				<td>${board.bo_mod_date}</td>
+				<td align="center">${board.bo_key}</td>
+				<td><a href="detail.do?bo_key=${board.bo_key}">${board.bo_title}</a></td>
+				<td align="center">${board.bo_reg_date}</td>
+				<td align="center">${board.bo_mod_date}</td>
 			</tr>
 			</c:forEach>
 		</table>
