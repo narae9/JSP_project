@@ -47,7 +47,7 @@
 				<textarea rows="5" cols="30" name="content" id="content"></textarea>
 			</li>
 			<li>
-				<label for="sh_img">이미지</label>
+				<label for="sh_img">대표이미지</label>
 				<input type="file" id="sh_img" name="sh_img" accept="image/gif,image/png,image/jpeg">
 			</li>
 		</ul>
