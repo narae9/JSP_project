@@ -65,7 +65,9 @@
 			<div class="dropdown-menu">COMMUNITY</div>
 		</li>
 		<li class="dropdown">
-			<div class="dropdown-menu">FAQ</div>
+			<div class="dropdown-menu">
+			<a href="${pageContext.request.contextPath}/board/list.do">FAQ</a>
+			</div>
 		</li>
 	</ul>
 </nav>

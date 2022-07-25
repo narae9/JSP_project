@@ -8,9 +8,10 @@ import java.util.List;
 
 import kr.board.vo.BoardVO;
 import kr.util.DBUtil;
+import kr.util.StringUtil;
 
 public class BoardDAO {
-	//싱글턴 패턴
+	
 	private static BoardDAO instance = new BoardDAO();
 	
 	public static BoardDAO getInstance() {
@@ -55,9 +56,93 @@ public class BoardDAO {
 		}
 		return count;
 	}
-	//글목록(검색글 목록)
-	//글상세
 	
+	//글목록(검색글 목록)
+	public List<BoardVO> getListBoard(int start, int end,
+			String keyfield,String keyword)
+					throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<BoardVO> list = null;
+		String sql = null;
+		String sub_sql = "";
+		int cnt = 0;
+
+		try {
+			conn = DBUtil.getConnection();
+
+			if(keyword!=null && !"".equals(keyword)) {
+				if(keyfield.equals("1")) sub_sql = "WHERE b.bo_title LIKE ?";
+			}
+			
+			sql = "SELECT * FROM (SELECT a.*, rownum rnum "
+					+ "FROM (SELECT * FROM board b " + sub_sql
+					+ " ORDER BY b.bo_key DESC)a) "
+					+ "WHERE rnum >= ? AND rnum <= ?";
+
+			pstmt = conn.prepareStatement(sql);
+			
+			if(keyword!=null && !"".equals(keyword)) {
+				pstmt.setString(++cnt, "%"+keyword+"%");
+			}
+			pstmt.setInt(++cnt, start);
+			pstmt.setInt(++cnt, end);
+
+			rs = pstmt.executeQuery();
+			
+			list = new ArrayList<BoardVO>();
+			while(rs.next()) {
+				BoardVO board = new BoardVO();
+				board.setBo_key(rs.getInt("bo_key"));
+				board.setBo_title(StringUtil.useNoHtml(rs.getString("bo_title")));
+				board.setBo_reg_date(rs.getDate("bo_reg_date"));
+				board.setBo_mod_date(rs.getDate("bo_mod_date"));
+
+				list.add(board);
+			}
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		return list;
+	}
+	
+	//글상세
+	public BoardVO getBoard(int bo_key)throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardVO board = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			
+			sql = "SELECT * FROM board b WHERE b.bo_key=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, bo_key);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				board = new BoardVO();
+				board.setBo_key(rs.getInt("bo_key"));
+				board.setBo_title(rs.getString("bo_title"));
+				board.setBo_write(StringUtil.useNoHtml(rs.getString("bo_write")));
+				board.setBo_reg_date(rs.getDate("bo_reg_date"));
+				board.setBo_mod_date(rs.getDate("bo_mod_date"));
+			}
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		return board;
+	}
 	
 	//댓글 등록
 	//댓글 개수
