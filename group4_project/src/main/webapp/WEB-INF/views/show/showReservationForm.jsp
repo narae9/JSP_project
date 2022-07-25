@@ -16,11 +16,19 @@
 	<!-- 지역별 찾기, 검색창 -->
 	<form id="search_form" action ="findTitleList.do" method ="get" > <!-- 검색할땐 get을 주로 씀 -->
 		<ul class="search" >
+			
 			<li>
 				<input type="search" name="keyword" id="keyword" placeholder="제목검색">
 			</li>
 			<li>
 				<input type="submit" value="검색" id="keyword_btn">
+			</li>
+			<li>
+				<select name="keyfield">
+					<option value="1">제목</option>
+					<option value="2">지역</option>
+					<option value="3">내용</option>
+				</select>
 			</li>
 		</ul>
 	<br>
@@ -31,7 +39,7 @@
 		<li>
 		<!-- 리스트 띄우기 -->
 		<table style="border-collapse:collapse;">
-			<tr>
+			<tr bgcolor="495057">
 				<th>대표이미지</th>
 				<th>제목</th>
 				<th>지역</th>
@@ -51,7 +59,9 @@
 		</li>   
 	</ul>
 	</div>
-	
+	<div class="align-center">
+		${page }
+	</div>
 	
 	
 </div>

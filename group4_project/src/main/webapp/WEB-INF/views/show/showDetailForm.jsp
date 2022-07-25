@@ -25,12 +25,17 @@
 				${show.sh_date }${show.sh_time }
 			</li>
 		</ul>
-		<ul>
-			<li>
-				<button type="button" class="btn btn-primary" onclick="location.href='#'">예매하기</button>
-				<button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">홈으로</button>
-			</li>
-		</ul>
+		<form>
+			<ul>
+				<li>
+					<input type="text" name="re_spon" id="re_spon" placeholder="후원금액">
+				</li>
+				<li>
+					<input type="submit" onclick="location.href='#'" value="예매하기">
+					<button type="button"  onclick="location.href='${pageContext.request.contextPath}/show/showListAction.do'">목록으로</button>
+				</li>
+			</ul>
+		</form>
 		
 	</div>
 	

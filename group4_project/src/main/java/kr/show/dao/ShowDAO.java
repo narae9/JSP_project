@@ -54,14 +54,58 @@ public class ShowDAO {
 	
 	//공연 예매
 	
-	//공연 리스트
-	public List<ShowVO> getListShow(String keyword) throws Exception{
+	//공연 레코드 수
+	public int getShowCount(String keyfield, String keyword)throws Exception{
 		Connection conn =null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<ShowVO> list = null;
 		String sql = null;
 		String sub_sql="";
+		int count = 0;
+		
+		try {
+			//JDBC 수행 1,2단계 : 커넥션풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			
+			if(keyword!=null && !"".equals(keyword)) {
+				if(keyfield.equals("1")) sub_sql = "WHERE sh_title LIKE ?";
+				else if(keyfield.equals("2")) sub_sql = "WHERE sh_place LIKE ?";
+				else if(keyfield.equals("3")) sub_sql = "WHERE sh_detail LIKE ?";
+			}
+			
+			sql = "SELECT COUNT(*) FROM show " + sub_sql+" ORDER BY sh_key DESC";
+			
+			//JDBC 수행 3단계 : PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			
+			if(keyword!=null && !"".equals(keyword)) {
+				pstmt.setString(1, "%"+keyword+"%");
+			}
+			//JDBC 수행 4단계
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			//자원정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		return count;
+	}
+	
+	//공연 리스트(검색
+	public List<ShowVO> getListShow(String keyfield, String keyword, int start, int end) throws Exception{
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<ShowVO> list = null;
+		String sql = null;
+		String sub_sql="";
+		int cnt=0;
 
 		
 		try {
@@ -69,14 +113,24 @@ public class ShowDAO {
 			conn = DBUtil.getConnection();
 			
 			//keyword가 있으면 검색
-			if(keyword!=null&&!"".equals(keyword)) {
-				sub_sql = "WHERE sh_title LIKE '%"+keyword+"%'";
+			if(keyword!=null && !"".equals(keyword)) {
+				if(keyfield.equals("1")) sub_sql = "WHERE sh_title LIKE ?";
+				else if(keyfield.equals("2")) sub_sql = "WHERE sh_place LIKE ?";
+				else if(keyfield.equals("3")) sub_sql = "WHERE sh_detail LIKE ?";
 			}
 			//sql
-			sql ="SELECT * FROM show "+sub_sql + " ORDER BY sh_key DESC";
+			sql ="SELECT * FROM (SELECT a.*, rownum rnum "
+					+ "FROM (SELECT * FROM   show "+sub_sql 
+					+ " ORDER BY sh_key DESC)a)"
+					+ " WHERE rnum>= ? AND rnum <=?";
 			//3단계
 			pstmt = conn.prepareStatement(sql);
 			
+			if(keyword!=null && !"".equals(keyword)) {
+				pstmt.setString(++cnt, "%"+keyword+"%");
+			}
+			pstmt.setInt(++cnt, start);
+			pstmt.setInt(++cnt, end);
 			
 			list = new ArrayList<ShowVO>();
 			rs = pstmt.executeQuery();
