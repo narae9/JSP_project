@@ -4,10 +4,10 @@
 body{
 	width:960px;
 	margin:0 auto;
-	background:black;
+	background:gray;
 }
 .page-main{
-	background:black;
+	background:gray;
 	margin:40px 0;
 	border-radius:5px;
 	box-shadow:0 2px 6px rgba(100,100,100,0.3);
@@ -253,10 +253,12 @@ input[id="zipcode"]{
 .page-left{
 	float:left;
 	text-align:center;
+	width:50%;
 }
 .page-right{
 	float:right;
 	text-align:center;
+	width:50%;
 }
 
 /*show 끝*/

@@ -73,7 +73,7 @@ public class ShowDAO {
 				sub_sql = "WHERE sh_title LIKE '%"+keyword+"%'";
 			}
 			//sql
-			sql ="SELECT * FROM show "+sub_sql;
+			sql ="SELECT * FROM show "+sub_sql + " ORDER BY sh_key DESC";
 			//3단계
 			pstmt = conn.prepareStatement(sql);
 			
@@ -82,11 +82,13 @@ public class ShowDAO {
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				ShowVO show = new ShowVO();
+				show.setSh_key(rs.getInt("sh_key"));
 				show.setSh_title(rs.getString("sh_title"));
 				show.setSh_place(rs.getString("sh_place"));
 				show.setSh_date(rs.getString("sh_date"));
 				show.setSh_time(rs.getString("sh_time"));
 				show.setSh_img(rs.getString("sh_img"));
+				
 				//show.setSre_gpa(rs.getInt("sh_gpa"));
 
 				list.add(show);
@@ -102,7 +104,42 @@ public class ShowDAO {
 	}
 	
 	//공연 상세보기
-	
+	public ShowVO showDetail(int sh_key) throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		ShowVO show = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			
+			sql="SELECT * FROM show WHERE sh_key=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, sh_key);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				show = new ShowVO();
+				show.setSh_title(rs.getString("sh_title"));
+				show.setSh_img(rs.getString("sh_img"));
+				show.setSh_place(rs.getString("sh_place"));
+				show.setSh_time(rs.getString("sh_time"));
+				show.setSh_date(rs.getString("sh_date"));
+				show.setSh_detail(rs.getString("sh_detail"));
+			}
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		
+		return show;
+	}
 	//공연 평점
 	//공연 예매 취소
 	//공연 목록

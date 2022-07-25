@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kr.controller.Action;
+import kr.show.dao.ShowDAO;
+import kr.show.vo.ShowVO;
 
 public class ShowDetailFormAction implements Action{
 
@@ -15,14 +17,21 @@ public class ShowDetailFormAction implements Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		Map<String, String> mapAjax = new HashMap<String,String>();
+		int sh_key = Integer.parseInt(request.getParameter("sh_key"));
+		request.setCharacterEncoding("utf-8");
 		
 		HttpSession session = request.getSession();
 		Integer me_num = (Integer)session.getAttribute("me_num");
+//자바스크립트로 로그인 안되어있을 때 예매 버튼 비활성화
 //		if(me_num==null) {
 //			mapAjax.put("result", "logout");
 //		}
 		
 		
+		ShowDAO dao = ShowDAO.getInstance();
+		ShowVO show = dao.showDetail(sh_key);
+		
+		request.setAttribute("show", show);
 		
 		return "/WEB-INF/views/show/showDetailForm.jsp";
 	}

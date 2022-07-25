@@ -12,8 +12,8 @@
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<h4>&nbsp;&nbsp;&nbsp;공연 등록하기</h4>
-	<div class="align-center">
-	<form action="showInsert.do" method="post" id="showInsertForm">
+	<div class="align-center" style="color:white;">
+	<form action="showInsert.do" method="post" id="showInsertForm" style="border:1px solid white;">
 		<ul class="">
 			<li>
 				<label for="sh_title">제목</label>
@@ -44,7 +44,7 @@
 			</li>
 			<li>
 				<label for="sh_detail">공연설명</label>
-				<textarea rows="5" cols="30" name="content" id="content"></textarea>
+				<textarea rows="5" cols="30" name="sh_detail" id="sh_detail"></textarea>
 			</li>
 			<li>
 				<label for="sh_img">대표이미지</label>
