@@ -1,11 +1,17 @@
 @charset "UTF-8";
 
+
+
+	
+/*show 시작*/
+
 #keyword:focus{   
 	border-color:rgba(82,168,236,0.8);
 	/* outline : border 바깥 외곽선 */
 	outline:0;
 	box-shadow:inset 0 1px 1px rgba(0,0,0,0.05);
 }
+
 #keyword_btn{
 	width:50px;
 	height: 26px;
@@ -16,7 +22,7 @@
 #keyword{
 	display:block;
 	float:left;
-	background-color:#FFFFFF;
+	background-color:gray;
 	border:1px solid #CCCCCC;
 	/*            상좌 상우 하우 하좌 */
 	border-radius:15px 0 0 15px;
@@ -27,21 +33,33 @@
 	font-size:12px; 
 	color:#666666; 
 }
-	
+
+.page-left{
+	float:left;
+	text-align:center;
+}
+.page-right{
+	float:right;
+	text-align:center;
+}
+
+/*show 끝*/
 
 
 /*공통*/
 body{
 	width:960px;
 	margin:0 auto;
-	background:black;
+	background:#04343e;
 }
 .page-main{
-	background:black;
+	background:#003f4d;
 	margin:40px 0;
 	border-radius:5px;
-	box-shadow:0 2px 6px rgba(100,100,100,0.3);
+	box-shadow:0 2px 6px rgba(10,10,10,0.3);
 	min-height:650px;
+	color:white;
+	border:1px solid white;
 }
 /* header */
 #main_logo{
@@ -166,19 +184,20 @@ li.search{
 }
 table{
 	width:100%;
-	border:1px solid #000;
+	border:1px solid #FFFFFF;
 	border-collapse:collapse;
 	margin-top:5px;
+	
 }
 table td, table th{
-	border:1px solid #000;
+	border:1px solid #FFFFFF;
 	padding:5px;
 }
 /*등록, 수정폼*/
 form{
 	width:600px;
 	margin:0 auto;
-	border:1px solid #000;
+	border:1px solid #FFFFFF;
 	padding:10px 10px 10px 30px;
 }
 ul{

@@ -5,15 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 </head>
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
+	<h4>&nbsp;&nbsp;&nbsp;공연목록</h4>
 	<!-- 지역별 찾기, 검색창 -->
 	<form id="search_form" action ="findTitleList.do" method ="get" > <!-- 검색할땐 get을 주로 씀 -->
-	<br><br>
 		<ul class="search" >
 			<li>
 				<input type="search" name="keyword" id="keyword" placeholder="제목검색">
@@ -39,8 +40,8 @@
 			</tr>
 			<c:forEach var="show" items="${list }"> 
 			<tr>
-				<td><a href="">${show.sh_img }</a></td>
-				<td><a href="">${show.sh_title }</a></td>
+				<td><a href="showDetailForm.do?sh_key=${show.sh_key }">${show.sh_img }</a></td>
+				<td><a href="showDetailForm.do?sh_key=${show.sh_key }">${show.sh_title }</a></td>
 				<td>${show.sh_place }</td>
 				<td>${show.sh_date } 시간[${show.sh_time }]</td>
 				<td>d<%-- ${show.sh_gpa } --%></td>
