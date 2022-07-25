@@ -40,7 +40,7 @@
 			 	<h2>${show.sh_title }</h2>
 			</li>
 			<li>
-				${show.sh_detail}
+				${show.sh_detail}   
 			</li>
 		</ul>
 		<ul>
