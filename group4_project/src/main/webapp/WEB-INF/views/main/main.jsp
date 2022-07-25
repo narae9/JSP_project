@@ -6,8 +6,11 @@
 <meta charset="UTF-8">
 <title>메인</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
+<<<<<<< HEAD
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slider.css" type="text/css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
+=======
+>>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
 </head>
 <body>
 	<div class="page-main">
