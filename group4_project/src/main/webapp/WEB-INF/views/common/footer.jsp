@@ -10,7 +10,7 @@
 <footer class="footer">
 <div class="footer_test">
 	<div class="footer_icon01">
-		<img id="star_icon" src="../images/star2.png">
+		<img id="star_icon" src="../images/star3.png">
 		<p>star</p>
 	</div>
 	<br><br>
