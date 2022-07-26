@@ -9,7 +9,9 @@
 
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
- </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css" type="text/css">
+
+</head>
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
@@ -17,15 +19,16 @@
 	<div class="page-left">
 		<ul>
 			<li class="align-center">
-				<img src="${pageContext.request.contextPath}/upload/${show.sh_img }">
-				<br>
-				<hr size="1" noshade="noshade" width="80%" color="white">
-				${show.sh_date }${show.sh_time }
+				<img src="${pageContext.request.contextPath}/upload/${show.sh_img}">
+				<br><br><br>
+				<hr size="5" noshade="noshade" width="80%" color="white">
+				<h1 style="color:white;">${show.sh_date }[${show.sh_time }]</h1>
 			</li>
 			<li class="page-left">
 			</li>
 		</ul>
-		<form style="border:none;" class="page-left">
+		
+		<form style="border:none;">
 			<ul>
 				<li>
 					<input type="text" name="re_spon" id="re_spon" placeholder="후원금액">
@@ -37,12 +40,13 @@
 			</ul>
 		</form>
 		
+		
 	</div>
 	
 	<div class="page-left">
 		<ul>
 			<li>
-			 	<h2>${show.sh_title }</h2>
+			 	<h1>${show.sh_title }</h1>
 			</li>
 			<li>
 				${show.sh_detail}   

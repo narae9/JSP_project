@@ -53,6 +53,11 @@ public class ShowDAO {
 	}
 	
 	//공연 예매
+	public void reserveShow(int me_num, int sh_num){
+		
+	
+		
+	}
 	
 	//공연 레코드 수
 	public int getShowCount(String keyfield, String keyword)throws Exception{

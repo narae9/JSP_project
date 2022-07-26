@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>공연 등록하기</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css"/>
+
 </head>
 <body>
 <div class="page-main">
