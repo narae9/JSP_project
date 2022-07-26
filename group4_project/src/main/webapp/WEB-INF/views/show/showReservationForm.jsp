@@ -30,7 +30,7 @@
 					<option value="3">내용</option>
 				</select>
 			</li>
-		</ul>
+		</ul>2
 	<br>
 	</form>
 	<div class="align-center">
