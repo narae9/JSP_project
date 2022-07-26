@@ -14,11 +14,10 @@
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<h4>&nbsp;&nbsp;&nbsp;공연목록</h4>
 	<!-- 지역별 찾기, 검색창 -->
-	<form id="search_form" action ="findTitleList.do" method ="get" > <!-- 검색할땐 get을 주로 씀 -->
+	<form id="search_form" action ="searchList.do" method ="get" > <!-- 검색할땐 get을 주로 씀 -->
 		<ul class="search" >
-			
 			<li>
-				<input type="search" name="keyword" id="keyword" placeholder="제목검색">
+				<input type="search" name="keyword" id="keyword">
 			</li>
 			<li>
 				<input type="submit" value="검색" id="keyword_btn">
@@ -33,9 +32,9 @@
 		</ul>
 	<br>
 	</form>
-	<div class="align-center">
+	
+	<div class="align-left" style="margin:0 4% 0 0">
 	<ul>
-
 		<li>
 		<!-- 리스트 띄우기 -->
 		<table style="border-collapse:collapse;">
@@ -48,7 +47,7 @@
 			</tr>
 			<c:forEach var="show" items="${list }"> 
 			<tr>
-				<td><a href="showDetailForm.do?sh_key=${show.sh_key }">${show.sh_img }</a></td>
+				<td><a href="showDetailForm.do?sh_key=${show.sh_key }"><img src="${pageContext.request.contextPath}/upload/${show.sh_img}" class="photo_size"></a></td>
 				<td><a href="showDetailForm.do?sh_key=${show.sh_key }">${show.sh_title }</a></td>
 				<td>${show.sh_place }</td>
 				<td>${show.sh_date } 시간[${show.sh_time }]</td>

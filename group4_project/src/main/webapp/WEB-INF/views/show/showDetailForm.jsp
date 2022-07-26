@@ -9,8 +9,6 @@
 
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
- -->
  </head>
 <body>
 <div class="page-main">
@@ -19,19 +17,21 @@
 	<div class="page-left">
 		<ul>
 			<li class="align-center">
-				${show.sh_img }
+				<img src="${pageContext.request.contextPath}/upload/${show.sh_img }">
 				<br>
 				<hr size="1" noshade="noshade" width="80%" color="white">
 				${show.sh_date }${show.sh_time }
 			</li>
+			<li class="page-left">
+			</li>
 		</ul>
-		<form>
+		<form style="border:none;" class="page-left">
 			<ul>
 				<li>
 					<input type="text" name="re_spon" id="re_spon" placeholder="후원금액">
 				</li>
 				<li>
-					<input type="submit" onclick="location.href='#'" value="예매하기">
+					<input type="submit" onclick="location.href='/show/reserveShow.do'" value="예매하기">
 					<button type="button"  onclick="location.href='${pageContext.request.contextPath}/show/showListAction.do'">목록으로</button>
 				</li>
 			</ul>

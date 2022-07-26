@@ -59,7 +59,6 @@ public class ShowDAO {
 		Connection conn =null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		List<ShowVO> list = null;
 		String sql = null;
 		String sub_sql="";
 		int count = 0;
@@ -81,6 +80,7 @@ public class ShowDAO {
 			
 			if(keyword!=null && !"".equals(keyword)) {
 				pstmt.setString(1, "%"+keyword+"%");
+			
 			}
 			//JDBC 수행 4단계
 			rs = pstmt.executeQuery();
@@ -120,7 +120,7 @@ public class ShowDAO {
 			}
 			//sql
 			sql ="SELECT * FROM (SELECT a.*, rownum rnum "
-					+ "FROM (SELECT * FROM   show "+sub_sql 
+					+ "FROM (SELECT * FROM show "+sub_sql 
 					+ " ORDER BY sh_key DESC)a)"
 					+ " WHERE rnum>= ? AND rnum <=?";
 			//3단계

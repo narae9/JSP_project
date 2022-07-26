@@ -13,8 +13,9 @@
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<h4>&nbsp;&nbsp;&nbsp;공연 등록하기</h4>
 	<div class="align-center" style="color:white;">
-	<form action="showInsert.do" method="post" id="showInsertForm" style="border:1px solid white;">
-		<ul class="">
+	<form action="showInsert.do" method="post" id="showInsertForm"
+	   enctype="multipart/form-data" style="border:1px solid white;">
+		<ul>
 			<li>
 				<label for="sh_title">제목</label>
 				<input type="text" id="sh_title" name="sh_title">
@@ -52,7 +53,7 @@
 			</li>
 		</ul>
 		<div>
-			<input type="submit" value="등록">
+			<input type="submit" value="등록" id="InsertSubmit_btn">
 			<input type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
 		</div>								
 	</form>   
