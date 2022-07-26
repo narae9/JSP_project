@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class CommunityVO {
 	private int co_key;
-	private int co_index;
+	private int co_index; //hit? 조회수?
 	private String co_title;
 	private String co_write;
 	private Date co_reg_date;

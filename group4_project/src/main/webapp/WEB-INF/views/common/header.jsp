@@ -63,7 +63,9 @@
 			</div>
 		</li>
 		<li class="dropdown">
-			<div class="dropdown-menu">COMMUNITY</div>
+			<div class="dropdown-menu">
+			<a href="${pageContext.request.contextPath}/community/list.do">COMMUNITY</a>
+			</div>
 		</li>
 		<li class="dropdown">
 			<div class="dropdown-menu">
