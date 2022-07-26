@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.photo_size{
+	width:160px;
+	height:100px;
+}
+#showInsertForm{
+	margin:0 auto;
+	padding: 20px 20px 40px 20px;
+	width:500px;
+}
+img{
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px 3px black;
+}
+.borderNone{
+	border:none;
+}
