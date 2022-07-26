@@ -53,8 +53,30 @@ public class ShowDAO {
 	}
 	
 	//공연 예매
-	public void reserveShow(int me_num, int sh_num){
+	public void reserveShow(int me_num, int sh_num)throws Exception{
 		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn= DBUtil.getConnection();
+			
+			sql="INSERT INTO (re_key, re_reserve, re_date, re_spon, sh_key, me_key )"
+					+ "VALUES(reserve_seq.nextval,?,?,?,?)";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(3, me_num);
+			pstmt.setInt(4, sh_num);
+			
+			pstmt.executeUpdate();
+			
+			
+		}catch(Exception e){
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
 	
 		
 	}
