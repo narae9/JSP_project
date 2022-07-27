@@ -52,7 +52,7 @@
                     </div>
                 </div>
 	                <div class="form-inf">
-	                    <button onclick="ScheduleManager.addSchedule()">Add Schedule</button>
+	                   
 	                </div>
 	            </div>
 	            </div>
