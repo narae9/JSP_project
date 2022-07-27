@@ -7,4 +7,10 @@ $(function(){
   			scrollTop: $(".page-main").offset().top 
  			}, 'slow');
 	});
+	
+	$('#test4').click(function(){
+		document.getElementById("test1").style.display = "block";
+		document.getElementById("test5").style.display = "block";
+		document.getElementById("test4").style.display = "none";
+	});
 });

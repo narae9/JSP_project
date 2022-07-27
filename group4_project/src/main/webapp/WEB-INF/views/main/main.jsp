@@ -26,7 +26,7 @@
 		<jsp:include page="/WEB-INF/views/common/slider.jsp"/>
 		<div class="content-main">
 		</div>
-		<div class="arrow_logo2" id="test4" onclick="location.href='#test2'">
+		<div class="arrow_logo2" id="test4" onclick="location.href='main.do'">
 		</div>
 		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	</div>
