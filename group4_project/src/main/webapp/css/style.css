@@ -111,7 +111,17 @@ body{
    left:50%;
    bottom: 10px;
 }
-
+.page-main .arrow_logo2{
+	cursor: pointer;
+	height: 35px;
+	width: 35px;
+	background-image: url(../images/up-arrow.png);
+	background-size: contain;
+	position: fixed;
+  	right:40px;
+ 	bottom: 20px;
+ 	display:none;
+}
 /*footer*/
 .footer{
 	margin-top: 285px;
