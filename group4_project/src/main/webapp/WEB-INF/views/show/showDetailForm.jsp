@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 
 <title>Insert title here</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css" type="text/css"/>
 
 <style type="text/css">
 img{
@@ -19,6 +19,47 @@ height:200px;
 	float:right;
 	margin: 0 5% 0 0 ;
 	
+}
+#mdifyDelete_btn{
+	float:right
+}
+input[type=text] {
+	border-radius:5px;
+	width:300px;
+	border:0;
+	height:30px;
+	margin: 0 0 10px 0;
+}
+.btnBlack {
+	background-color: #333;
+	color: #fff;
+	border-radius:5px;
+	border-color: #333;
+	width:100px; 
+	height:30px;
+}
+.btnBlack:hover {
+	background-color:#646566;
+	color:#fff;
+	border-color:#646566;
+	width:100px; 
+	height:30px;
+}
+
+.btnBlue{
+	background-color: #2b8eff;
+	color: #fff;
+	border-radius:5px;
+	border-color:#2b8eff;
+	width:100px; 
+	height:30px;
+}
+.btnBlue:hover {
+	background-color:#78b7ff;
+	color:#fff;
+	border-color:#78b7ff;
+	width:100px; 
+	height:30px;
 }
 </style>
 
@@ -45,18 +86,18 @@ height:200px;
 					<input type="text" name="re_spon" id="re_spon" placeholder="후원금액">
 				</li>
 				<li>
-					<input type="submit" onclick="location.href='${pageContext.request.contextPath}/show/reserveShow.do'" value="예매하기">
-					<button type="button"  onclick="location.href='${pageContext.request.contextPath}/show/showListAction.do'">목록으로</button>
+					<input class="btnBlue" type="submit" onclick="location.href='${pageContext.request.contextPath}/show/reserveShow.do'" value="예매하기">
+					<button class="btnBlack" type="button"  onclick="location.href='${pageContext.request.contextPath}/show/showListAction.do'">목록으로</button>
 				</li>
 			</ul>
 		</form>
 		
 		
 	</div>
-	
-		<input type="button" value="수정하기" class="modify" onclick="location.href='${pageContext.request.contextPath}/show/showModifyForm.do?sh_key=${show.sh_key}'">
-		<input type="button" value="삭제" class="delete" onclick="location.href='${pageContext.request.contextPath}/show/showDeleteFrom.do?sh_key=${show.sh_key}'">
-	
+	<div id="mdifyDelete_btn">
+		<input class="btnBlack" type="button" value="수정하기" onclick="location.href='${pageContext.request.contextPath}/show/showModifyForm.do?sh_key=${show.sh_key}'">
+		<input class="btnBlack" type="button" value="삭제"  onclick="location.href='${pageContext.request.contextPath}/show/showDeleteFrom.do?sh_key=${show.sh_key}'">	
+	</div>
 	<div class="page-left">
 		<ul>			
 			<li>

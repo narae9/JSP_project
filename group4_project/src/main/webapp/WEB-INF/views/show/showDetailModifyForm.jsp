@@ -8,13 +8,60 @@
 <title>공연예매수정</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css"/>
+<style type="text/css">
+input[type=text] {
+	border-radius:5px;
+	width:300px;
+	border:0;
+	height:30px;
+	margin: 0 0 10px 0;
+}
+textarea, input[type=date], input[type=time], select{
+	border-radius: 5px;
+}
 
+.btnBlack{
+	background-color: #333;
+	color: #fff;
+	border-radius:5px;
+	border-color: #333;
+	width:100px; 
+	height:30px;
+}
+.btnBlack:hover {
+	background-color:#646566;
+	color:#fff;
+	border-color:#646566;
+	width:100px; 
+	height:30px;
+}
+
+.btnBlue{
+	background-color: #2b8eff;
+	color: #fff;
+	border-radius:5px;
+	border-color:#2b8eff;
+	width:100px; 
+	height:30px;
+}
+.btnBlue:hover {
+	background-color:#78b7ff;
+	color:#fff;
+	border-color:#78b7ff;
+	width:100px; 
+	height:30px;
+}
+li{
+	margin:10px auto;
+}
+
+</style>
 </head>
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<h4>&nbsp;&nbsp;&nbsp;공연예매 수정</h4>
-	<div class="align-center" style="color:white;">
+	<div class="content-main" style="color:white;margin:0 auto;">
 	<form action="showModify.do?sh_key=${show.sh_key}" method="post" id="showInsertForm"
 	   enctype="multipart/form-data" style="border:1px solid white;">
 		<ul>
@@ -54,9 +101,9 @@
 				<input type="file" id="sh_img" name="sh_img" accept="image/gif,image/png,image/jpeg">
 			</li>
 		</ul>
-		<div>
-			<input type="submit" value="수정" id="InsertSubmit_btn">
-			<input type="button" value="취소" onclick="location.href='${pageContext.request.contextPath}/show/showDetailForm.do?sh_key=${show.sh_key}'">
+		<div class="align-center">
+			<input class="btnBlue" type="submit" value="수정" id="InsertSubmit_btn">
+			<input class="btnBlack" type="button" value="취소" onclick="location.href='${pageContext.request.contextPath}/show/showDetailForm.do?sh_key=${show.sh_key}'">
 		</div>								
 	</form>   
 	</div>
