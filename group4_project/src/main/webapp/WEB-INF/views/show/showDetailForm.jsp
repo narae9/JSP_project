@@ -74,11 +74,18 @@ h2{
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<h2>&nbsp;&nbsp;&nbsp;공연예매</h2>
+
 	<div>
 	<div class="page-left">
 		<ul>
 			<li class="align-center">
+			<c:if test="${!empty show.sh_img }">
 				<img src="${pageContext.request.contextPath}/upload/${show.sh_img}">
+			</c:if>
+			<c:if test="${empty show.sh_img }">
+				<img src="${pageContext.request.contextPath}/images/blank2.png">
+			</c:if>
+
 				<br><br><br>
 				<hr size="5" noshade="noshade" width="70%" color="white">
 				<h1 style="color:white;">${show.sh_date }[${show.sh_time }]</h1>
