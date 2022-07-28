@@ -16,7 +16,7 @@
 	<div class="content-main">
 		<br><br><br>
 		<h3 onclick="location.href='list.do'" style="width:100px; cursor:pointer">문의게시판</h3>
-		<hr size="4" color="white" width="10%" align="left">
+		<hr size="4" color="white" width="95px" align="left">
 		<br>
 		<form id="search_form" action="list.do" 
 		                                    method="get">
