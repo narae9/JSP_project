@@ -5,7 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공연 등록하기</title>
+<title>공연예매수정</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css"/>
 <style type="text/css">
 input[type=text] {
 	border-radius:5px;
@@ -54,29 +56,25 @@ li{
 }
 
 </style>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css"/>
-
 </head>
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<h4>&nbsp;&nbsp;&nbsp;공연 등록하기</h4>
-	<div class="content-main" style="color:white;margin:0 auto;" >
-	<form action="showInsert.do" method="post" id="showInsertForm"
+	<h4>&nbsp;&nbsp;&nbsp;공연예매 수정</h4>
+	<div class="content-main" style="color:white;margin:0 auto;">
+	<form action="showModify.do?sh_key=${show.sh_key}" method="post" id="showInsertForm"
 	   enctype="multipart/form-data" style="border:1px solid white;">
 		<ul>
 			<li>
 				<label for="sh_title">제목</label>
-				<input type="text" id="sh_title" name="sh_title">
+				<input type="text" id="sh_title" name="sh_title" value="${show.sh_title }">
 			</li>
 			<li>
 				<label for="sh_date">공연날짜</label>
-				<input type="date" id="sh_date" name="sh_date">			
-			</li>
-			<li>
-				<label for="sh_time">공연시간</label>
-				<input type="time" id="sh_time" name="sh_time">
+				<input type="date" id="sh_date" name="sh_date" value="${show.sh_date }">
+				시간:
+				<input type="time" id="sh_time" name="sh_time" value="${show.sh_time }">
+				
 			</li>
 			<li>
 				<label for="sh_place">공연장소</label>
@@ -96,7 +94,7 @@ li{
 			</li>
 			<li>
 				<label for="sh_detail">공연설명</label>
-				<textarea rows="5" cols="30" name="sh_detail" id="sh_detail"></textarea>
+				<textarea rows="5" cols="30" name="sh_detail" id="sh_detail">${show.sh_detail }</textarea>
 			</li>
 			<li>
 				<label for="sh_img">대표이미지</label>
@@ -104,8 +102,8 @@ li{
 			</li>
 		</ul>
 		<div class="align-center">
-			<input class="btnBlue" type="submit" value="등록" id="InsertSubmit_btn">
-			<input class="btnBlack"type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
+			<input class="btnBlue" type="submit" value="수정" id="InsertSubmit_btn">
+			<input class="btnBlack" type="button" value="취소" onclick="location.href='${pageContext.request.contextPath}/show/showDetailForm.do?sh_key=${show.sh_key}'">
 		</div>								
 	</form>   
 	</div>

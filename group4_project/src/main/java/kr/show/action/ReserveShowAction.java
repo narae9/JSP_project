@@ -5,6 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kr.controller.Action;
+import kr.show.dao.ShowDAO;
+import kr.show.vo.ReserveVO;
+import kr.show.vo.ShowVO;
 
 public class ReserveShowAction implements Action{
 
@@ -16,10 +19,18 @@ public class ReserveShowAction implements Action{
 //		if(me_num==null) {
 //			return null;
 //		}
+		int re_spon = Integer.parseInt(request.getParameter("re_spon"));
+		int sh_key = Integer.parseInt(request.getParameter("sh_key"));
+		
+		ReserveVO reserve = new ReserveVO();
+		reserve.setRe_spon(re_spon);
+		
+		ShowDAO dao = ShowDAO.getInstance();
+		reserve = dao.reserveShow(reserve,sh_key);
+		
+		request.setAttribute("reserve", reserve);
 		
 		
-		
-		
-		return null;
+		return "/WEB-INF/views/show/showReserveResult.jsp";
 	}
 }

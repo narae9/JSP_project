@@ -16,7 +16,7 @@ public class ShowReservationFormAction implements Action{
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		String keyfield = request.getParameter("sh_title");
+		String keyfield = request.getParameter("keyfield");
 		String keyword = request.getParameter("keyword");
 		String pageNum = request.getParameter("pageNum");
 		if(pageNum == null) pageNum ="1";

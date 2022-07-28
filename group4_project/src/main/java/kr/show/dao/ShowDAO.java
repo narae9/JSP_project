@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.show.vo.ReserveVO;
 import kr.show.vo.ShowVO;
 import kr.util.DBUtil;
 
@@ -53,9 +54,35 @@ public class ShowDAO {
 	}
 	
 	//공연 예매
-	public void reserveShow(int me_num, int sh_num){
+
+	public ReserveVO reserveShow(ReserveVO reserve, int sh_key) throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql=null;
+		String sql2=null;
 		
-	
+		try {
+			conn = DBUtil.getConnection();
+
+			
+			sql2="INSERT INTO reserve (re_key,re_reserve,re_date,re_spon,sh_key,me_key)"
+					+ "VALUES(reserve_seq.nextval,?,?,?,?,?)";
+			
+			pstmt = conn.prepareStatement(sql2);
+			pstmt.setInt(1, reserve.getRe_reserve());
+			pstmt.setString(2, reserve.getRe_date());
+			pstmt.setInt(3, reserve.getRe_spon());
+			pstmt.setInt(4,sh_key);
+			pstmt.setInt(5, reserve.getMe_key());
+			
+			pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+		return null;
 		
 	}
 	
@@ -162,7 +189,7 @@ public class ShowDAO {
 		return list;
 	}
 	
-	//공연 상세보기
+	//공연 상세보기 / 수정전 데이터 가져오기
 	public ShowVO showDetail(int sh_key) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -182,6 +209,7 @@ public class ShowDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				show = new ShowVO();
+				show.setSh_key(rs.getInt("sh_key"));
 				show.setSh_title(rs.getString("sh_title"));
 				show.setSh_img(rs.getString("sh_img"));
 				show.setSh_place(rs.getString("sh_place"));
@@ -189,6 +217,7 @@ public class ShowDAO {
 				show.setSh_date(rs.getString("sh_date"));
 				show.setSh_detail(rs.getString("sh_detail"));
 			}
+			
 			
 		}catch(Exception e) {
 			throw new Exception(e);
@@ -199,9 +228,66 @@ public class ShowDAO {
 		
 		return show;
 	}
+	
+	//공연정보 수정
+	public void showDetailModify(ShowVO show) throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			
+			sql="UPDATE show SET sh_title=?, sh_place=?, sh_detail=?, sh_img=?, "
+					+ "sh_date=?, sh_time=? WHERE sh_key=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, show.getSh_title());
+			pstmt.setString(2, show.getSh_place());
+			pstmt.setString(3, show.getSh_detail());
+			pstmt.setString(4, show.getSh_img());
+			pstmt.setString(5, show.getSh_date());
+			pstmt.setString(6, show.getSh_time());
+			pstmt.setInt(7, show.getSh_key());
+			
+			pstmt.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+		
+	}
+	//공연삭제
+	public void showDelete(int sh_key) throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			
+			sql="DELETE FROM show WHERE sh_key=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, sh_key);
+			
+			pstmt.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+		
+	}
+	
 	//공연 평점
 	//공연 예매 취소
-	//공연 목록
 	//페이지
+
 	
 }
