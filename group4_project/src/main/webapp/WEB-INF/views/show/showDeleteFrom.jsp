@@ -23,9 +23,10 @@
 	width:100px; 
 	height:30px;
 }
+
 </style>
 </head>
-<body>
+<body class="showBody">
 <div class="page-main">
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<div class="align-center">

@@ -27,12 +27,13 @@ select{
 	border-radius: 10px;
 	height:27px;
 }
+
 </style>
 </head>
-<body>
+<body class="showBody">
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<h4>&nbsp;&nbsp;&nbsp;공연목록</h4>
+	<h2>&nbsp;&nbsp;&nbsp;공연목록</h2>
 	<!-- 지역별 찾기, 검색창 -->
 	<form id="search_form" action ="searchList.do" method ="get" > <!-- 검색할땐 get을 주로 씀 -->
 		<ul class="search" >
@@ -58,7 +59,7 @@ select{
 		<li>
 		<!-- 리스트 띄우기 -->
 		<table class="borderNone"> 
-			<tr bgcolor="495057">
+			<tr bgcolor="#5690a5">
 				<th style="width:80px;border-radius:10px 0 0 10px;">대표이미지</th>
 				<th>제목</th>
 				<th>지역</th>
@@ -83,9 +84,11 @@ select{
 		</li>   
 	</ul>
 	</div>
+	<br>
 	<div class="align-center">
 		${page }
 	</div>
+	<br><br><br>
 	
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	

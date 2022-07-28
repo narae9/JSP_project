@@ -54,13 +54,12 @@ textarea, input[type=date], input[type=time], select{
 li{
 	margin:10px auto;
 }
-
 </style>
 </head>
-<body>
+<body class="showBody">
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<h4>&nbsp;&nbsp;&nbsp;공연예매 수정</h4>
+	<h2>&nbsp;&nbsp;&nbsp;공연예매 수정</h2>
 	<div class="content-main" style="color:white;margin:0 auto;">
 	<form action="showModify.do?sh_key=${show.sh_key}" method="post" id="showInsertForm"
 	   enctype="multipart/form-data" style="border:1px solid white;">

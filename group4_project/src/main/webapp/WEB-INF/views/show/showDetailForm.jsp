@@ -21,7 +21,8 @@ height:200px;
 	
 }
 #mdifyDelete_btn{
-	float:right
+	float:right;
+	margin:0 5% 0 0
 }
 input[type=text] {
 	border-radius:5px;
@@ -61,15 +62,18 @@ input[type=text] {
 	width:100px; 
 	height:30px;
 }
+h2{
+	color:white;
+}
 
 
 </style>
 
 </head>
-<body>
+<body class="showBody">
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<h4>&nbsp;&nbsp;&nbsp;공연예매</h4>
+	<h2>&nbsp;&nbsp;&nbsp;공연예매</h2>
 	<div>
 	<div class="page-left">
 		<ul>
@@ -101,12 +105,13 @@ input[type=text] {
 		<input class="btnBlack" type="button" value="수정하기" onclick="location.href='${pageContext.request.contextPath}/show/showModifyForm.do?sh_key=${show.sh_key}'">
 		<input class="btnBlack" type="button" value="삭제"  onclick="location.href='${pageContext.request.contextPath}/show/showDeleteFrom.do?sh_key=${show.sh_key}'">	
 	</div>
-	<div class="page-left">
+	<br>
+	<div class="page-right">
 		<ul>			
 			<li>
 			 	<h1>${show.sh_title }</h1>
 			</li>
-			<li>
+			<li style="color:white;">
 				${show.sh_detail}  
 				<br> 
 			</li>
@@ -115,9 +120,11 @@ input[type=text] {
 			
 		</ul>
 	</div>
+	
 	</div>
-
-</div>
+<div>
 		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+</div>
+</div>
 </body>
 </html>
