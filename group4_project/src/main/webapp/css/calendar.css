@@ -13,8 +13,8 @@ a{
 
 /*Basic*/
 .calendar_main{
-	margin-top: 80px;
-	background:black;
+	margin-top: 150px;
+	background:dfdfdf;
 	border-radius:5px;
 	box-shadow:0 2px 6px rgba(100,100,100,0.3);
 	border: 1px solid white;
@@ -46,7 +46,6 @@ button{
     font-size: 10px;
 }
 /* Calendar Moin*/
-
 .calendar{
     width: 100%;
     height: auto;
