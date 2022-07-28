@@ -9,7 +9,13 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css" type="text/css">
+<style type="text/css">
+#search_form{
+	float:right;
+	margin: 0 0 0 90%;
+}
 
+</style>
 </head>
 <body>
 <div class="page-main">
@@ -31,7 +37,7 @@
 					<option value="3">내용</option>
 				</select>
 			</li>
-		</ul>2
+		</ul>
 	<br>
 	</form>
 	
