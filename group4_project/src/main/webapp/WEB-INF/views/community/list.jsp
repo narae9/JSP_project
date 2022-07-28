@@ -16,7 +16,7 @@
 	<div class="content-main">
 		<br><br><br>
 		<h3 onclick="location.href='list.do'" style="width:90px; cursor:pointer">커뮤니티</h3>
-		<hr size="4" color="white" width="8%" align="left">
+		<hr size="4" color="white" width="75px" align="left">
 		<br>
 		<form id="search_form" action="list.do" 
 		                                    method="get">
