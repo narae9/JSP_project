@@ -11,7 +11,7 @@ body{
 	margin:40px 0;
 	border-radius:5px;
 	box-shadow:0 2px 6px rgba(100,100,100,0.3);
-	min-height:650px;
+	min-height:750px;
 }
 /* header */
 #main_logo{
@@ -261,6 +261,7 @@ table td, table th{
 form{
 	margin:0 auto;
 	border:1px solid #000;
+	border-radius:10px;
 	padding:10px 10px 10px 10px;
 }
 ul{

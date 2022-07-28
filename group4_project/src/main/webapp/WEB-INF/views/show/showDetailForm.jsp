@@ -61,6 +61,8 @@ input[type=text] {
 	width:100px; 
 	height:30px;
 }
+
+
 </style>
 
 </head>
@@ -68,12 +70,13 @@ input[type=text] {
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<h4>&nbsp;&nbsp;&nbsp;공연예매</h4>
+	<div>
 	<div class="page-left">
 		<ul>
 			<li class="align-center">
 				<img src="${pageContext.request.contextPath}/upload/${show.sh_img}">
 				<br><br><br>
-				<hr size="5" noshade="noshade" width="80%" color="white">
+				<hr size="5" noshade="noshade" width="70%" color="white">
 				<h1 style="color:white;">${show.sh_date }[${show.sh_time }]</h1>
 			</li>
 			<li class="page-left">
@@ -112,10 +115,9 @@ input[type=text] {
 			
 		</ul>
 	</div>
-	
-	<div>
-	
 	</div>
+
 </div>
+		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </body>
 </html>

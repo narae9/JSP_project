@@ -23,6 +23,10 @@ hr{
 	noshade:noshade;
 	color:white;
 }
+select{
+	border-radius: 10px;
+	height:27px;
+}
 </style>
 </head>
 <body>
@@ -83,6 +87,7 @@ hr{
 		${page }
 	</div>
 	
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	
 </div>
 

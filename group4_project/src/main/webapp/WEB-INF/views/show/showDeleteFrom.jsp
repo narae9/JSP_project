@@ -27,6 +27,7 @@
 </head>
 <body>
 <div class="page-main">
+<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<div class="align-center">
 		<h1>삭제가 완료되었습니다.</h1>
 		<br>
@@ -37,6 +38,7 @@
 			</li>
 		</ul>
 	</div>
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </div>
 
 </body>
