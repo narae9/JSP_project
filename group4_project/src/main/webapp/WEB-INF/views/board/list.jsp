@@ -11,7 +11,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/board.js"></script>
 </head>
 <body>
-<div class="board-main">
+<div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<div class="content-main">
 		<br><br><br>
