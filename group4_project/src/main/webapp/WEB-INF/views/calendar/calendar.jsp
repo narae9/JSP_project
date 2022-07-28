@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +10,12 @@
 <title>Calendar</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/calendar.css" type="text/css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/calendar.js"></script>
 </head>
 <body>
-<div class="page-main">
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+<div class="calendar_main">
     <div class="wrap col-flex jcc aic">
 
         <div class="flex aic" style="gap: 40px">
@@ -31,8 +33,8 @@
             <div class="calendar-top">FRI</div>
             <div class="calendar-top">SAT</div>
         </div>
-
     </div>
+</div>
 
 <!-- Model -->
     <div class="modal schedule">
@@ -40,23 +42,22 @@
             <div class="modal-form">
                 <div class="modal-top flex aifs jcsb">
                 <h1 class="modal-title"></h1>
-                <button onclick="document.querySelector('.modal.schedule').classList.remove('show')">x</button>
+                <button onclick="document.querySelector('.modal.schedule').classList.remove('show'),ScheduleManager.remove()">x</button>
                 </div>
 
             <div class="modal-content">
                 <div class="schedule-list">
                     <div class="flex aic jcc" style="width: 100%; height: 100%;">
-                    There is no schedules.. 
+                    
                     </div>
                 </div>
-                <div class="form-inf">
-                    <button onclick="ScheduleManager.addSchedule()">Add Schedule</button>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-</div>
+	                <div class="form-inf">
+	                   
+	                </div>
+	            </div>
+	            </div>
+	        </div>
+	    </div>	
     <script>
         Calendar.$calendar = document.querySelector(".calendar");
         Calendar.$date = document.querySelector(".cur-date");

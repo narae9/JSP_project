@@ -20,12 +20,12 @@
 	</div>
 	<br><br>
 	<div class="footer_icon02">
-		<img id="facebk" src="../images/facebook.png" onclick="location.href='https://www.facebook.com/'">
-		<img id="instagram" src="../images/instagram2.png" onclick="location.href='https://www.instagram.com/'">
-		<img id="twitter" src="../images/twitter2.png" onclick="location.href='https://twitter.com/'">
+		<img id="facebk" src="../images/facebook.png" onclick="location.href='https://www.facebook.com/'" style="cursor:pointer">
+		<img id="instagram" src="../images/instagram2.png" onclick="location.href='https://www.instagram.com/'" style="cursor:pointer">
+		<img id="twitter" src="../images/twitter2.png" onclick="location.href='https://twitter.com/'" style="cursor:pointer">
 	</div>
 	<div>
-		<p>2022-07-30</p>
+		<p>2022-08-01</p>
 	</div>
 	<br><br>
 </div>

@@ -16,62 +16,134 @@ const Calendar = {
     },
     /*스케줄 메시지창*/
     evtHandle() {
-        document.querySelectorAll(".date")
+		const today = new Date();
+        document.querySelectorAll(".date .day")
             .forEach(elem => {
                 elem.onclick = function () {
                     document.querySelector(".modal.schedule")
                         .classList.add("show");
 
             const day = Calendar.day = this.innerText;
+            //const day = Calendar.day = i;
             const $mTitle = document.querySelector(".modal.schedule .modal-title");
-            $mTitle.innerHTML = `Schedules<br>in ${Calendar.year}. ${Calendar.month} .${day}`;   
+            $mTitle.innerHTML = `${Calendar.year}. ${Calendar.month} .${day} 공연 목록`;   
             
-            Calendar.refreshScheduleList();
+            Calendar.refreshScheduleList(today.getFullYear(),today.getMonth() + 1,Calendar.day);
             }
         });
     },
-
-    refreshScheduleList() {
+	/*스케줄 메시지 창에 스케줄 입력*/
+    refreshScheduleList(y,m,day) {
         const $mScheduleList = document.querySelector(".modal.schedule .schedule-list");
         const schedules = ScheduleManager.schedules.filter(v => v.date == `${Calendar.year}-${Calendar.month}-${Calendar.day}`);
-
-        if(schedules.length)
-            $mScheduleList.innerHTML = schedules.map(sc =>`
-                    <div class="schedule flex aic jcsb">
-                        <h3>${sc.title}</h3>
-                        <button onclick="ScheduleManager.remove('${sc.id}')">x</button>
-                    </div>
-            `).join("\n\n");
-        else
-        $mScheduleList.innerHTML = `
-        <div class="flex aic jcc" style="width: 100%; height: 100%;">
-            There is no schedules.. 
-        </div>
-        `;
+        if(day.length==1) day = "0"+day;
+		console.log(y + "~~~" + m + "~~~~" + day);
+		$.ajax({
+			url:'listCalendar.do',
+			type:'post',
+			data:{y:y,m:m},
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(param){
+			let output = "";
+			let cnt = 0;		
+			$(param.list).each(function(index,item){			
+				if(day == item.sh_date.substr(8,2)){
+	            output += `<div class="schedule flex aic jcsb">`;
+	            output += `<p>` + item.sh_title + ` / ` + item.sh_time +  ` / ` + item.sh_place + `</p>`;
+	            output += `</div>`
+				cnt++;
+		        }
+        	});
+			console.log(y + "~~~" + m + "~~~~" + day + "cnt:" + cnt);
+        	if(cnt==0){
+		        output += 
+		        `<div class="flex aic jcc" style="width: 100%; height: 100%;">
+		            There is no schedules.. 
+		        </div>`;
+		    }	
+        	
+        		
+        	$mScheduleList.innerHTML += output;	
+        	
+			},
+			error:function(){
+				alert('네트워크 오류');
+			}		
+		});		
     },
+    /*AJAX 통신*/
+    selsectList(){	
+		$.ajax({
+			url:'listCalendar.do',
+			type:'post',
+			dataType:'json',
+			async:false,
+			cache:false,
+			timeout:30000,
+			success:function(param){
+				return param.list;
+			},
+			error:function(){
+				alert('네트워크 오류 발생');
+			}
+		});
+	},
+    
     /*Calendar 날짜 출력*/
-    showDates(y, m) { 
-        const before = document.querySelectorAll(".date");
-        before.forEach(v => v.remove());  
-        
-        const today = new Date();
-        const todayDate = (Calendar.year == today.getFullYear()) &&
-                          (Calendar.month == today.getMonth() + 1)
-                          ? today.getDate()
-                          : null;
-
-        for (
-            let i = -Calendar.getFirstDay(y,m) + 1; 
-            i <= Calendar.getLastDay(y,m); 
-            i++
-        ) {
-            Calendar.$calendar.innerHTML += `
-            <div class="date ${i < 1 ? "hidden-date" : ""}">
-                <p>${i}</p>
-            <div>
-            `;
-        }
-        Calendar.evtHandle();
+    showDates(y, m) {
+		$.ajax({
+			url:'listCalendar.do',
+			type:'post',
+			data:{y:y,m:m},
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(param){
+		        const before = document.querySelectorAll(".date");
+		        before.forEach(v => v.remove());
+		          
+		        /* //오늘 날짜 구하기
+		        const today = new Date();
+		        const todayDate = (Calendar.year == today.getFullYear()) &&
+		                          (Calendar.month == today.getMonth() + 1)
+		                          ? today.getDate()
+		                          : null;
+				*/
+				let output = "";
+		        for (
+		            let i = -Calendar.getFirstDay(y,m) + 1; 
+		            i <= Calendar.getLastDay(y,m); 
+		            i++
+		        ) {
+		            output += 
+		            `<div class="date ${i < 1 ? "hidden-date" : ""}">
+		                <p class="day">${i}</p>`;
+		           let cnt = 0; //캘린터 공연 타이틀 갯수 카운트
+		           $(param.list).each(function(index,item){
+						if(i == item.sh_date.substr(8,2)){
+							if(cnt<3){
+								output += `<p class="day_item">` + item.sh_title + `</p>`;
+							}
+							if(cnt==3){
+								output += `<input type="button" class="day_item_add" value="더보기" onclick="Calendar.evtHandle()"></button>`;
+							}
+							cnt++;
+						}
+					});
+		            output +=  `</div>`;
+		        }
+		        
+		        Calendar.$calendar.innerHTML += output;
+		               
+		        Calendar.evtHandle();        
+			},
+			error:function(){
+				alert('네트워크 오류 발생');
+			}
+		});
+		
     },
 
     getFirstDay(y,m) {
@@ -128,11 +200,14 @@ const ScheduleManager = {
     },
 
     remove(id){
+		const $mScheduleList = document.querySelector(".modal.schedule .schedule-list");
         const index = ScheduleManager.schedules.findIndex(v =>v.id==id);
 
         ScheduleManager.schedules.splice(index, 1);
 
         this.saveSchedule();
-        Calendar.refreshScheduleList();
+        //Calendar.refreshScheduleList();
+        
+        $mScheduleList.innerHTML =``;
     },
 }

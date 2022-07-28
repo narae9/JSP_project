@@ -1,38 +1,28 @@
 @charset "UTF-8";
-/*
-*{
-    margin: 0;
-    padding: 0;
-    letter-spacing: -1px;
-    box-sizing: border-box;
-}
-*/
 a{
     color: initial;
     text-decoration: none;
 }
-
-
 /* Felxbox */
 .flex{display: flex;}
 .col-flex{display: flex;flex-direction: column;}
-.jcc{justify-content: center;}
+/*.jcc{justify-content: center;}*/
 .jcsb{justify-content: space-between;}
 .aic{align-items: center;}
 .aifs{align-items: flex-start;}
 
 /*Basic*/
-/*
-body{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: #dfdfdf;
+.calendar_main{
+	margin-top: 80px;
+	background:black;
+	border-radius:5px;
+	box-shadow:0 2px 6px rgba(100,100,100,0.3);
+	border: 1px solid white;
+	height: auto;	
 }
-*/
 .wrap{
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 button{
     padding: 10px 15px;
@@ -44,11 +34,22 @@ button{
     cursor: pointer;
     font-size: 18px;
 }
+.day_item_add{
+    padding: 5px 10px;
+    width:100%;
+    background: #444;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 10px;
+}
 /* Calendar Moin*/
 
 .calendar{
     width: 100%;
-    height: 600px;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
@@ -84,9 +85,13 @@ button{
     background: #f4f4f4;
     padding: 10px;
     padding-bottom: 40px;
-    cursor: pointer;
 }
-
+.day{
+	cursor: pointer;	
+}
+.day_item{
+	font-size:5px;
+}
 .today{
     border: 3px solid yellowgreen !important;
 }
