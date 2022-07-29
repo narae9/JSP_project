@@ -21,7 +21,7 @@ table td, table th {
 }
 hr{
 	noshade:noshade;
-	color:white;
+	color:white;   
 }
 select{
 	border-radius: 10px;
