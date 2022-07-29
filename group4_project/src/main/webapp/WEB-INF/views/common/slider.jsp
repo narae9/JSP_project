@@ -18,6 +18,13 @@
 	height: 690px;
 	background-color: rgba(255,255,255,0.25);
 }
+.slider_second_main{
+	position: static;
+	top: 150px;
+	width: 100%; 
+	height: 610px;
+	background-color: rgba(25,25,25,0.25);
+}
 .clearfix:after { 
 	content: ''; 
 	display: block; 
@@ -136,50 +143,53 @@
 </head>
 <body>
 <div class="slider_main">
-  <div id="container">
-    <div class="slide_wrap">
-      <div class="slide_box">
-        <div class="slide_list clearfix">
-          <div class="slide_content slide01">
-          	<img src="${pageContext.request.contextPath}/images/poster/poster1.jpg" width="400px" height="570px"><br>
-          	홍대 라이브 버스킹데이<br>
-          	5.27 13:10
-          </div>
-          <div class="slide_content slide02">
-          <img src="${pageContext.request.contextPath}/images/poster/poster2.jpg" width="400px" height="570px"><br>
-         	헬로우 버스킹<br>
-          	8.8 18:30
-          </div>
-          <div class="slide_content slide03">
-          <img src="${pageContext.request.contextPath}/images/poster/poster3.jpg" width="400px" height="570px"><br>
-          	간이역 버스킹<br>
-          	5.31 18:00
-          </div>
-          <div class="slide_content slide04">
-          <img src="${pageContext.request.contextPath}/images/poster/poster4.jpg" width="400px" height="570px"><br>
-          	힐링 버스킹<br>
-          	11.21 17:30
-          </div>
-          <div class="slide_content slide05">
-          <img src="${pageContext.request.contextPath}/images/poster/poster5.jpg" width="400px" height="570px"><br>
-          	문화의 거리 버스킹<br>
-          	9.10 17:30
-          </div>
-        </div>
-        <!-- // .slide_list -->
-      </div>
-      <!-- // .slide_box -->
-      <div class="slide_btn_box">
-        <button type="button" class="slide_btn_prev">◀</button>
-        <button type="button" class="slide_btn_next">▶</button>
-      </div>
-      <!-- // .slide_btn_box -->
-      <ul class="slide_pagination"></ul>
-      <!-- // .slide_pagination -->
-    </div>
-    <!-- // .slide_wrap -->
-  </div>
-  <!-- // .container -->
+	  <div class="slider_second_main">
+	</div>
+	<!-- slider_second_main -->
+	  <div id="container">
+	    <div class="slide_wrap">
+	      <div class="slide_box">
+	        <div class="slide_list clearfix">
+	          <div class="slide_content slide01">
+	          	<img src="${pageContext.request.contextPath}/images/poster/poster1.jpg" width="400px" height="570px"><br>
+	          	홍대 라이브 버스킹데이<br>
+	          	5.27 13:10
+	          </div>
+	          <div class="slide_content slide02">
+	          <img src="${pageContext.request.contextPath}/images/poster/poster2.jpg" width="400px" height="570px"><br>
+	         	헬로우 버스킹<br>
+	          	8.8 18:30
+	          </div>
+	          <div class="slide_content slide03">
+	          <img src="${pageContext.request.contextPath}/images/poster/poster3.jpg" width="400px" height="570px"><br>
+	          	간이역 버스킹<br>
+	          	5.31 18:00
+	          </div>
+	          <div class="slide_content slide04">
+	          <img src="${pageContext.request.contextPath}/images/poster/poster4.jpg" width="400px" height="570px"><br>
+	          	힐링 버스킹<br>
+	          	11.21 17:30
+	          </div>
+	          <div class="slide_content slide05">
+	          <img src="${pageContext.request.contextPath}/images/poster/poster5.jpg" width="400px" height="570px"><br>
+	          	문화의 거리 버스킹<br>
+	          	9.10 17:30
+	          </div>
+	        </div>
+	        <!-- // .slide_list -->
+	      </div>
+	      <!-- // .slide_box -->
+	      <div class="slide_btn_box">
+	        <button type="button" class="slide_btn_prev">◀</button>
+	        <button type="button" class="slide_btn_next">▶</button>
+	      </div>
+	      <!-- // .slide_btn_box -->
+	      <ul class="slide_pagination"></ul>
+	      <!-- // .slide_pagination -->
+	    </div>
+	    <!-- // .slide_wrap -->
+	  </div>
+	  <!-- // .container -->
 </div>
 <!-- // .slider_main -->
   <script>
