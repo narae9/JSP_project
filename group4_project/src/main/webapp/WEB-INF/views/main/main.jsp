@@ -24,16 +24,16 @@
 		<div class="page-main" id="test2">
 		<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 		<jsp:include page="/WEB-INF/views/common/slider.jsp"/>
-		<div class="content-main">
 		
+		<div class="content-main">
 			<table id="main-table">
-				<tr bgcolor="D3D3D3">
-					<th id="main-tableth" width="60%" style="color:black; font-size:18px; border-right: hidden; text-align:left">문의 및 공지</th>
+				<tr bgcolor="#5690a5">
+					<th id="main-tableth">문의 및 공지</th>
 					<th></th>
 				</tr>
 				<c:forEach var="board" items="${boardList}">
 				<tr>
-					<td style="text-decoration:underline; border-right: hidden;"><a href="${pageContext.request.contextPath}/board/detail.do?bo_key=${board.bo_key}" target="_blank">${fn:substring(board.bo_title,0,12)}</a></td>
+					<td><a href="${pageContext.request.contextPath}/board/detail.do?bo_key=${board.bo_key}" target="_blank">${fn:substring(board.bo_title,0,12)}</a></td>
 					<td style="font-size:13px; text-align:right">(${board.bo_reg_date})</td>
 				</tr>
 				</c:forEach>
@@ -45,8 +45,8 @@
 		<div class="arrow_logo2" id="test4" onclick="location.href='main.do'">
 		</div>
 		<br><br>
-		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	</div>
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </div>
 </body>
 </html>
