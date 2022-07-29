@@ -42,7 +42,7 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next())
 				num=rs.getInt(1);
-			
+			   
 			//MEMBER 테이블에 데이터 저장
 			sql = "INSERT INTO MEMBER (me_key, me_id, me_path) VALUES (?,?,?)";
 			//PreparedStatement 객체 생성

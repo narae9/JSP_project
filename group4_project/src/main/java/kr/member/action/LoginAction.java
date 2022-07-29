@@ -13,7 +13,7 @@ public class LoginAction implements Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		//전송된 데이터 인코딩
 		request.setCharacterEncoding("utf-8");
-		
+		  
 		//전송된 데이터 반환
 		String id = request.getParameter("id");
 		String pw = request.getParameter("passwd");

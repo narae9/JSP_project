@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인 정보</title>
-
+  
 </head>
 <body>
 	<script>
