@@ -38,7 +38,7 @@ public class LoginAction implements Action{
 			
 			return "redirect:/main/main.do";			
 		}
-		
+		  
 		//인증 실패시 호출
 		return "/WEB-INF/views/member/login.jsp";
 	}

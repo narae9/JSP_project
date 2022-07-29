@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import kr.controller.Action;
 
 public class LogoutAction implements Action{
-   
+     
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
