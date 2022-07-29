@@ -5,18 +5,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>문의게시판</title>
+<title>문의 및 공지사항</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/board.js"></script>
 </head>
 <body>
-<div class="board-main">
+<div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<div class="content-main">
-		<br><br><br><br>
-		<h3>문의게시판</h3>
-		<hr size="4" noshade="noshade" width="10%" align="left">
+		<br><br><br>
+		<h3 onclick="location.href='list.do'" style="width:100px; cursor:pointer">문의게시판</h3>
+		<hr size="4" color="white" width="95px" align="left">
+		<br>
 		<form id="search_form" action="list.do" 
 		                                    method="get">
 			<ul class="search">
@@ -27,7 +28,7 @@
 				</li>
 				<li>
 					<input type="search" size="16" 
-					  name="keyword" id="keyword"
+					  name="keyword" id="keyword_board"
 					  value="${param.keyword}">
 				</li>
 				<li>
@@ -50,16 +51,16 @@
 		</c:if>
 		<c:if test="${count > 0}">
 		<table>
-			<tr bgcolor="495057">
-				<th width="10%">번호</th>
-				<th width="50%">제목</th>
-				<th width="20%">작성일</th>
-				<th width="20%">수정일</th>
+			<tr bgcolor="D3D3D3">
+				<th width="10%" style="color:black">번호</th>
+				<th width="50%" style="color:black">제목</th>
+				<th width="20%" style="color:black">작성일</th>
+				<th width="20%" style="color:black">수정일</th>
 			</tr>
 			<c:forEach var="board" items="${list}">
 			<tr>
-				<td align="center">${board.bo_key}</td>
-				<td><a href="detail.do?bo_key=${board.bo_key}">${board.bo_title}</a></td>
+				<td align="center" style="font-weight:bold">${board.bo_key}</td>
+				<td style="text-decoration:underline"><a href="detail.do?bo_key=${board.bo_key}">${board.bo_title}</a></td>
 				<td align="center">${board.bo_reg_date}</td>
 				<td align="center">${board.bo_mod_date}</td>
 			</tr>

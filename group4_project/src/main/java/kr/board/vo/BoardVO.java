@@ -15,7 +15,6 @@ public class BoardVO {
 	private Date bo_mod_date;
 	private Date bom_mod_date;
 	
-	
 	public int getMe_key() {
 		return me_key;
 	}

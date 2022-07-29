@@ -144,6 +144,49 @@ public class BoardDAO {
 		return board;
 	}
 	
+	//메인 최신글 목록
+	public List<BoardVO> getMainListBoard(int start,int end)
+												throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<BoardVO> list = null;
+		String sql = null;
+
+		try {
+			conn = DBUtil.getConnection();
+			
+			sql = "SELECT * FROM (SELECT a.*, rownum rnum "
+					+ "FROM (SELECT * FROM board b "
+					+ "ORDER BY b.bo_key DESC)a) "
+					+ "WHERE rnum >= ? AND rnum<=?";
+
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+
+			rs = pstmt.executeQuery();
+			list = new ArrayList<BoardVO>();
+			
+			while(rs.next()) {
+				BoardVO board = new BoardVO();
+				board.setBo_key(rs.getInt("bo_key"));
+				board.setBo_title(StringUtil.useNoHtml(rs.getString("bo_title")));
+				board.setBo_reg_date(rs.getDate("bo_reg_date"));
+
+				list.add(board);
+			}
+
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			//자원정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		return list;
+	}
+	
 	//댓글 등록
 	//댓글 개수
 	//댓글 목록
