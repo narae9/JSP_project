@@ -19,11 +19,10 @@
 	background-color: rgba(255,255,255,0.25);
 }
 .slider_second_main{
-	position: static;
-	top: 150px;
+	position: absolute;
+	top: 1600px;
 	width: 100%; 
-	height: 610px;
-	background-color: rgba(25,25,25,0.25);
+	height: 306px;
 }
 .clearfix:after { 
 	content: ''; 
@@ -45,7 +44,8 @@
 .slide_box { 
 	width: 100%; 
 	margin: auto; 
-	overflow-x: hidden; 
+	overflow-x: hidden;
+	
 }
 .slide_content { 
 	display: table; 
@@ -143,7 +143,7 @@
 </head>
 <body>
 <div class="slider_main">
-	  <div class="slider_second_main">
+	 <div class="slider_second_main" style="background:yellow;">
 	</div>
 	<!-- slider_second_main -->
 	  <div id="container">
@@ -291,6 +291,34 @@
           slideList.style.transform = "translate3d(-" + (slideWidth * (curIndex + 1)) + "px, 0px, 0px)";
         });
       });
+      
+      /*background*/
+      const btn_next = document.getElementsByClassName('slide_btn_next');
+      const btn_prev = document.getElementsByClassName('slide_btn_prev');
+      const body = document.getElementsByClassName('slider_second_main');
+      const colornm1 = ['yellow','green','orange','brown','white']; /*위에 배경색*/
+      const colornm2 = ['yellow','green','orange','brown','white']; /*밑에 배경색*/
+      let ii = 0;
+      
+      btn_next[0].addEventListener('click',colorChange_next);
+      btn_prev[0].addEventListener('click',colorChange_prev);
+      
+      function colorChange_next(){  
+    	  if(ii >= 4){ii=-1};
+    	  ii++;
+    	  const colordx = colornm2[ii];
+    	  console.log(ii);
+    	  body[0].style.backgroundColor = colordx;
+    	  
+      }
+      function colorChange_prev(){  
+    	  if(ii <= 0){ii=5};
+    	  ii--;
+    	  const colordx = colornm2[ii];
+    	  console.log(ii);
+    	  body[0].style.backgroundColor = colordx;
+    	  
+      }
     })();
   </script>
 </body>
