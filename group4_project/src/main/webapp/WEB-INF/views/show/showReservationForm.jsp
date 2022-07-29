@@ -9,26 +9,33 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css" type="text/css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/show.js"></script>
 <style type="text/css">
 #search_form{
 	float:right;
-	margin: 0 0 0 90%;
+	margin: 0 0 0 90%;  
 }
 table td, table th {
 	border:0;
     padding: 10px;
-    color: white;
+    color: white;   
 }
 hr{
 	noshade:noshade;
-	color:white;
+	color:white;   
 }
+select{
+	border-radius: 10px;
+	height:27px;
+}
+
 </style>
 </head>
-<body>
+<body class="showBody">
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<h4>&nbsp;&nbsp;&nbsp;공연목록</h4>
+	<h2>&nbsp;&nbsp;&nbsp;공연목록</h2>
 	<!-- 지역별 찾기, 검색창 -->
 	<form id="search_form" action ="searchList.do" method ="get" > <!-- 검색할땐 get을 주로 씀 -->
 		<ul class="search" >
@@ -54,7 +61,7 @@ hr{
 		<li>
 		<!-- 리스트 띄우기 -->
 		<table class="borderNone"> 
-			<tr bgcolor="495057">
+			<tr bgcolor="#5690a5">
 				<th style="width:80px;border-radius:10px 0 0 10px;">대표이미지</th>
 				<th>제목</th>
 				<th>지역</th>
@@ -62,7 +69,7 @@ hr{
 				<th style="border-radius:0 10px 10px 0;">평점</th>
 			</tr>
 			<c:forEach var="show" items="${list }"> 
-			<tr style="text-size:30px">
+			<tr style="text-size:30px;border-bottom:2px solid white;">
 				<c:if test="${!empty show.sh_img}">
 					<td><a href="showDetailForm.do?sh_key=${show.sh_key }"><img src="${pageContext.request.contextPath}/upload/${show.sh_img}" class="photo_size"></a></td>
 				</c:if>
@@ -74,15 +81,19 @@ hr{
 				<td><h3>${show.sh_date } 시간[${show.sh_time }]</h3></td>
 				<td> d<%-- ${show.sh_gpa } --%></td>
 			</tr>
+			
 			</c:forEach>
 		</table>
 		</li>   
 	</ul>
 	</div>
+	<br>
 	<div class="align-center">
 		${page }
 	</div>
+	<br><br><br>
 	
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	
 </div>
 

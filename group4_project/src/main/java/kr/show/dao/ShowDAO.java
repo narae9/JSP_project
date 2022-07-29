@@ -55,25 +55,24 @@ public class ShowDAO {
 	
 	//공연 예매
 
-	public ReserveVO reserveShow(ReserveVO reserve, int sh_key) throws Exception{
+	public ReserveVO reserveShow(int re_spon, int sh_key, int status, int me_key) throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql=null;
-		String sql2=null;
 		
 		try {
 			conn = DBUtil.getConnection();
 
 			
-			sql2="INSERT INTO reserve (re_key,re_reserve,re_date,re_spon,sh_key,me_key)"
-					+ "VALUES(reserve_seq.nextval,?,?,?,?,?)";
+			sql="INSERT INTO reserve (re_key,re_date ,re_reserve,re_spon,sh_key,me_key)"
+					+ "VALUES(reserve_seq.nextval,sysdate,?,?,?,?)";
 			
-			pstmt = conn.prepareStatement(sql2);
-			pstmt.setInt(1, reserve.getRe_reserve());
-			pstmt.setString(2, reserve.getRe_date());
-			pstmt.setInt(3, reserve.getRe_spon());
-			pstmt.setInt(4,sh_key);
-			pstmt.setInt(5, reserve.getMe_key());
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, status);
+			pstmt.setInt(2, re_spon);
+			pstmt.setInt(3, sh_key );
+			pstmt.setInt(4, me_key);
+			
 			
 			pstmt.executeUpdate();
 			

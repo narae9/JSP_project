@@ -8,13 +8,15 @@
 <title>공연예매수정</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/show.js"></script>
 <style type="text/css">
 input[type=text] {
 	border-radius:5px;
 	width:300px;
 	border:0;
 	height:30px;
-	margin: 0 0 10px 0;
+	margin: 0 0 10px 0; 
 }
 textarea, input[type=date], input[type=time], select{
 	border-radius: 5px;
@@ -54,13 +56,12 @@ textarea, input[type=date], input[type=time], select{
 li{
 	margin:10px auto;
 }
-
 </style>
 </head>
-<body>
+<body class="showBody">
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<h4>&nbsp;&nbsp;&nbsp;공연예매 수정</h4>
+	<h2>&nbsp;&nbsp;&nbsp;공연예매 수정</h2>
 	<div class="content-main" style="color:white;margin:0 auto;">
 	<form action="showModify.do?sh_key=${show.sh_key}" method="post" id="showInsertForm"
 	   enctype="multipart/form-data" style="border:1px solid white;">
@@ -107,6 +108,7 @@ li{
 		</div>								
 	</form>   
 	</div>
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 </div>
 

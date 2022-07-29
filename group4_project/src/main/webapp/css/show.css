@@ -11,10 +11,30 @@
 }
 img{
 	border-radius: 10px;
-	box-shadow: 3px 3px 3px 3px black;
+	box-shadow: 3px 3px 3px 3px #5690a5;
 }
 .borderNone{
 	border:none;
 }
+h1, h2, h3, h4, h5, h6{  
+	color:white;
+}
+.content-main{
+   padding:10px 20px;
+   margin: 100px 0;
+   color:white;
+}
+.showBody{
 
-
+   width:960px;
+   margin:0 auto;
+   box-shadow:0 0 5px 5px #5690a5;
+   /*
+   background-image:url(../images/bck10.png);
+   background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   width:100%;
+    */
+    background:#1D6B87;
+}

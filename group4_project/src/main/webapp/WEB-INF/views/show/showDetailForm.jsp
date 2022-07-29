@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css" type="text/css"/>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/show.js"></script>
 <style type="text/css">
 img{
 width:300px;
@@ -21,7 +22,8 @@ height:200px;
 	
 }
 #mdifyDelete_btn{
-	float:right
+	float:right;
+	margin:0 5% 0 0
 }
 input[type=text] {
 	border-radius:5px;
@@ -61,32 +63,46 @@ input[type=text] {
 	width:100px; 
 	height:30px;
 }
+h2{
+	color:white;
+}
+
+
 </style>
 
 </head>
-<body>
+<body class="showBody">
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<h4>&nbsp;&nbsp;&nbsp;공연예매</h4>
+	<h2>&nbsp;&nbsp;&nbsp;공연예매</h2>
+
+	<div>
 	<div class="page-left">
 		<ul>
 			<li class="align-center">
+			<c:if test="${!empty show.sh_img }">
 				<img src="${pageContext.request.contextPath}/upload/${show.sh_img}">
+			</c:if>
+			<c:if test="${empty show.sh_img }">
+				<img src="${pageContext.request.contextPath}/images/blank2.png">
+			</c:if>
+
 				<br><br><br>
-				<hr size="5" noshade="noshade" width="80%" color="white">
+				<hr size="5" noshade="noshade" width="70%" color="white">
 				<h1 style="color:white;">${show.sh_date }[${show.sh_time }]</h1>
 			</li>
 			<li class="page-left">
 			</li>
 		</ul>
 		
-		<form style="border:none;">
+		<form action="reserveShow.do" method="post" style="border:none;" id="reserve_btn">
+		    <input type="hidden" name="sh_key" value="${show.sh_key}">
 			<ul>
 				<li>
 					<input type="text" name="re_spon" id="re_spon" placeholder="후원금액">
 				</li>
 				<li>
-					<input class="btnBlue" type="submit" onclick="location.href='${pageContext.request.contextPath}/show/reserveShow.do'" value="예매하기">
+					<input class="btnBlue" type="submit" value="예매하기">
 					<button class="btnBlack" type="button"  onclick="location.href='${pageContext.request.contextPath}/show/showListAction.do'">목록으로</button>
 				</li>
 			</ul>
@@ -94,16 +110,19 @@ input[type=text] {
 		
 		
 	</div>
+	<%-- <c:if test="${member.me_num == show.me_num}"> --%>
 	<div id="mdifyDelete_btn">
 		<input class="btnBlack" type="button" value="수정하기" onclick="location.href='${pageContext.request.contextPath}/show/showModifyForm.do?sh_key=${show.sh_key}'">
 		<input class="btnBlack" type="button" value="삭제"  onclick="location.href='${pageContext.request.contextPath}/show/showDeleteFrom.do?sh_key=${show.sh_key}'">	
 	</div>
-	<div class="page-left">
+	<%-- </c:if> --%>
+	<br>
+	<div class="page-right">
 		<ul>			
 			<li>
 			 	<h1>${show.sh_title }</h1>
 			</li>
-			<li>
+			<li style="color:white;">
 				${show.sh_detail}  
 				<br> 
 			</li>
@@ -113,9 +132,10 @@ input[type=text] {
 		</ul>
 	</div>
 	
-	<div>
-	
 	</div>
+<div>
+		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+</div>
 </div>
 </body>
 </html>
