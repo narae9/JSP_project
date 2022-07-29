@@ -187,7 +187,7 @@ body{
 }
 #title_s{
    text-align: center;
-   background-color: #696969;
+   background-color: #5690a5; 
 }
 #write_s{
    margin: 80px 0;
@@ -208,6 +208,65 @@ body{
    text-align: center;
 }
 /**/
+
+/*댓글*/
+div#reply_div2{
+	padding:5px 10px 40px 10px;
+	margin-top:10px;
+	background-color:#5690a5;
+}
+form#re_form{
+	width:650px;
+	border:none;
+}
+span.re-title{
+	color:#000;
+	font-size:12pt;
+	line-height:200%;
+}
+span.letter-count{
+	font-size:10pt;
+	color:#999;
+}
+textarea.rep-content{
+	width:90%;
+	height:50px;
+	margin:10px 10px;
+}
+div#re_first, div#mre_first{
+	float:left;
+	width:70%;
+	padding-left:15px;
+	margin-bottom:10px;
+}
+div#re_second, div#mre_second{
+	float:left;
+	width:19%;
+	margin-bottom:10px;
+}
+div#loading{
+	width:100px;
+	height:50px;
+	/*정중앙에 div를 배치하기 위한 설정*/
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	display:flex;
+	/*세로 정렬*/
+	align-items:center;
+	justify-content:center;
+}
+div.paging-button{
+	text-align:right;
+}
+div#output{
+	clear:both;
+}
+form#mre_form{
+	border:none;
+	margin:5px;
+}
 
 .result-display{
    width:400px;
@@ -259,10 +318,8 @@ ul.search li{
 }
 table{
    width:100%;
-   border:1px solid #fff;
    border-collapse:collapse;
    margin-top:35px;
-   
 }
 #main-table{
    width: 50%;
@@ -279,9 +336,14 @@ video{
    padding:10px;
 }
 table td, table th{
-   border:1px solid #fff;
    padding:10px;
    color: white;
+}
+#table-border{
+   border:1px solid #fff;
+   border-top: none;
+   border-left:none;
+   border-right:none;
 }
 
 /*등록, 수정폼*/
