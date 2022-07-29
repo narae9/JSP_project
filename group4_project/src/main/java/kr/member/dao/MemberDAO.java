@@ -93,29 +93,40 @@ public class MemberDAO {
 		MemberVO member = null;
 		String sql = null;
 		
+		System.out.println("ID 중복체크 및 로그인 처리 시작");
+		
 		try {
+			System.out.println("커넥션 할당부터 시작");
+			System.out.println("찾고자 하는 아이디: "+id);
 			// 커넥션 할당
 			conn = DBUtil.getConnection();
 			
 			//SQL문 작성
-			sql = "SELECT * FROM MEMBER m LEFT OUTER JOIN MEMBER_DETAIL d"
-					+ " ON m.ME_KEY=d.ME_KEY WHERE m.me_id=?";
+			sql = "SELECT * FROM MEMBER m LEFT OUTER JOIN MEMBER_DETAIL d ON m.ME_KEY=d.ME_KEY WHERE m.me_id=?";
 			// 객체 생성
 			pstmt = conn.prepareStatement(sql);
 			//데이터 바인딩
-			pstmt.setString(1, id);
+			pstmt.setString(1, id);			
 			
-			rs = pstmt.executeQuery();
+			rs = pstmt.executeQuery();			
+			
 			if(rs.next()) {
+				System.out.println("회원 찾기 성공, 데이터 저장~");
 				member = new MemberVO();
+				member.setMe_key(rs.getInt("me_key"));
+				member.setMe_id(rs.getString("me_id"));
+				member.setMe_path(String.valueOf(rs.getInt("me_path")));
+				member.setMe_passwd(rs.getString("me_passwd"));
+				member.setMe_email(rs.getString("me_email"));
+				
+				System.out.println("데이터 저장 끝!");
 			}
 			
 		}catch(Exception e) {
 			throw new Exception(e);
 		}finally {
 			//자원정리
-			DBUtil.executeClose(rs,pstmt,conn);
-		}
+			DBUtil.executeClose(rs,pstmt,conn);		}
 		
 		return member;
 	}
