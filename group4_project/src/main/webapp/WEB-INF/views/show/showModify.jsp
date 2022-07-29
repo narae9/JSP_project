@@ -2,4 +2,5 @@
     pageEncoding="UTF-8"%>
 <script type="text/javascript">
 	alert('수정 완료');
+	location.href="../main/main.do";
 </script>

@@ -17,18 +17,17 @@ public class ReserveShowAction implements Action{
 		HttpSession session = request.getSession();
 		Integer me_num = (Integer)session.getAttribute("me_num");
 //		if(me_num==null) {
-//			return null;
+//			return /WEB-INF/views/member/login.jsp;
 //		}
+		
 		int re_spon = Integer.parseInt(request.getParameter("re_spon"));
+		
 		int sh_key = Integer.parseInt(request.getParameter("sh_key"));
 		
-		ReserveVO reserve = new ReserveVO();
-		reserve.setRe_spon(re_spon);
 		
 		ShowDAO dao = ShowDAO.getInstance();
-		reserve = dao.reserveShow(reserve,sh_key);
-		
-		request.setAttribute("reserve", reserve);
+		dao.reserveShow(re_spon,sh_key,0, 1); //0예약 /  1취소
+
 		
 		
 		return "/WEB-INF/views/show/showReserveResult.jsp";

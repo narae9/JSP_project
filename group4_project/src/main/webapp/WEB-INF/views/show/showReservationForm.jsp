@@ -9,6 +9,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css" type="text/css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/show.js"></script>
 <style type="text/css">
 #search_form{
 	float:right;
@@ -67,7 +69,7 @@ select{
 				<th style="border-radius:0 10px 10px 0;">평점</th>
 			</tr>
 			<c:forEach var="show" items="${list }"> 
-			<tr style="text-size:30px">
+			<tr style="text-size:30px;border-bottom:2px solid white;">
 				<c:if test="${!empty show.sh_img}">
 					<td><a href="showDetailForm.do?sh_key=${show.sh_key }"><img src="${pageContext.request.contextPath}/upload/${show.sh_img}" class="photo_size"></a></td>
 				</c:if>
@@ -79,6 +81,7 @@ select{
 				<td><h3>${show.sh_date } 시간[${show.sh_time }]</h3></td>
 				<td> d<%-- ${show.sh_gpa } --%></td>
 			</tr>
+			
 			</c:forEach>
 		</table>
 		</li>   
