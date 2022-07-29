@@ -94,6 +94,63 @@ body{
 .dropdown-content a:hover {
    color: darkorange;
 }
+/*헤더 글자 쇼*/
+.dropdown-menu a:hover{
+	color: darkorange;
+}
+
+@media screen and (max-width: 480px) {
+    .dropdown:nth-child(n + 3) {
+        display: none;
+    }
+    .dropdown:nth-child(2) .menu__link {
+        border-right: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .dropdown:nth-child(n + 4) {
+        display: none;
+    }
+    .dropdown:nth-child(3) .menu__link {
+        border-right: 0;
+    }
+}
+@media screen and (max-width: 992px) {
+    .dropdown:nth-child(n + 5) {
+        display: none;
+    }
+    .dropdown:nth-child(4) .menu__link {
+        border-right: 0;
+    }
+}
+
+.dropdown:last-child .menu__link {
+    border-right: 0;
+}
+.menu__link:hover .menu__first-word_com, .menu__link:focus .menu__first-word_com {
+    transform: translate3d(0, -105%, 0);
+}
+.menu__link:hover .menu__second-word_com, .menu__link:focus .menu__second-word_com {
+    transform: translate3d(0, 105%, 0);
+}
+
+@media screen and (min-width: 768px) {
+    .menu__link {
+        padding: 6px 40px 3px;
+    }
+}
+.menu__title_com {
+    display: inline-block;
+    overflow: hidden;
+}
+.menu__first-word_com, .menu__second-word_com {
+    display: inline-block;
+    position: relative;
+    transition: transform .3s;
+}
+.menu__first-word_com::before, .menu__second-word_com::before {
+    position: absolute;
+}
 /* end of header */
 
 /*대문*/
