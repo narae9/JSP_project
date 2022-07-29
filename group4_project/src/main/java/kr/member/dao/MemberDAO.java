@@ -27,7 +27,7 @@ public class MemberDAO {
 		PreparedStatement pstmt3 = null;
 		ResultSet rs = null;
 		String sql = null;
-//		int num = 0;	//시퀀스 번호 저장
+		int num = 0;	//시퀀스 번호 저장
 		
 		try {
 			//커넥션풀에서 커넥션 할당
@@ -40,16 +40,17 @@ public class MemberDAO {
 			//PreparedStatement 객체 생성
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-//			if(rs.next())
-//				num=rs.getInt(1);
+			if(rs.next())
+				num=rs.getInt(1);
 			
 			//MEMBER 테이블에 데이터 저장
-			sql = "INSERT INTO MEMBER (me_key, me_id, me_path) VALUES (MEMBER_SEQ.nextval,?,?)";
+			sql = "INSERT INTO MEMBER (me_key, me_id, me_path) VALUES (?,?,?)";
 			//PreparedStatement 객체 생성
 			pstmt2 = conn.prepareStatement(sql);
 			//?에 데이터 바인딩
-			pstmt2.setString(1,member.getMe_id());
-			pstmt2.setInt(2, member.getMe_path());
+			pstmt2.setInt(1, num);
+			pstmt2.setString(2,member.getMe_id());
+			pstmt2.setInt(3, member.getMe_path());
 			pstmt2.executeUpdate();
 			
 			//MEMBER_DETAIL 테이블에 데이터 저장
@@ -66,8 +67,8 @@ public class MemberDAO {
 			pstmt3.setInt(6, member.getMe_zipcode());
 			pstmt3.setString(7, member.getMe_add1());
 			pstmt3.setString(8, member.getMe_add2());
-			pstmt3.setInt(9, member.getMe_key());	// 이부분 잘 모르겠단 말이지,,, 나중에 물어보기
-			pstmt2.executeUpdate();
+			pstmt3.setInt(9, num);	// 이부분 잘 모르겠단 말이지,,, 나중에 물어보기
+			pstmt3.executeUpdate();
 			
 			//SQL 실행 및 성공시 commit
 			conn.commit();			
