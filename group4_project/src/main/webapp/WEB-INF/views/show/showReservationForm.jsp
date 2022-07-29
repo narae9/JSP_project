@@ -17,7 +17,7 @@
 table td, table th {
 	border:0;
     padding: 10px;
-    color: white;
+    color: white;   
 }
 hr{
 	noshade:noshade;
