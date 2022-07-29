@@ -12,7 +12,7 @@
 <style type="text/css">
 #search_form{
 	float:right;
-	margin: 0 0 0 90%;
+	margin: 0 0 0 90%;  
 }
 table td, table th {
 	border:0;
