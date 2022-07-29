@@ -53,6 +53,7 @@
 	width: 400px; 
 	height: 570px; 
 }
+
 .slide_content > p { 
 	display: table-cell; 
 	vertical-align: middle; 
