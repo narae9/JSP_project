@@ -95,7 +95,7 @@ h2{
 			</li>
 		</ul>
 		
-		<form action="reserveShow.do" method="post" style="border:none;">
+		<form action="reserveShow.do" method="post" style="border:none;" id="reserve_btn">
 		    <input type="hidden" name="sh_key" value="${show.sh_key}">
 			<ul>
 				<li>

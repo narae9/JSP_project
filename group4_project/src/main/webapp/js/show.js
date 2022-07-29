@@ -30,6 +30,14 @@ $(function(){
 		}
 	});
 	
+	$('#reserve_btn').submit(function(){
+		if($('#re_spon').val().trim()==""){
+			$('#re_spon').val('0');
+		}
+		
+	});
+
+	
 
 
 });
