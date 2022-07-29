@@ -69,7 +69,7 @@ select{
 				<th style="border-radius:0 10px 10px 0;">평점</th>
 			</tr>
 			<c:forEach var="show" items="${list }"> 
-			<tr style="text-size:30px">
+			<tr style="text-size:30px;border-bottom:2px solid white;">
 				<c:if test="${!empty show.sh_img}">
 					<td><a href="showDetailForm.do?sh_key=${show.sh_key }"><img src="${pageContext.request.contextPath}/upload/${show.sh_img}" class="photo_size"></a></td>
 				</c:if>
@@ -81,6 +81,7 @@ select{
 				<td><h3>${show.sh_date } 시간[${show.sh_time }]</h3></td>
 				<td> d<%-- ${show.sh_gpa } --%></td>
 			</tr>
+			
 			</c:forEach>
 		</table>
 		</li>   
