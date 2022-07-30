@@ -32,7 +32,6 @@
 			</div>
 			
 			<!-- 비밀번호 -->
-			<input type="button" id="id_check" value="test">
 			
 		</form>
 	</div>
