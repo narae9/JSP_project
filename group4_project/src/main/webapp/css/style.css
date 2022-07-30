@@ -388,18 +388,7 @@ label{
    width:130px;
    float:left;/*태그를 왼쪽으로 정렬*/
 }
-input[type="text"],input[type="password"],input[type="email"]{
-   width:200px;
-}
-#register_form input[id="id"]{
-   width:113px;
-}
-input[id="zipcode"]{
-   width:95px;
-}
-.form-notice{
-   margin-left:130px;
-}
+
 /*My Page*/
 .mypage-div{
    width:48%;
