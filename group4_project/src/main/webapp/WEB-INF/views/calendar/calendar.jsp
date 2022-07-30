@@ -15,9 +15,10 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+	<h2 style="color:white; float:right;">전체 일정</h2>
 <div class="calendar_main">
+<span style="color:white; font-size:5px;">* 자세한 일정은 날짜 선택시 확인하실 수 있습니다.</span>
     <div class="wrap col-flex jcc aic">
-
         <div class="flex aic" style="gap: 40px">
             <button onclick="Calendar.addMonth(-1)">◀</button>
             <h1 class="cur-date" style="color:white;">2022. 7.</h1>
@@ -63,5 +64,6 @@
         Calendar.$date = document.querySelector(".cur-date");
         Calendar.init();
     </script>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </body>
 </html>

@@ -28,7 +28,7 @@ const Calendar = {
             const $mTitle = document.querySelector(".modal.schedule .modal-title");
             $mTitle.innerHTML = `${Calendar.year}. ${Calendar.month} .${day} 공연 목록`;   
             
-            Calendar.refreshScheduleList(today.getFullYear(),today.getMonth() + 1,Calendar.day);
+            Calendar.refreshScheduleList(Calendar.year,Calendar.month,Calendar.day);
             }
         });
     },
@@ -119,7 +119,7 @@ const Calendar = {
 		        ) {
 		            output += 
 		            `<div class="date ${i < 1 ? "hidden-date" : ""}">
-		                <p class="day">${i}</p>`;
+		                <p class="day" id="day${i}">${i}</p>`;
 		           let cnt = 0; //캘린터 공연 타이틀 갯수 카운트
 		           $(param.list).each(function(index,item){
 						if(i == item.sh_date.substr(8,2)){
@@ -127,7 +127,7 @@ const Calendar = {
 								output += `<p class="day_item">` + item.sh_title + `</p>`;
 							}
 							if(cnt==3){
-								output += `<input type="button" class="day_item_add" value="더보기" onclick="Calendar.evtHandle()"></button>`;
+								output += `<input type="button" class="day_item_add" value="더보기" onclick="$('#day${i}').trigger('click');"></button>`;
 							}
 							cnt++;
 						}

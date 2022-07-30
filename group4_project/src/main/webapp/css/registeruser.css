@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/*회원가입 폼*/
+#register_form{
+	margin: 0px auto;
+	width: 500px;
+	height: 900px;
+	border:none;
+	outline: 3px solid white;	
+	padding: 10px;
+	text-align: center;
+}
+
+#text_label {
+	font-size: 20px;
+	font-weight: bold;
+	width: 300px;
+	text-align: left;
+}
+
+#id {
+	text-align: center;
+	width: 300px;
+	height: 20px;
+	font-size: 20px;	
+}
+
+#passwd {
+	margin-left: -5%;
+	width: 300px;
+	height: 30px;
+	font-size: 20px;
+}

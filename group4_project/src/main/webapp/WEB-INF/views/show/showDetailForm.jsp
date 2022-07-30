@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css" type="text/css"/>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/show.js"></script>
 <style type="text/css">
 img{
 width:300px;
@@ -94,13 +95,14 @@ h2{
 			</li>
 		</ul>
 		
-		<form style="border:none;">
+		<form action="reserveShow.do" method="post" style="border:none;" id="reserve_btn">
+		    <input type="hidden" name="sh_key" value="${show.sh_key}">
 			<ul>
 				<li>
 					<input type="text" name="re_spon" id="re_spon" placeholder="후원금액">
 				</li>
 				<li>
-					<input class="btnBlue" type="submit" onclick="location.href='${pageContext.request.contextPath}/show/reserveShow.do'" value="예매하기">
+					<input class="btnBlue" type="submit" value="예매하기">
 					<button class="btnBlack" type="button"  onclick="location.href='${pageContext.request.contextPath}/show/showListAction.do'">목록으로</button>
 				</li>
 			</ul>
@@ -108,10 +110,15 @@ h2{
 		
 		
 	</div>
+	<%-- <c:if test="${member.me_num == show.me_num}"> --%>
 	<div id="mdifyDelete_btn">
 		<input class="btnBlack" type="button" value="수정하기" onclick="location.href='${pageContext.request.contextPath}/show/showModifyForm.do?sh_key=${show.sh_key}'">
 		<input class="btnBlack" type="button" value="삭제"  onclick="location.href='${pageContext.request.contextPath}/show/showDeleteFrom.do?sh_key=${show.sh_key}'">	
 	</div>
+<<<<<<< HEAD
+=======
+	<%-- </c:if> --%>
+>>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
 	<br>
 	<div class="page-right">
 		<ul>			

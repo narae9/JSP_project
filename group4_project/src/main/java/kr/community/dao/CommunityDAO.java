@@ -29,16 +29,15 @@ public class CommunityDAO {
 		try {
 			conn = DBUtil.getConnection();
 
-			sql = "INSERT INTO community (co_key,co_index,co_title,"
+			sql = "INSERT INTO community (co_key,co_title,"
 				+ "co_write,me_key) VALUES ("
-				+ "community_seq.nextval,?,?,?,?)";
+				+ "community_seq.nextval,?,?,?)";
 
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setInt(1, comm.getCo_index());
-			pstmt.setString(2, comm.getCo_title());
-			pstmt.setString(3, comm.getCo_write());
-			pstmt.setInt(4, comm.getMe_key());
+			pstmt.setString(1, comm.getCo_title());
+			pstmt.setString(2, comm.getCo_write());
+			pstmt.setInt(3, comm.getMe_key());
 			
 			pstmt.executeUpdate();
 			
@@ -51,7 +50,7 @@ public class CommunityDAO {
 	
 	//총 레코드 수(검색 레코드 수)
 	public int getBoardCount(String keyfield,String keyword)
-            throws Exception{
+									throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -65,7 +64,6 @@ public class CommunityDAO {
 			if(keyword!=null && !"".equals(keyword)) {
 				if(keyfield.equals("1")) sub_sql = "WHERE c.co_title LIKE ?";
 				else if(keyfield.equals("2")) sub_sql = "WHERE m.me_id LIKE ?";
-				else if(keyfield.equals("3")) sub_sql = "WHERE c.co_write LIKE ?";
 			}
 
 			sql = "SELECT COUNT(*) FROM community c JOIN member m USING(me_key) " + sub_sql;
@@ -91,7 +89,7 @@ public class CommunityDAO {
 	//글목록
 	public List<CommunityVO> getListBoard(int start, int end,
 			String keyfield,String keyword)
-					throws Exception{
+								throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -106,7 +104,6 @@ public class CommunityDAO {
 			if(keyword!=null && !"".equals(keyword)) {
 				if(keyfield.equals("1")) sub_sql = "WHERE c.co_title LIKE ?";
 				else if(keyfield.equals("2")) sub_sql = "WHERE m.me_id LIKE ?";
-				else if(keyfield.equals("3")) sub_sql = "WHERE c.co_write LIKE ?";
 			}
 
 			sql = "SELECT * FROM (SELECT a.*, rownum rnum "

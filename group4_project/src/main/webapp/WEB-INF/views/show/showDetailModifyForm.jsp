@@ -8,13 +8,15 @@
 <title>공연예매수정</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/show.js"></script>
 <style type="text/css">
 input[type=text] {
 	border-radius:5px;
 	width:300px;
 	border:0;
 	height:30px;
-	margin: 0 0 10px 0;
+	margin: 0 0 10px 0; 
 }
 textarea, input[type=date], input[type=time], select{
 	border-radius: 5px;

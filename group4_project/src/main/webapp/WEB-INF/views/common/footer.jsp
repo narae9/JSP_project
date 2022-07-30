@@ -8,8 +8,10 @@
 </head>
 <body>
 <footer class="footer">
+<hr size="1" color="#00616A" width="55%" align="center">
 <div class="footer_test">
 	<div class="footer_icon01">
+	<br><br><br><br>
 		<img id="star_icon" src="../images/star3.png">
 		<p>star</p>
 	</div>
