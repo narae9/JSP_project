@@ -16,13 +16,7 @@
 	padding-top: 30px;
 	width: 100%; 
 	height: 690px;
-	background-color: rgba(255,255,255,0.25);
-}
-.slider_second_main{
-	position: absolute;
-	top: 1600px;
-	width: 100%; 
-	height: 306px;
+	background-color: rgba(251,176,76);
 }
 .clearfix:after { 
 	content: ''; 
@@ -98,11 +92,12 @@
 	margin-top: -45px; 
 	width: 60px; 
 	height: 60px; 
-	font-size: 16px; 
+	font-size: 30px; 
 	color: white; 
 	background: none; 
 	cursor: pointer;
-	border: none; 
+	border: none;
+	z-index: 2; 
 }
 .slide_btn_box > .slide_btn_prev { 
 	left: -100px; 
@@ -120,7 +115,8 @@
 	list-style: none; 
 	margin: 0; 
 	padding: 0; 
-	transform: translateX(-50%); 
+	transform: translateX(-50%);
+	z-index: 3;  
 }
 .slide_pagination .dot { 
 	display: inline-block; 
@@ -140,13 +136,79 @@
 	width: 100%; 
 	height: 100%; 
 }
+/*slider_second*/
+.slider_second{
+	position: absolute;
+	top: 1350px;
+	width:100%;
+	height: 580px;
+	z-index: 1;
+}
+.slider_second_box1{
+	width:380px;
+    height:500px;
+    overflow:hidden;
+    position: absolute;
+  	top: 10%;
+  	left: 80px;
+  	background-image: url(${pageContext.request.contextPath}/images/poster/slider_second_img1.webp);
+}
+.slider_second_box1:hover {
+  transform: scale(1.2);
+  transition: transform 1s;
+  filter: brightness(80%);
+}
+.slider_second_box1:hover #explain{
+	opacity: 1; 
+}
+.slider_second_box1:hover #explain1{
+	opacity: 1; 
+}
+.slider_second_box1 > p {
+	opacity: 0;
+	vertical-align: middle; 
+	text-align: center; 
+	font-size: 75px;
+	font-weight: bold; 
+	color: white; 
+}
+.slider_second_box1_text1 > p{
+	writing-mode: vertical-rl;
+	opacity: 0;
+}
+.slider_second_box2_1{
+	width:300px;
+    height:400px;
+    overflow:hidden;
+    position: absolute;
+  	left:1600px;
+}
+.slider_second_box2_1 > img{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+.slider_second_box2_2{
+	width:400px;
+    height:500px;
+    overflow:hidden;
+    position: absolute;
+    top:50px;
+  	left:1250px;
+}
+.slider_second_box2_2 > img{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
   </style>
 </head>
 <body>
 <div class="slider_main">
-	 <div class="slider_second_main" style="background:yellow;">
-	</div>
-	<!-- slider_second_main -->
 	  <div id="container">
 	    <div class="slide_wrap">
 	      <div class="slide_box">
@@ -193,6 +255,15 @@
 	  <!-- // .container -->
 </div>
 <!-- // .slider_main -->
+<div class="slider_second">
+	<div class="slider_second_box1"><p id = "explain">FIND OUT IF YOU REALLY EXIST</p></div>
+	<div class="slider_second_box1_text1"><p id = "explain1">Let's have fun with Illu, I hate being still</p></div>
+	<!--  <div class="slider_second_box2_1"><img src="${pageContext.request.contextPath}/images/poster/slider_second_img2_1.webp"></div >-->
+	<!-- <div class="slider_second_box2_2"><img src="${pageContext.request.contextPath}/images/poster/slider_second_img2_2.gif"></div>-->
+	<div class="slider_second_box2_3"></div>
+	<div class="slider_second_box2_4"></div>
+</div>
+<!-- // .slider_second -->
   <script>
     (function () {
       const slideList = document.querySelector('.slide_list');  // Slide parent dom
@@ -294,32 +365,6 @@
       });
       
       /*background*/
-      const btn_next = document.getElementsByClassName('slide_btn_next');
-      const btn_prev = document.getElementsByClassName('slide_btn_prev');
-      const body = document.getElementsByClassName('slider_second_main');
-      const colornm1 = ['yellow','green','orange','brown','white']; /*위에 배경색*/
-      const colornm2 = ['yellow','green','orange','brown','white']; /*밑에 배경색*/
-      let ii = 0;
-      
-      btn_next[0].addEventListener('click',colorChange_next);
-      btn_prev[0].addEventListener('click',colorChange_prev);
-      
-      function colorChange_next(){  
-    	  if(ii >= 4){ii=-1};
-    	  ii++;
-    	  const colordx = colornm2[ii];
-    	  console.log(ii);
-    	  body[0].style.backgroundColor = colordx;
-    	  
-      }
-      function colorChange_prev(){  
-    	  if(ii <= 0){ii=5};
-    	  ii--;
-    	  const colordx = colornm2[ii];
-    	  console.log(ii);
-    	  body[0].style.backgroundColor = colordx;
-    	  
-      }
     })();
   </script>
 </body>

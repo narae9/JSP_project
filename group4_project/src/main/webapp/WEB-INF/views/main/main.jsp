@@ -21,30 +21,65 @@
 		<div class="arrow_logo" id="test1">
 		</div>
 		</div>
-		<div class="page-main" id="test2">
+		<div class="page-main-first" id="test2">
 		<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 		<jsp:include page="/WEB-INF/views/common/slider.jsp"/>
-		
-		<div class="content-main">
-			<table id="main-table">
-				<tr bgcolor="#5690a5">
-					<th id="main-tableth">문의 및 공지</th>
-					<th></th>
-				</tr>
-				<c:forEach var="board" items="${boardList}">
-				<tr>
-					<td><a href="${pageContext.request.contextPath}/board/detail.do?bo_key=${board.bo_key}" target="_blank">${fn:substring(board.bo_title,0,12)}</a></td>
-					<td style="font-size:13px; text-align:right">(${board.bo_reg_date})</td>
-				</tr>
-				</c:forEach>
-			</table>
-		<video controls muted poster="../images/mp4poster.png" preload="none">
- 				<source src="../images/king01.mp4" type="video/mp4">
+		<div class = "middle-line">
+			SOMETHING AMAZING IS ABOUT TO HAPPEN
+		</div>
+		<div class="content-main-first">
+			<div class="content-main-first_1">
+				<img src="${pageContext.request.contextPath}/images/poster/content-main-first_1.gif" style="width: 80%; height: 90%; border-radius:5px;">
+				<div class="content-main-first_1_1">
+					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_1_1.gif" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px gray; border-radius:5px;">
+				</div>
+			</div>
+			<div class="content-main-first_1">
+				<img src="${pageContext.request.contextPath}/images/poster/content-main-first_2.jpg" style="width: 80%; height: 90%; border-radius:5px;">
+				<div class="content-main-first_1_1">
+					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_2_1.gif" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px gray; border-radius:5px;">
+				</div>
+			</div>
+			<div class="content-main-first_1">
+				<img src="${pageContext.request.contextPath}/images/poster/content-main-first_3.jpg" style="width: 80%; height: 90%; border-radius:5px;">
+				<div class="content-main-first_1_1">
+					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_3_1.png" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px gray; border-radius:5px;">
+				</div>
+			</div>
+			<div class="content-main-first_1">
+				<img src="${pageContext.request.contextPath}/images/poster/content-main-first_4.jpg" style="width: 80%; height: 90%; border-radius:5px;">
+				<div class="content-main-first_1_1">
+					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_4_1.gif" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px gray; border-radius:5px;">
+				</div>
+			</div>
+		</div>
+		<div class = "middle-line">
+			FOR A GOOD TIME CALL
+		</div>
+		<div class="content-main-second">
+			<div class="content-main-second-table">
+				<table id="main-table">
+					<tr style="background:rgba(255,134,113);">
+						<th id="main-tableth">문의 및 공지</th>
+						<th id="main-tableth"></th>
+					</tr>
+					<c:forEach var="board" items="${boardList}">
+					<tr>
+						<td id="main-tabletd" style="background:rgba(255,134,113);"><a href="${pageContext.request.contextPath}/board/detail.do?bo_key=${board.bo_key}" target="_blank">${fn:substring(board.bo_title,0,12)}</a></td>
+						<td id="main-tabletd" style="font-size:13px; text-align:right; background:rgba(255,134,113);">(${board.bo_reg_date})</td>
+					</tr>
+					</c:forEach>
+				</table>
+			</div>
+			<div class="content-main-second-video">
+				<video controls muted poster="../images/mp4poster.png" preload="none">
+ 					<source src="../images/king01.mp4" type="video/mp4">
 				</video>
+			</div>
 		</div>
 		<div class="arrow_logo2" id="test4" onclick="location.href='main.do'">
 		</div>
-		<br><br>
+
 	</div>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </div>

@@ -11,7 +11,7 @@ body{
     background-size: cover;
     width:960px;
     */
-    background:#1D6B87;
+    background:rgba(49,48,47);
 }
 .page-main{
    /*
@@ -22,21 +22,47 @@ body{
     background-position: center;
     background-size: cover;
    */
-   background:#1D6B87;
+   background:rgba(49,48,47);
    margin:40px 0;
    border-radius:5px;
    box-shadow:0 2px 6px rgba(100,100,100,0.3);
    min-height:750px;
 }
+.page-main-first{
+   /*
+   height: 100%;
+   width: 100%;
+   background-image:url(../images/bck11.png);
+   background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   */
+   background:rgba(49,48,47);
+   margin:40px 0;
+   border-radius:5px;
+   box-shadow:0 2px 6px rgba(100,100,100,0.3);
+   height:2600px;
+}
 /* header */
 #main_logo{
    padding-top:10px;
+   color:white;
+   background:rgba(49,48,47);
+}
+#main_logo a:visited{
+    text-decoration:none;
+	color:white;
 }
 #main_nav{
    padding:0px 10px 20px 10px;
    height:20px;
    float: right;
    color:white;
+   background:rgba(49,48,47);
+}
+#main_nav a:visited{
+    text-decoration:none;
+	color:white;
 }
 #main_nav ul{
    list-style:none;
@@ -61,6 +87,7 @@ body{
 /* header second_nav */
 .second_nav{
    width: 100%;
+   background:rgba(248,238,225);
 }
 .dropdown{
    width: 33%;
@@ -72,7 +99,11 @@ body{
    font-size: 16px;
    cursor: pointer;
    text-align:center;
-   color: white;
+   color:white;
+}
+.dropdown-menu a:visited{
+    text-decoration:none;
+	color:white;
 }
 .dropdown-content{
    position: absolute;
@@ -86,6 +117,9 @@ body{
    display: block;
 }
 .dropdown-menu:hover{
+   color: darkorange;
+}
+.dropdown-menu a:hover{
    color: darkorange;
 }
 .dropdown:hover .dropdown-content{
@@ -132,9 +166,9 @@ body{
    background-image: url(../images/up-arrow.png);
    background-size: contain;
    position: fixed;
-     right:40px;
-    bottom: 20px;
-    display:none;
+   right:40px;
+   bottom: 20px;
+   display:none;
 }
 /*footer*/
 .footer{
@@ -193,7 +227,6 @@ body{
 }
 a:link{
    text-decoration:none;
-   color:white;
 }
 a:visited{
    text-decoration:none;
@@ -201,12 +234,8 @@ a:visited{
 }
 a:hover{
    text-decoration:none;
-   color:#6C6C6C;
 }
 /*목록*/
-h3{
-   color: white;
-}
 form#search_form{
    border:none;
 }
@@ -230,22 +259,24 @@ table{
    margin-top:35px;
 }
 #main-table{
-   width: 500px;
-   float: left;
-   border:3px solid #fff;
+   border:3px solid black;
    border-collapse:collapse;
-   margin: 0 40px 0 20px;
-}
-video{
-   width: 500px;
 }
 #main-tableth{
-   border:1px solid #fff;
+   border:1px solid black;
    padding:10px;
    width:150px;
    color:white;
    font-size:18px;
    text-align:center;
+}
+#main-tabletd{
+	border:1px solid black;
+	color:white;
+}
+#main-tabletd:visited{
+   text-decoration:none;
+   color:white;
 }
 table td, table th{
    padding:10px;
@@ -336,5 +367,57 @@ input[id="zipcode"]{
    text-align:center;
    width:50%;
 }
-
 /*show 끝*/
+/*middle-line*/
+.middle-line{
+	margin:0px;
+	padding: 0px;
+	width: 100%;
+	height: 25px;
+	background: rgba(49,48,47);
+	color:white;
+	text-align:center;
+	font-size: 12px;
+	justify-content: center;
+    align-items: center;
+    line-height: 25px;
+}
+/*content-main-first*/
+.content-main-first{
+	margin:0px;
+	padding-top: 300px;
+	padding-left: 2%;
+	width: 100%;
+	height: 700px;
+	background:rgba(137,141,85);
+}
+.content-main-first_1{
+	position: relative;
+	width: 25%;
+	height: 70%;
+	float:left;
+}
+.content-main-first_1_1{
+	position: absolute;
+	width: 88%;
+	height: 85%;
+	top:20%;
+	left:9%;
+}
+/*content-main-second*/
+.content-main-second{
+	margin:0px;
+	padding-top: 10px;
+	width: 100%;
+	height: 600px;
+	background:rgba(248,238,225);
+}
+.content-main-second-table{
+	margin-left : 5%;
+	width: 45%;
+	float: left;
+}
+.content-main-second-video{
+	width: 45%;
+	float: right;
+}
