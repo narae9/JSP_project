@@ -55,7 +55,7 @@
 <nav class="second_nav">
 	<ul>
 		<li class="dropdown">
-			<div class="dropdown-menu">RESEVE</div>
+			<div class="dropdown-menu">RESERVE</div>
 			<div class="dropdown-content">
 				<a href="${pageContext.request.contextPath }/show/showReservationForm.do">Show Reseve</a>
 				<a href="${pageContext.request.contextPath }/show/showInsertForm.do">Show SignUp</a>
@@ -65,12 +65,22 @@
 		</li>
 		<li class="dropdown">
 			<div class="dropdown-menu">
-			<a href="${pageContext.request.contextPath}/community/list.do">COMMUNITY</a>
+			<a class="menu__link" href="${pageContext.request.contextPath}/community/list.do">
+			<span class="menu__title_com">
+			<span class="menu__first-word_com"
+						data-hover="COM">COM</span><span class="menu__second-word_com"data-hover="MUNITY">MUNITY&nbsp;</span>
+			</span>
+			</a>
 			</div>
 		</li>
 		<li class="dropdown">
 			<div class="dropdown-menu">
-			<a href="${pageContext.request.contextPath}/board/list.do">FAQ</a>
+			<a class="menu__link" href="${pageContext.request.contextPath}/board/list.do">
+			<span class="menu__title_com">
+			<span class="menu__first-word_com"
+						data-hover="F">F</span><span class="menu__second-word_com"data-hover="AQ">AQ&nbsp;</span>
+			</span>
+			</a>
 			</div>
 		</li>
 	</ul>

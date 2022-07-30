@@ -115,7 +115,10 @@ h2{
 		<input class="btnBlack" type="button" value="수정하기" onclick="location.href='${pageContext.request.contextPath}/show/showModifyForm.do?sh_key=${show.sh_key}'">
 		<input class="btnBlack" type="button" value="삭제"  onclick="location.href='${pageContext.request.contextPath}/show/showDeleteFrom.do?sh_key=${show.sh_key}'">	
 	</div>
+<<<<<<< HEAD
+=======
 	<%-- </c:if> --%>
+>>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
 	<br>
 	<div class="page-right">
 		<ul>			
