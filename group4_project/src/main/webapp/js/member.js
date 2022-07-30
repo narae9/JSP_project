@@ -25,10 +25,10 @@ $(function(){
 			success:function(param){
 				if(param.result == 'idNotFound'){
 					idChecked = 1;
-					$('#message_id').css('color','#000000').text('등록 가능 ID');
+					$('#message_id').css('color','white').text('등록 가능 ID');
 				}else if(param.result == 'idDuplicated'){
 					idChecked = 0;
-					$('#message_id').css('color','red').text('중복된 ID');
+					$('#message_id').css('color','white').text('중복된 ID');
 					$('#id').val('').focus();
 				}else{
 					idChecked = 0;
@@ -48,7 +48,62 @@ $(function(){
 		$('#message_id').text('');
 	});
 	
+	
 	// 회원정보 등록 유효성 체크
+	$('#register_form').submit(function(){
+		if($('#id').val().trim()==''){
+			alert('아이디를 입력하세요!');
+			$('#id').val('').focus();
+			return false;
+		}
+		if(idChecked==0){
+			alert('아이디 중복 체크 필수');
+			return false;
+		}
+		if($('#name').val().trim()==''){
+			alert('이름을 입력하세요!');
+			$('#name').val('').focus();
+			return false;
+		}
+		if($('#passwd').val().trim()==''){
+			alert('비밀번호를 입력하세요!');
+			$('#passwd').val('').focus();
+			return false;
+		}
+		if($('#agecode').val().trim()==''){
+			alert('생년월일 입력하세요!');
+			$('#agecode').val('').focus();
+			return false;
+		}
+		if($('#phone').val().trim()==''){
+			alert('전화번호를 입력하세요!');
+			$('#phone').val('').focus();
+			return false;
+		}
+		if($('#email').val().trim()==''){
+			alert('이메일을 입력하세요!');
+			$('#email').val('').focus();
+			return false;
+		}
+		if($('#zipcode').val().trim()==''){
+			alert('우편번호를 입력하세요!');
+			$('#zipcode').val('').focus();
+			return false;
+		}
+		if($('#add1').val().trim()==''){
+			alert('주소를 입력하세요!');
+			$('#address1').val('').focus();
+			return false;
+		}
+		if($('#add2').val().trim()==''){
+			alert('나머지 주소를 입력하세요!');
+			$('#address2').val('').focus();
+			return false;
+		}
+		
+	});
+	
+	
 	
 	
 	//========== 로그인 ==========//

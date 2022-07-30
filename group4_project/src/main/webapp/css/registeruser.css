@@ -10,7 +10,7 @@
 #register_form{
 	display: inline-box;
 	width: 500px;
-	height: 900px;
+	/* height: 900px; */
 	border:none;
 	outline: 3px solid white;	
 	padding: 10px;
@@ -35,40 +35,87 @@
 	width: 350px;
 	padding: 5px;
 	text-align: left;
-	color: white;
-	border: 1px solid white;
+	color: white;	
+	/* border: 1px solid white; */
 }
 
 .text_f {	
 	font-size: 20px;
 	font-weight: bold;
 }
-
-.form-notice{
-  font-size: 12px;
+	
+.text_notice {
+	margin-left: 35%;
+	color: #d0d0d0;
+	font-size: 13px;
 }
 
+#message_id {
+	margin-left: 70%;
+	color: #d0d0d0;
+	font-size: 13px;
+}
+
+/* 회원가입: 텍스트 박스 설정 */
 #id{
 	width: 250px;
 	height: 35px;
-	font-size: 18px;
+	font-size: 20px;
+	text-align: center;
 	border: 5px solid #d0d0d0;
 	border-radius: 40px;
 }
 
-#id_check {
+#zipcode {
+	width: 200px;
 	height: 35px;
+	font-size: 20px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+	border-radius: 40px;
 }
 
-
-/* input[type="text"],input[type="password"],input[type="email"]{
-   width:200px;
+#agecode {
+	width: 320px;
+	height: 35px;
+	font-size: 20px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+	border-radius: 40px;
 }
 
- #register_form input[id="id"]{
-   width:113px;
+#passwd, #name, #phone, #email {
+	width: 320px;
+	height: 35px;
+	font-size: 20px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+	border-radius: 40px;
 }
 
-input[id="zipcode"]{
-   width:95px;
-} */
+#add1, #add2 {
+	width: 320px;
+	height: 35px;
+	font-size: 15px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+	border-radius: 40px;
+}
+
+input[type="button"] {
+	height: 35px;
+	font-size: 15px;
+	font-weight: bold;
+	border:none;
+}
+
+input[type="submit"] {
+	height: 40px;
+	width: 70%;
+	color: white;
+	font-size: 22px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	background-color: #808080;
+}
