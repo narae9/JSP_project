@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/* 화면 프레임 */
+.content {
+	width: 100%;
+	text-align: center;
+}
+
+#login_form {
+	display: inline-box;
+	width: 600px;
+	height: 300px;
+	text-align:center;
+	border: 3px solid white;
+	padding: 10px;
+}
+
+.input {
+	margin-top: 60px;
+}
+
+input[type="submit"] {
+	height: 40px;
+	width: 64%;
+	margin-top: 15px;
+	color: white;
+	font-size: 22px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	background-color: #808080;
+}
+input[type="text"],input[type="password"] {
+	width: 370px;
+	height: 40px;
+	margin: 5px;
+	font-size: 20px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+}

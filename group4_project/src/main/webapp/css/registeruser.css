@@ -10,7 +10,6 @@
 #register_form{
 	display: inline-box;
 	width: 500px;
-	/* height: 900px; */
 	border:none;
 	outline: 3px solid white;	
 	padding: 10px;
