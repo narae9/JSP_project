@@ -93,11 +93,7 @@ public class MemberDAO {
 		MemberVO member = null;
 		String sql = null;
 
-		System.out.println("ID 중복체크 및 로그인 처리 시작");
-
 		try {
-			System.out.println("커넥션 할당부터 시작");
-			System.out.println("찾고자 하는 아이디: "+id);
 			// 커넥션 할당
 			conn = DBUtil.getConnection();
 
@@ -111,7 +107,6 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();			
 
 			if(rs.next()) {
-				System.out.println("회원 찾기 성공, 데이터 저장~");
 				member = new MemberVO();
 				member.setMe_key(rs.getInt("me_key"));
 				member.setMe_id(rs.getString("me_id"));
@@ -119,7 +114,6 @@ public class MemberDAO {
 				member.setMe_passwd(rs.getString("me_passwd"));
 				member.setMe_email(rs.getString("me_email"));
 
-				System.out.println("데이터 저장 끝!");
 			}
 
 		}catch(Exception e) {

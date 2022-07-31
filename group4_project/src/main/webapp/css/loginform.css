@@ -19,9 +19,26 @@
 	margin-top: 60px;
 }
 
-input[type="submit"] {
+.message {
+	font-size: 30px;
+	font-weight: bold;
+	color: white;	
+}
+
+.result_regist {
+	width: 600px;
+	height: 300px;
+  	margin:50px auto;
+ 	border:3px solid white;
+ 	display:flex;/*하위요소를 수직으로 쌓을 수 있는 공간을 만듬*/
+ 	align-items:center;/*세로 정렬*/
+  	justify-content:center;/*가로 정렬*/
+}
+
+
+input[type="submit"], input[type="button"] {
 	height: 40px;
-	width: 64%;
+	width: 80%;
 	margin-top: 15px;
 	color: white;
 	font-size: 22px;
