@@ -15,16 +15,17 @@ li{
 }
 .slide_wrapper{
 	position: relative;
-	width: 960px;
+	width: 1930px;
 	margin: 0 auto;
-	height: 300px;
+	height: 330px;
 	overflow: hidden;
+	background-color: black;
 }
 .slides{
 	position: absolute;
 	left: 0;
 	top: 0;
-	transition:left 0.5s ease-out scale( 2.0 );
+	transition:left 0.5s ease-out;
 }
 .slides li:not(:last-child){
 	float: left;
@@ -32,14 +33,13 @@ li{
 }
 .controls{
 	text-align: center;
-	margin-top: 50px;
 }
 .controls span{
 	background: none;
 	color: white;
 	border: none;
 	cursor: pointer;
-	font-size: 25px;
+	font-size: 20px;
 	text-align: center;
 	border-radius: 2em;
 }
@@ -48,22 +48,33 @@ li{
 }
 .controls span.prev{rigth:calc(100% + 50px);}
 .controls span.next{left:calc(100% + 50px);}
+.poster_img{
+	border-radius: 5px;
+}
 </style>
 </head>
 <body>
 	<div class = "slide_wrapper">
 		<ul class="slides">
-			<li><img src="${pageContext.request.contextPath}/images/poster/poster1.jpg" width="300" height="300"></li>
-			<li><img src="${pageContext.request.contextPath}/images/poster/poster2.jpg" width="300" height="300"></li>
-			<li><img src="${pageContext.request.contextPath}/images/poster/poster3.jpg" width="300" height="300"></li>
-			<li><img src="${pageContext.request.contextPath}/images/poster/poster4.jpg" width="300" height="300"></li>
-			<li><img src="${pageContext.request.contextPath}/images/poster/poster5.jpg" width="300" height="300"></li>	
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster1.jpg" width="250" height="330" class="poster_img"></li>
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster2.jpg" width="250" height="330" class="poster_img"></li>
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster3.jpg" width="250" height="330" class="poster_img"></li>
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster4.jpg" width="250" height="330" class="poster_img"></li>
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster5.jpg" width="250" height="330" class="poster_img"></li>
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster6.jpg" width="250" height="330" class="poster_img"></li>
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster7.png" width="250" height="330" class="poster_img"></li>	
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster8.jpg" width="250" height="330" class="poster_img"></li>
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster9.jpg" width="250" height="330" class="poster_img"></li>
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster10.jpg" width="250" height="330" class="poster_img"></li>
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster11.jpg" width="250" height="330" class="poster_img"></li>
+			<li><img src="${pageContext.request.contextPath}/images/poster/poster12.jpg" width="250" height="330" class="poster_img"></li>
 		</ul>
 	</div>
-	<p class="controls">
+	<div class="controls">
 		<span class="prev">◀</span>
+		<span style="color:white; font-size:7px; justify-content: center; align-items: center; text-align:center;">Performance Poster</span>
 		<span class="next">▶</span>
-	</p>
+	</div>
 </body>
 <script type="text/javascript">
 
@@ -72,19 +83,19 @@ li{
 		currentIdx = 0,
 		slideCount = slide.length,
 		prevBtn = document.querySelector('.prev'),
-		slideWidth = 300,
+		slideWidth = 250,
 		slideMargin = 30,
 		nextBtn = document.querySelector('.next');
 	
 	slides.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
 	
 	function moveSlide(num) {
-		slides.style.left = -num * 330 + 'px';
+		slides.style.left = -num * 280 + 'px';
 		currentIdx = num;
 	}
 	
 	nextBtn.addEventListener('click',function(){
-		if(currentIdx < slideCount - 3){
+		if(currentIdx < slideCount - 7){
 			moveSlide(currentIdx + 1);
 			console.log(currentIdx);
 		}else{
@@ -96,7 +107,7 @@ li{
 		if(currentIdx > 0){
 			moveSlide(currentIdx - 1);
 		}else{
-			moveSlide(slideCount - 3);
+			moveSlide(slideCount - 7);
 		}	
 	});
 

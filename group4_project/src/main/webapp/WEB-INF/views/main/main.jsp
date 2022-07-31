@@ -23,34 +23,61 @@
 		</div>
 		<div class="page-main-first" id="test2">
 		<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-		<jsp:include page="/WEB-INF/views/common/slider.jsp"/>
+		<div class="slider_main">
+			<div class="slider_main_img1_box">
+				<img src="${pageContext.request.contextPath}/images/poster/slider_main_img1.jpg" class="slider_main_img1" style="width: 100%; height: 100%; border-radius: 2em;">
+			</div>
+			<div class="slider_main_font1">
+				<!-- <img src="${pageContext.request.contextPath}/images/poster/font1.png" style="width: 100%; height: 100%;">-->
+				<span>
+					ENJOY<br>
+					PARADE
+				</span>
+			</div>
+			<div class="slider_main_font2">
+				<img src="${pageContext.request.contextPath}/images/poster/font2.png" style="width: 100%; height: 100%;">
+			</div>
+			<div class="slider_main_img2_box">
+				<img src="${pageContext.request.contextPath}/images/poster/slider_main_img2.jpg" class="slider_main_img2" style="width: 100%; height: 100%; border-radius: 0.5em;">
+			</div>
+			<div class="slider_main_font3">
+				
+			</div>
+		</div>
 		<div class = "middle-line">
+			I HATE BEING BORED
+		</div>		
+		<jsp:include page="/WEB-INF/views/common/slider1.jsp"/>
+		<div class = "middle-line2">
 			SOMETHING AMAZING IS ABOUT TO HAPPEN
 		</div>
 		<div class="content-main-first">
 			<div class="content-main-first_1">
 				<img src="${pageContext.request.contextPath}/images/poster/content-main-first_1.gif" style="width: 80%; height: 90%; border-radius:5px;">
 				<div class="content-main-first_1_1">
-					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_1_1.gif" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px gray; border-radius:5px;">
+					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_1_1.gif" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px #adb5bd; border-radius:5px;">
 				</div>
 			</div>
 			<div class="content-main-first_1">
 				<img src="${pageContext.request.contextPath}/images/poster/content-main-first_2.jpg" style="width: 80%; height: 90%; border-radius:5px;">
 				<div class="content-main-first_1_1">
-					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_2_1.gif" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px gray; border-radius:5px;">
+					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_2_1.gif" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px #adb5bd; border-radius:5px;">
 				</div>
 			</div>
 			<div class="content-main-first_1">
 				<img src="${pageContext.request.contextPath}/images/poster/content-main-first_3.jpg" style="width: 80%; height: 90%; border-radius:5px;">
 				<div class="content-main-first_1_1">
-					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_3_1.png" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px gray; border-radius:5px;">
+					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_3_1.png" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px #adb5bd; border-radius:5px;">
 				</div>
 			</div>
 			<div class="content-main-first_1">
 				<img src="${pageContext.request.contextPath}/images/poster/content-main-first_4.jpg" style="width: 80%; height: 90%; border-radius:5px;">
 				<div class="content-main-first_1_1">
-					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_4_1.gif" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px gray; border-radius:5px;">
+					<img src="${pageContext.request.contextPath}/images/poster/content-main-first_4_1.gif" style="width: 70%; height: 90%; box-shadow: 1px 1px 1px 1px #adb5bd; border-radius:5px;">
 				</div>
+			</div>
+			<div class="content-main-font3">
+				<img src="${pageContext.request.contextPath}/images/poster/font4.png" style="width: 100%; height: 100%;">
 			</div>
 		</div>
 		<div class = "middle-line">

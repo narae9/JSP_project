@@ -17,6 +17,7 @@
 	width: 100%; 
 	height: 690px;
 	background-color: rgba(251,176,76);
+	/*background-image: url("${pageContext.request.contextPath}/images/poster/slider_background4.jpg");*/
 }
 .clearfix:after { 
 	content: ''; 
@@ -256,9 +257,10 @@
 </div>
 <!-- // .slider_main -->
 <div class="slider_second">
-	<div class="slider_second_box1"><p id = "explain">FIND OUT IF YOU REALLY EXIST</p></div>
-	<div class="slider_second_box1_text1"><p id = "explain1">Let's have fun with Illu, I hate being still</p></div>
-	<!--  <div class="slider_second_box2_1"><img src="${pageContext.request.contextPath}/images/poster/slider_second_img2_1.webp"></div >-->
+	
+	<!-- <div class="slider_second_box1"><p id = "explain">FIND OUT IF YOU REALLY EXIST</p></div>-->
+	<!-- <div class="slider_second_box1_text1"><p id = "explain1">Let's have fun with Illu, I hate being still</p></div>-->
+	<div class="slider_second_box2_1"><img src="${pageContext.request.contextPath}/images/poster/slider_background4.png"></div >
 	<!-- <div class="slider_second_box2_2"><img src="${pageContext.request.contextPath}/images/poster/slider_second_img2_2.gif"></div>-->
 	<div class="slider_second_box2_3"></div>
 	<div class="slider_second_box2_4"></div>
