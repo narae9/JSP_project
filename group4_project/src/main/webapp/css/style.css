@@ -568,17 +568,47 @@ label{
 }
 .slider_main_font2{
 	width: 800px;
-	height: 600px;
+	height: 580px;
 	position: relative;
-	top:-600px;
+	top:-550px;
 	left: 800px;
 }
 .slider_main_img2_box{
 	width: 300px;
 	height: 430px;
 	position: relative;
-	top:-850px;
+	top:-820px;
 	left: 1040px;
+}
+.slider_main_font3{
+	position: relative;
+	top:-1100px;
+	left: 420px;
+}
+.slider_main_font3 > span{
+	font-size: 93px;
+	color: rgba(49,48,47);
+	font-weight: bold;
+}
+.slider_main_font4{
+	width: 400px;
+	height: 500px;
+	position: relative;
+	top:-1195px;
+	left: 430px;
+}
+.slider_main_font5{
+	position: relative;
+	top:-1860px;
+	left: 1350px;
+	writing-mode: tb-rl;
+}
+.slider_main_font5 > span{
+	font-size: 17px;
+	color: rgba(49,48,47);
+}
+.slider_main_font5 > span:hover{
+	color:rgba(245,129,110);
 }
 .content-main-font3{
 	width: 40%;

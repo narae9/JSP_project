@@ -41,7 +41,17 @@
 				<img src="${pageContext.request.contextPath}/images/poster/slider_main_img2.jpg" class="slider_main_img2" style="width: 100%; height: 100%; border-radius: 0.5em;">
 			</div>
 			<div class="slider_main_font3">
-				
+				<span>
+					RESERVE NOW
+				</span>
+			</div>
+			<div class="slider_main_font4">
+				<img src="${pageContext.request.contextPath}/images/poster/font5.png" style="width: 100%; height: 100%;">
+			</div>
+			<div class="slider_main_font5">
+				<span>
+					RESERVE INTERESTING COLORFUL@VARIOUS
+				</span>
 			</div>
 		</div>
 		<div class = "middle-line">
