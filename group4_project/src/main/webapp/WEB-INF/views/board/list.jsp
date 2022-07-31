@@ -21,6 +21,7 @@
 		<img id="boardlist_title" src="../images/title_ss.png" onclick="location.href='list.do'">
 		</span>
 		</div>
+		
 		<form id="search_form2" action="list.do" method="get">
 			<ul class="search2">
 				<li>
@@ -36,11 +37,13 @@
 				</li>
 			</ul>
 		</form>
+		
 		<c:if test="${count == 0}">
 		<div class="result-display">
 			표시된 게시물이 없습니다.
 		</div>
 		</c:if>
+		
 		<c:if test="${count > 0}">
 		<div class="board-listtable">
 		<table id="list_table">

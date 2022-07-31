@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/*list*/
+#boardlist_title2{
+	cursor:pointer;
+	box-shadow:none;
+	width: 200px;
+	margin: 0 auto;
+	position:center;
+}
+/**/
+
+/*detail*/
+#eyes{
+	border-radius: none;
+	box-shadow: none;
+	width:18px;
+}
+#output_fav2{
+	border-radius: none;
+	box-shadow: none;
+	width:25px;
+	margin: 0 0 0 10px;
+	cursor:pointer;
+}
+/**/

@@ -338,7 +338,7 @@ public class BoardDAO {
 		try {
 			conn = DBUtil.getConnection();
 			
-			sql = "update board_com set bom_write=?, bom_mod_date=sysdate where bom_key=?";	
+			sql = "UPDATE board_com set bom_write=?, bom_mod_date=sysdate where bom_key=?";	
 			
 			pstmt = conn.prepareStatement(sql);
 			
