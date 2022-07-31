@@ -16,7 +16,7 @@
 		</li>
 		</c:if>
 		
-		<c:if test="${!empty user_num && user_auth == 2}">
+		<c:if test="${!empty user_num && (user_auth == 2 || user_auth == 1)}">
 		<li>
 			<a href="${pageContext.request.contextPath}/member/myPage.do">MyPage</a>
 		</li>
@@ -37,7 +37,7 @@
 		<c:if test="${!empty user_num}">
 		<li class="menu-logout">
 			[<span>${user_id}</span>]
-			<a href="${pageContext.request.contextPath}/member/logout.do">LogOut</a>
+			<a href="${pageContext.request.contextPath}/member/logout.do">Logout</a>
 		</li>
 		</c:if>
 		

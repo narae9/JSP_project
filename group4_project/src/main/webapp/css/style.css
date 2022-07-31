@@ -38,6 +38,12 @@ body{
    color:white;
    background:rgba(49,48,47);
 }
+
+#main_nav a:unvisited{
+    text-decoration:none;
+	color: #e0e0e0;
+}
+
 #main_nav a:visited{
     text-decoration:none;
 	color:white;
