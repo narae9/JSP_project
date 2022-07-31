@@ -125,4 +125,78 @@ public class MemberDAO {
 
 		return member;
 	}
+	
+	//회원 상세정보
+	public MemberVO getMember(int me_key)throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		MemberVO member = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			sql = "SELECT * FROM MEMBER M JOIN MEMBER_DETAIL D ON M.ME_KEY=D.ME_KEY WHERE M.ME_KEY=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, me_key);
+			
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				member = new MemberVO();
+				member.setMe_key(rs.getInt("me_key"));
+				member.setMe_id(rs.getString("me_id"));
+				member.setMe_path(String.valueOf(rs.getInt("me_path")));
+				member.setMe_passwd(rs.getString("me_passwd"));
+				member.setMe_name(rs.getString("me_name"));
+				member.setMe_phone(rs.getString("me_phone"));
+				member.setMe_email(rs.getString("me_email"));
+				member.setMe_zipcode(rs.getString("me_zipcode"));
+				member.setMe_add1(rs.getString("me_add1"));
+				member.setMe_add2(rs.getString("me_add2"));
+				member.setMe_agecode(rs.getString("me_agecode"));
+				member.setMe_date(rs.getDate("me_date"));				
+			}
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			//자원정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		return member;
+	}
+	
+	
+	// 회원정보 수정
+	public void updateMember(MemberVO member)throws Exception{
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			sql = "UPDATE MEMBER_DETAIL SET ME_NAME=?, ME_PHONE=?, ME_EMAIL=?, ME_ZIPCODE=?, ME_ADD1=?, ME_ADD2=? WHERE ME_KEY=?";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, member.getMe_name());
+			pstmt.setString(2, member.getMe_phone());
+			pstmt.setString(3, member.getMe_email());
+			pstmt.setInt(4, member.getMe_zipcode());
+			pstmt.setString(5, member.getMe_add1());
+			pstmt.setString(6,member.getMe_add2());
+			pstmt.setInt(7, member.getMe_key());
+			
+			pstmt.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			//자원 정리
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+		
+	}
 }
