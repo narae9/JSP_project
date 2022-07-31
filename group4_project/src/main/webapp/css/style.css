@@ -45,7 +45,7 @@ body{
    margin:40px 0;
    border-radius:5px;
    box-shadow:0 2px 6px rgba(100,100,100,0.3);
-   height:2600px;
+   height:2900px;
 }
 /* header */
 #main_logo{
@@ -131,13 +131,10 @@ body{
 }
 .dropdown-content a:hover {
    color: darkorange;
-<<<<<<< HEAD
-=======
 }
 /*헤더 글자 쇼*/
 .dropdown-menu a:hover{
 	color: darkorange;
->>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
 }
 
 @media screen and (max-width: 480px) {
@@ -273,8 +270,6 @@ body{
    height: 50px;
 }
 /*end of footer*/
-
-<<<<<<< HEAD
 /*상세글*/
 #reply_div{
    margin:0 0 25px 0;
@@ -307,9 +302,6 @@ body{
    text-align: center;
 }
 /**/
-
-=======
->>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
 .result-display{
    width:400px;
    height:200px;
@@ -327,6 +319,7 @@ body{
 }
 a:link{
    text-decoration:none;
+   color:white;
 }
 a:visited{
    text-decoration:none;
@@ -355,26 +348,25 @@ ul.search li{
 }
 table{
    width:100%;
-<<<<<<< HEAD
    border:1px solid #fff;
    border-collapse:collapse;
    margin-top:35px;
    
 }
 #main-table{
-   width: 50%;
+   width: 100%;
+   height: 100%;
    float: left;
    border:1px solid #fff;
    border-collapse:collapse;
    margin:0 40px 0 0;
 }
 video{
-   width: 45%;
+   width: 80%;
    text-align:center;
 }
 #main-tableth{
    padding:10px;
-=======
    border-collapse:collapse;
    margin-top:35px;
 }
@@ -389,7 +381,6 @@ video{
    color:white;
    font-size:18px;
    text-align:center;
->>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
 }
 #main-tabletd{
 	border:1px solid black;
@@ -400,15 +391,12 @@ video{
    color:white;
 }
 table td, table th{
-<<<<<<< HEAD
    border:1px solid #fff;
    padding:10px;
    color: white;
-=======
    padding:10px;
    color: white;
    border:1px solid #fff;
->>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
 }
 
 /*등록, 수정폼*/
@@ -484,7 +472,6 @@ input[id="zipcode"]{
    font-size:12px; 
    color:#666666; 
 }
-<<<<<<< HEAD
 /*문의게시판 search*/
 #keyword_board{
    background-color:white;
@@ -499,8 +486,6 @@ input[id="zipcode"]{
 }
 
 /**/
-=======
->>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
 .page-left{
    float:left;
    text-align:center;
@@ -519,6 +504,19 @@ input[id="zipcode"]{
 	width: 100%;
 	height: 25px;
 	background: rgba(49,48,47);
+	color:white;
+	text-align:center;
+	font-size: 12px;
+	justify-content: center;
+    align-items: center;
+    line-height: 25px;
+}
+.middle-line2{
+	margin:0px;
+	padding: 0px;
+	width: 100%;
+	height: 25px;
+	background: rgba(242,124,105);
 	color:white;
 	text-align:center;
 	font-size: 12px;
@@ -548,6 +546,12 @@ input[id="zipcode"]{
 	top:20%;
 	left:9%;
 }
+.content-main-font_1{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	top:-80px;
+}
 /*content-main-second*/
 .content-main-second{
 	margin:0px;
@@ -564,4 +568,52 @@ input[id="zipcode"]{
 .content-main-second-video{
 	width: 45%;
 	float: right;
+}
+/*slider_main*/
+.slider_main {
+	margin-top: 65px;
+	padding-top: 30px;
+	width: 100%; 
+	height: 690px;
+	background-color: rgba(251,176,76);
+}
+.slider_main_img1_box{
+	width: 500px;
+	height: 340px;
+	position: relative;
+	top:60px;
+	left: 420px;
+}
+.slider_main_font1{
+	width: 150px;
+	height: 150px;
+	position: relative;
+	top:-350px;
+	left: 830px;
+}
+.slider_main_font1 > span{
+	font-size: 50px;
+	color: rgba(49,48,47);
+	font-weight: bold;
+}
+.slider_main_font2{
+	width: 800px;
+	height: 600px;
+	position: relative;
+	top:-600px;
+	left: 800px;
+}
+.slider_main_img2_box{
+	width: 300px;
+	height: 430px;
+	position: relative;
+	top:-850px;
+	left: 1040px;
+}
+.content-main-font3{
+	width: 40%;
+	height: 500px;
+	position: relative;
+	top:-200px;
+	left: 550px;
 }

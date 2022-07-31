@@ -8,7 +8,7 @@
 </head>
 <body>
 <footer class="footer">
-<hr size="1" color="white" width="55%" align="center">
+<hr size="1" color="white" width="100%" align="center">
 <div class="footer_test">
 	<div class="footer_icon01">
 	<br><br><br><br>

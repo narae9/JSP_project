@@ -16,7 +16,6 @@ img{
 .borderNone{
 	border:none;
 }
-<<<<<<< HEAD
 h1, h2, h3, h4, h5, h6{
 	color:white;
 }
@@ -27,7 +26,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .showBody{
     width:960px;
-=======
+}
 h1, h2, h3, h4, h5, h6{  
 	color:white;
 }
@@ -39,7 +38,6 @@ h1, h2, h3, h4, h5, h6{
 .showBody{
 
    width:960px;
->>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
    margin:0 auto;
    box-shadow:0 0 5px 5px gray;
    /*
