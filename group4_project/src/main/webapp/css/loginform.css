@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/* 화면 프레임 */
+.content {
+	width: 100%;
+	text-align: center;
+}
+
+#login_form {
+	display: inline-box;
+	width: 600px;
+	height: 300px;
+	text-align:center;
+	border: 3px solid white;
+	padding: 10px;
+}
+
+.input {
+	margin-top: 60px;
+}
+
+.message {
+	font-size: 30px;
+	font-weight: bold;
+	color: white;	
+}
+
+.result_regist {
+	width: 600px;
+	height: 300px;
+  	margin:50px auto;
+ 	border:3px solid white;
+ 	display:flex;/*하위요소를 수직으로 쌓을 수 있는 공간을 만듬*/
+ 	align-items:center;/*세로 정렬*/
+  	justify-content:center;/*가로 정렬*/
+}
+
+
+input[type="submit"], input[type="button"] {
+	height: 40px;
+	width: 80%;
+	margin-top: 15px;
+	color: white;
+	font-size: 22px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	background-color: #808080;
+}
+input[type="text"],input[type="password"] {
+	width: 370px;
+	height: 40px;
+	margin: 5px;
+	font-size: 20px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+}

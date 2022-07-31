@@ -1,33 +1,120 @@
 @charset "UTF-8";
 
+/*콘텐츠 박스*/
+.content {
+	width:100%;
+	text-align:center;
+}
+
 /*회원가입 폼*/
 #register_form{
-	margin: 0px auto;
+	display: inline-box;
 	width: 500px;
-	height: 900px;
 	border:none;
 	outline: 3px solid white;	
 	padding: 10px;
 	text-align: center;
 }
 
-#text_label {
-	font-size: 20px;
-	font-weight: bold;
-	width: 300px;
-	text-align: left;
-}
-
-#id {
-	text-align: center;
-	width: 300px;
-	height: 20px;
-	font-size: 20px;	
-}
-
-#passwd {
-	margin-left: -5%;
+/*회원가입: 요소 그룹*/
+.form_path {
+	margin: 0 auto;
 	width: 300px;
 	height: 30px;
+	padding: 5px;
+	text-align:center;
 	font-size: 20px;
+	font-weight: bold;
+	color: white;
+}
+
+/*회원가입: 요소별 글씨적용*/
+.form_text {
+	margin: 0 auto;
+	width: 350px;
+	padding: 5px;
+	text-align: left;
+	color: white;	
+	/* border: 1px solid white; */
+}
+
+.text_f {	
+	font-size: 20px;
+	font-weight: bold;
+}
+	
+.text_notice {
+	margin-left: 35%;
+	color: #d0d0d0;
+	font-size: 13px;
+}
+
+#message_id {
+	margin-left: 70%;
+	color: #d0d0d0;
+	font-size: 13px;
+}
+
+/* 회원가입: 텍스트 박스 설정 */
+#id{
+	width: 250px;
+	height: 35px;
+	font-size: 20px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+	border-radius: 40px;
+}
+
+#zipcode {
+	width: 200px;
+	height: 35px;
+	font-size: 20px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+	border-radius: 40px;
+}
+
+#agecode {
+	width: 320px;
+	height: 35px;
+	font-size: 20px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+	border-radius: 40px;
+}
+
+#passwd, #name, #phone, #email {
+	width: 320px;
+	height: 35px;
+	font-size: 20px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+	border-radius: 40px;
+}
+
+#add1, #add2 {
+	width: 320px;
+	height: 35px;
+	font-size: 15px;
+	text-align: center;
+	border: 5px solid #d0d0d0;
+	border-radius: 40px;
+}
+
+input[type="button"] {
+	height: 35px;
+	font-size: 15px;
+	font-weight: bold;
+	border:none;
+}
+
+input[type="submit"] {
+	height: 40px;
+	width: 70%;
+	color: white;
+	font-size: 22px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	background-color: #808080;
 }

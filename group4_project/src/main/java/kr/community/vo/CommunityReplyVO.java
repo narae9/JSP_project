@@ -1,14 +1,12 @@
 package kr.community.vo;
 
-import java.sql.Date;
-
 public class CommunityReplyVO {
 	private int com_key;
 	private String com_write;
-	private Date com_date;
+	private String com_date;
 	private int co_key;
 	private int me_key;
-	
+	private String me_id;
 	public int getCom_key() {
 		return com_key;
 	}
@@ -21,10 +19,10 @@ public class CommunityReplyVO {
 	public void setCom_write(String com_write) {
 		this.com_write = com_write;
 	}
-	public Date getCom_date() {
+	public String getCom_date() {
 		return com_date;
 	}
-	public void setCom_date(Date com_date) {
+	public void setCom_date(String com_date) {
 		this.com_date = com_date;
 	}
 	public int getCo_key() {
@@ -39,6 +37,11 @@ public class CommunityReplyVO {
 	public void setMe_key(int me_key) {
 		this.me_key = me_key;
 	}
-	
+	public String getMe_id() {
+		return me_id;
+	}
+	public void setMe_id(String me_id) {
+		this.me_id = me_id;
+	}
 	
 }

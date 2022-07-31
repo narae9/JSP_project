@@ -4,28 +4,10 @@
 body{
    width:100%;
    margin:0 auto;
-   /*
-   background-image:url(../images/bck10.png);
-   background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width:960px;
-    */
+
     background:rgba(49,48,47);
 }
 .page-main{
-   /*
-   height: 100%;
-<<<<<<< HEAD
-    width: 100%;
-=======
-   width: 100%;
->>>>>>> branch 'main' of https://github.com/choiks1117/group4_project.git
-   background-image:url(../images/bck11.png);
-   background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-   */
    background:rgba(49,48,47);
    margin:40px 0;
    border-radius:5px;
@@ -33,14 +15,6 @@ body{
    min-height:750px;
 }
 .page-main-first{
-   /*
-   height: 100%;
-   width: 100%;
-   background-image:url(../images/bck11.png);
-   background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-   */
    background:rgba(49,48,47);
    margin:40px 0;
    border-radius:5px;
@@ -64,6 +38,12 @@ body{
    color:white;
    background:rgba(49,48,47);
 }
+
+#main_nav a:unvisited{
+    text-decoration:none;
+	color: #e0e0e0;
+}
+
 #main_nav a:visited{
     text-decoration:none;
 	color:white;
@@ -269,7 +249,6 @@ body{
    width: 50px;
    height: 50px;
 }
-/*end of footer*/
 /*상세글*/
 #reply_div{
    margin:0 0 25px 0;
@@ -301,7 +280,6 @@ body{
 #reply_div{
    text-align: center;
 }
-/**/
 .result-display{
    width:400px;
    height:200px;
@@ -390,10 +368,8 @@ video{
    text-decoration:none;
    color:white;
 }
+
 table td, table th{
-   border:1px solid #fff;
-   padding:10px;
-   color: white;
    padding:10px;
    color: white;
    border:1px solid #fff;
@@ -414,18 +390,7 @@ label{
    width:130px;
    float:left;/*태그를 왼쪽으로 정렬*/
 }
-input[type="text"],input[type="password"],input[type="email"]{
-   width:200px;
-}
-#register_form input[id="id"]{
-   width:113px;
-}
-input[id="zipcode"]{
-   width:95px;
-}
-.form-notice{
-   margin-left:130px;
-}
+
 /*My Page*/
 .mypage-div{
    width:48%;
@@ -471,7 +436,9 @@ input[id="zipcode"]{
    padding:0 0 0 10px;
    font-size:12px; 
    color:#666666; 
+
 }
+
 /*문의게시판 search*/
 #keyword_board{
    background-color:white;
@@ -484,6 +451,9 @@ input[id="zipcode"]{
    font-size:5px; 
    color:#666666;
 }
+
+
+/**/
 
 /**/
 .page-left{

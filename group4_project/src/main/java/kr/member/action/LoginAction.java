@@ -32,9 +32,10 @@ public class LoginAction implements Action{
 		if(check) {	//인증 성공
 			//로그인 처리
 			HttpSession session = request.getSession();
+			session.setAttribute("user_num", member.getMe_key());
 			session.setAttribute("user_name", member.getMe_name());
 			session.setAttribute("user_id", member.getMe_id());
-			session.setAttribute("user_path", member.getMe_path());
+			session.setAttribute("user_auth", member.getMe_path());
 			
 			return "redirect:/main/main.do";			
 		}
