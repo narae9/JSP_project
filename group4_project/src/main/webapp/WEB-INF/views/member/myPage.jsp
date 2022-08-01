@@ -18,10 +18,10 @@
 			<div class="menu-title">마이페이지</div>
 			<ul class="menu">
 				<li><a class="active" href="${pageContext.request.contextPath}/member/myPage.do">마이 홈</a></li>
-				<li><a href="#">회원정보 수정</a></li>
+				<li><a href="${pageContext.request.contextPath}/member/modifyUserForm.do">회원정보 수정</a></li>
 				<li><a href="${pageContext.request.contextPath}/member/reservationhistoryForm.do">예매/등록 정보</a></li>
 			</ul>
-		</div>		
+		</div>		  
 		
 		<div class="profile-box">
 			<div class="profile-title">내 정보</div>
@@ -37,6 +37,7 @@
 				 이메일 | ${member.me_email} <br>
 				 주소 | (${member.me_zipcode}) ${member.me_add1} ${member.me_add2}
 			</div>
+			
 		</div>
 	</div>
 </body>

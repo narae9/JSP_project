@@ -21,12 +21,12 @@ public class ShowModifyAction implements Action{
 	
 		MultipartRequest multi = FileUtil.createFile(request);
 		HttpSession session = request.getSession();
-		Integer me_key = (Integer)session.getAttribute("me_key");
+		Integer user_num = (Integer)session.getAttribute("user_num");
 		int sh_key = Integer.parseInt(multi.getParameter("sh_key"));
 		
 		Map<String,String> mapAjax = new HashMap<String, String>();
 		
-		if(me_key == null) {//로그인이 되지 않은 경우
+		if(user_num == null) {//로그인이 되지 않은 경우
 			mapAjax.put("result", "logout");
 			return "/WEB-INF/views/member/loginForm.jsp";
 		}

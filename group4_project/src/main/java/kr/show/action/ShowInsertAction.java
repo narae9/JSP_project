@@ -23,14 +23,20 @@ public class ShowInsertAction implements Action{
 	   request.setCharacterEncoding("utf-8");
       
       HttpSession session = request.getSession();
-      Integer me_key = (Integer)session.getAttribute("me_key");
+      Integer user_num = (Integer)session.getAttribute("user_num");
+      Integer user_auth = (Integer)session.getAttribute("user_auth");
       
       Map<String,String> mapAjax = new HashMap<String, String>();
       
-      if(me_key==null) {
+      if(user_num==null) {
     	  mapAjax.put("result", "logout");
          return "/WEB-INF/views/member/loginForm.jsp";
       }
+      if(user_auth == 1) {
+    	 mapAjax.put("result", "notArtist");
+         return "/WEB-INF/main/main.do";
+      }
+      
       
       MultipartRequest multi = FileUtil.createFile(request);
 
@@ -44,7 +50,7 @@ public class ShowInsertAction implements Action{
       showVO.setSh_place(multi.getParameter("sh_place"));
       showVO.setSh_detail(multi.getParameter("sh_detail"));
       showVO.setSh_img(multi.getFilesystemName("sh_img")); 
-      showVO.setMe_key(me_key);
+      showVO.setMe_key(user_num);
       
       ShowDAO dao = ShowDAO.getInstance();
       dao.showInsert(showVO);

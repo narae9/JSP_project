@@ -32,8 +32,8 @@ public class ShowDAO {
 		try {
 			conn = DBUtil.getConnection();
 			
-			sql="INSERT INTO show (sh_key,sh_title,sh_date,sh_time,sh_place,sh_detail,sh_img)"
-					+ "VALUES(show_seq.nextval,?,?,?,?,?,?)";
+			sql="INSERT INTO show (sh_key,sh_title,sh_date,sh_time,sh_place,sh_detail,sh_img, me_key)"
+					+ "VALUES(show_seq.nextval,?,?,?,?,?,?,?)";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, show.getSh_title());
@@ -42,6 +42,7 @@ public class ShowDAO {
 			pstmt.setString(4, show.getSh_place());
 			pstmt.setString(5, show.getSh_detail());
 			pstmt.setString(6, show.getSh_img()); 
+			pstmt.setInt(7, show.getMe_key());
 			
 			pstmt.executeUpdate();
 			

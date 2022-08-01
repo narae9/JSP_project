@@ -22,7 +22,7 @@ body { color: white;}
 }
 
 .menu-title {
-	width: 100%;
+	width: 200px;
 	height: 40px;
 	font-size: 26px;
 	font-weight: bold;
@@ -75,7 +75,6 @@ li a.active {
 	align-items: center;
 	align-content: center;
 	justify-content: center;
-	border: 1px solid red;
 }
 
 .profile-title {
@@ -102,3 +101,7 @@ li a.active {
 .profile-detail {
 	text-align: left;
 }
+  
+/* 회원정보 수정 */
+
+
