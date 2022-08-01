@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.board.vo.BoardReplyVO;
 import kr.community.vo.CommunityFavVO;
 import kr.community.vo.CommunityReplyVO;
 import kr.community.vo.CommunityVO;
@@ -513,16 +514,24 @@ public class CommunityDAO {
 		String sql = null;
 
 		try {
+			//커넥션풀로부터 커넥션을 할당
 			conn = DBUtil.getConnection();
-			sql = "UPDATE community_com SET com_write=? WHERE com_key=?";
+			//SQL문 작성
+			sql = "UPDATE community_com SET com_write=?,"
+					+ "com_mod_date=SYSDATE "
+					+ "WHERE com_key=?";
+			//PreparedStatement 객체 생성
 			pstmt = conn.prepareStatement(sql);
+			//?에 데이터를 바인딩
 			pstmt.setString(1, reply.getCom_write());
 			pstmt.setInt(2, reply.getCom_key());
+			//SQL문 실행
 			pstmt.executeUpdate();
 
 		}catch(Exception e) {
 			throw new Exception(e);
 		}finally {
+			//자원정리
 			DBUtil.executeClose(null, pstmt, conn);
 		}
 	}

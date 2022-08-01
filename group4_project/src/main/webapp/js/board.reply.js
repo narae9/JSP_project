@@ -148,15 +148,15 @@ $(function(){
 	//댓글 수정 버튼 클릭시 수정폼 노출
 	$(document).on('click','.modify-btn',function(){
 		//댓글 번호
-		let re_num = $(this).attr('data-renum');
+		let bom_key = $(this).attr('data-renum');
 		
 		//댓글 내용
-		let content = $(this).parent().find('p').html().replace(/<br>/gi,'\n');	//g:지정문자열 모두, i:대소문자 무시
+		let bom_write = $(this).parent().find('p').html().replace(/<br>/gi,'\n');	//g:지정문자열 모두, i:대소문자 무시
 		
 		//댓글 수정폼 UI
 		let modifyUI = '<form id="mre_form">';
 		modifyUI += '<input type = "hidden" name="bom_key" id="mre_num" value="'+bom_key+'">';
-		modifyUI += '<textarea rows="3" cols="50" name="bom_write" id="mre_content" class="rep-content">'+bo_write+'</textarea>';
+		modifyUI += '<textarea rows="3" cols="50" name="bom_write" id="mre_content" class="rep-content">'+bom_write+'</textarea>';
 		modifyUI += '<div id="mre_first"><span class="letter-count">300/300</span></div>';
 		modifyUI += '<div id="mre_second" class="align-right">';
 		modifyUI += ' <input type="submit" value="수정">';
@@ -219,7 +219,7 @@ $(function(){
 				if(param.result=='logout'){
 					alert('로그인해야 수정할 수 있습니다.');
 				}else if(param.result == 'success'){
-					$('$mre_forms').parent().find('p').html($('#mre_content').val().replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>'));
+					$('#mre_form').parent().find('p').html($('#mre_content').val().replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>'));
 					$('#mre_form').parent().find('.modify-date').text('최근 수정일 : ');
 					//수정폼 삭제 및 초기화
 					initModifyForm();

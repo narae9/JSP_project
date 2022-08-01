@@ -24,12 +24,19 @@
 		</div>
 		
 		<form id="search_form2" action="list.do" method="get">
-			<ul class="search2">
+				<ul class="search2">
 				<li>
-					<select name="keyfield">
+					<select id="keyff" name="keyfield">
 						<option value="1">제목</option>
 						<option value="2">작성자</option>
 					</select>
+					<div class="list-space">
+					<c:if test="${!empty user_num}">
+						<input type="button" value="글쓰기"
+							onclick="location.href='writeForm.do'">
+					</c:if>
+				</div>
+					<br><br>
 				</li>
 				<li>
 					<input type="search" name="keyword" id="keyword_board2" value="${param.keyword}">
@@ -40,12 +47,7 @@
 			</ul>
 		</form>
 		
-		<div class="list-space align-right">
-		    <c:if test="${!empty user_num}">
-		    <input type="button" value="글쓰기"
-			   onclick="location.href='writeForm.do'">
-			</c:if>      
-		</div>
+		
 		
 		<c:if test="${count == 0}">
 		<div class="result-display">

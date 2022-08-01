@@ -6,7 +6,16 @@
 	box-shadow:none;
 	width: 200px;
 	margin: 0 auto;
+	margin-top: 65px;
+	margin-bottom: 10px;
 	position:center;
+}
+.list-space{
+	float: right;
+	margin: 0 38px 0 0;
+}
+#keyff{
+	border-radius:15px;
 }
 /**/
 
@@ -22,5 +31,28 @@
 	width:25px;
 	margin: 0 0 0 10px;
 	cursor:pointer;
+}
+.detail-sub2{
+	float:right;
+}
+/**/
+
+/*updateForm*/
+#write_form2{
+	box-shadow: 1px 1px 1px 1px black;
+	width:68%;
+	margin-bottom: 50px;
+	margin-top: 30px;
+}
+#co_title{
+	width:300px;
+}
+#co_write{
+	width: 302px;
+	height: 280px;
+}
+.com_cc{
+	text-align: center;
+	margin: 50px auto;
 }
 /**/

@@ -40,28 +40,28 @@
 		</div>
 		
 		<ul class="detail-sub">
-			<li>
+					<li class="detail-sub2">
+						<%-- 로그인한 회원번호와 작성자 회원번호가 일치해야 수정,삭제 가능 --%> <c:if
+							test="${user_num == comm.me_key}">
+							<input type="button" value="수정"
+								onclick="location.href='updateForm.do?co_key=${comm.co_key}'">
+							<input type="button" value="삭제" id="delete_btn">
+							<script type="text/javascript">
+								let delete_btn = document.getElementById('delete_btn');
+								//이벤트 연결
+								delete_btn.onclick = function() {
+									let choice = confirm('삭제하시겠습니까?');
+									if (choice) {
+										location.replace('delete.do?co_key=${comm.co_key}');
+									}
+								};
+							</script>
+						</c:if>
+					</li>
+					<li>
 				<%-- 좋아요 --%>
 				<img id="output_fav2" src="${pageContext.request.contextPath}/images/nolove.png">
 				<span id="output_fcount2"></span>
-			</li>
-			<li>
-				<%-- 로그인한 회원번호와 작성자 회원번호가 일치해야 수정,삭제 가능 --%>
-				<c:if test="${user_num == comm.me_key}">
-				<input type="button" value="수정" 
-				 onclick="location.href='updateForm.do?board_num=${board.board_num}'">
-				<input type="button" value="삭제" id="delete_btn">
-				<script type="text/javascript">
-					let delete_btn = document.getElementById('delete_btn');
-					//이벤트 연결
-					delete_btn.onclick=function(){
-						let choice = confirm('삭제하시겠습니까?');
-						if(choice){
-							location.replace('delete.do?board_num=${board.board_num}');
-						}
-					};
-				</script>
-				</c:if>
 			</li>
 		</ul>
 		
@@ -73,8 +73,8 @@
 				
 				<hr size="3" color="white" width="783px" align="right">
 				
-				<textarea rows="3" cols="50" name="bom_write" 
-				  id="bom_write" class="rep-content"
+				<textarea rows="3" cols="50" name="com_write" 
+				  id="com_write" class="rep-content"
 				  <c:if test="${empty user_num}">disabled="disabled"</c:if>
 				  ><c:if test="${empty user_num}">로그인해야 작성할 수 있습니다.</c:if></textarea>
 				<c:if test="${!empty user_num}">
