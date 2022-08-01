@@ -14,12 +14,12 @@ public class ShowInsertFormAction implements Action{
    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
       
       HttpSession session = request.getSession();
-      Integer me_key = (Integer)session.getAttribute("me_key");
+      Integer user_num = (Integer)session.getAttribute("user_num");
       Map<String,String> mapAjax = new HashMap<String, String>();
       
-      if(me_key==null) {
+      if(user_num==null) {
     	 mapAjax.put("result", "logout");
-    	 return "redirect:/views/member/login.do";
+    	 return "redirect:/member/loginForm.do";
       }
       
       return "/WEB-INF/views/show/showInsertForm.jsp";
