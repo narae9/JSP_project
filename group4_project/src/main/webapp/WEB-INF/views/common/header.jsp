@@ -10,35 +10,15 @@
 </div>
 <div id="main_nav">
 	<ul>
-		<c:if test="${!empty user_num && user_auth == 3}">
-		<li>
-			<a href="${pageContext.request.contextPath}/member/memberList.do">Management</a>
-		</li>
-		</c:if>
-		
 		<c:if test="${!empty user_num && (user_auth == 2 || user_auth == 1)}">
 		<li>
 			<a href="${pageContext.request.contextPath}/member/myPage.do">MyPage</a>
 		</li>
 		</c:if>
 		
-		<!-- 
-		<c:if test="${!empty user_num && !empty user_photo}">
-		<li class="menu-profile">
-			<img src="${pageContext.request.contextPath}/upload/${user_photo}" width="25" height="25" class="my-photo">
-		</li>
-		</c:if>
-		
-		<c:if test="${!empty user_num && empty user_photo}">
-		<li class="menu-profile">
-			<img src="${pageContext.request.contextPath}/images/face.png" width="25" height="25" class="my-photo">
-		</li>
-		</c:if>
-		-->
-		
 		<c:if test="${!empty user_num}">
 		<li class="menu-logout">
-			[<span>${user_id}</span>]
+			[<span>${user_name}</span>]
 			<a href="${pageContext.request.contextPath}/member/logout.do">Logout</a>
 		</li>
 		</c:if>
