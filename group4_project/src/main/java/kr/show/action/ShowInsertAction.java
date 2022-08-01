@@ -1,6 +1,9 @@
 package kr.show.action;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,15 +19,18 @@ public class ShowInsertAction implements Action{
 
    @Override
    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+	   request.setCharacterEncoding("utf-8");
       
       HttpSession session = request.getSession();
-      Integer me_num = (Integer)session.getAttribute("me_num");
+      Integer me_key = (Integer)session.getAttribute("me_key");
       
-      request.setCharacterEncoding("utf-8");
+      Map<String,String> mapAjax = new HashMap<String, String>();
       
-//      if(me_num==null) {
-//         return "/WEB-INF/views/member/loginForm.jsp";
-//      }
+      if(me_key==null) {
+    	  mapAjax.put("result", "logout");
+         return "/WEB-INF/views/member/loginForm.jsp";
+      }
       
       MultipartRequest multi = FileUtil.createFile(request);
 
@@ -37,7 +43,8 @@ public class ShowInsertAction implements Action{
       showVO.setSh_time(multi.getParameter("sh_time"));
       showVO.setSh_place(multi.getParameter("sh_place"));
       showVO.setSh_detail(multi.getParameter("sh_detail"));
-      showVO.setSh_img(multi.getFilesystemName("sh_img"));
+      showVO.setSh_img(multi.getFilesystemName("sh_img")); 
+      showVO.setMe_key(me_key);
       
       ShowDAO dao = ShowDAO.getInstance();
       dao.showInsert(showVO);
