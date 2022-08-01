@@ -110,7 +110,7 @@ h2{
 		
 		
 	</div>
-	<c:if test="${!empty show.me_key}">
+	<c:if test="${sessionScope.me_key == show.me_key}">
 	<div id="mdifyDelete_btn">
 		<input class="btnBlack" type="button" value="수정하기" onclick="location.href='${pageContext.request.contextPath}/show/showModifyForm.do?sh_key=${show.sh_key}'">
 		<input class="btnBlack" type="button" value="삭제"  onclick="location.href='${pageContext.request.contextPath}/show/showDeleteFrom.do?sh_key=${show.sh_key}'">	

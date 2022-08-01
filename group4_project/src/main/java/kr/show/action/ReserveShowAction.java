@@ -17,12 +17,12 @@ public class ReserveShowAction implements Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		HttpSession session = request.getSession();
-		Integer me_key = (Integer)session.getAttribute("me_key");
+		Integer user_num = (Integer)session.getAttribute("user_num");
 		Map<String,String> mapAjax = new HashMap<String, String>();
 		
-		if(me_key==null) {
+		if(user_num==null) {
 			mapAjax.put("result", "logout");
-			return "/WEB-INF/views/member/login.jsp";
+			return "/WEB-INF/views/member/loginForm.jsp";
 		}
 		
 		
@@ -31,7 +31,7 @@ public class ReserveShowAction implements Action{
 		
 		
 		ShowDAO dao = ShowDAO.getInstance();
-		dao.reserveShow(re_spon,sh_key,0, me_key); //0예약 /  1취소
+		dao.reserveShow(re_spon,sh_key,0, user_num); //0예약 /  1취소
 
 		
 		return "/WEB-INF/views/show/showReserveResult.jsp";

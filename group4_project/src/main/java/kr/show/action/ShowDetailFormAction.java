@@ -23,16 +23,7 @@ public class ShowDetailFormAction implements Action{
 		
 		int sh_key = Integer.parseInt(request.getParameter("sh_key"));
 		request.setCharacterEncoding("utf-8");
-		
-		HttpSession session = request.getSession();
-		Integer me_key = (Integer)session.getAttribute("me_key");
-//자바스크립트로 로그인 안되어있을 때 예매 버튼 비활성화
-//		if(me_key==null) {
-//			mapAjax.put("result", "logout");
-//		}
-		
-		//MultipartRequest multi = FileUtil.createFile(request);
-		
+			
 		
 		ShowDAO dao = ShowDAO.getInstance();
 		ShowVO show = dao.showDetail(sh_key);
