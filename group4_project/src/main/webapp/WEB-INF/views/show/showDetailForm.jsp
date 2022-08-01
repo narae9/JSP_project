@@ -33,7 +33,7 @@ input[type=text] {
 	margin: 0 0 10px 0;
 }
 .btnBlack {
-	background-color: #333;
+	background-color: #333;  
 	color: #fff;
 	border-radius:5px;
 	border-color: #333;
