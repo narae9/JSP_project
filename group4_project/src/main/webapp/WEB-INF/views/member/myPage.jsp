@@ -37,6 +37,8 @@
 				 이메일 | ${member.me_email} <br>
 				 주소 | (${member.me_zipcode}) ${member.me_add1} ${member.me_add2}
 			</div>
+			
+			<!-- 조금 이따 삭제할 주석 -->
 		</div>
 	</div>
 </body>

@@ -24,7 +24,7 @@ public class ModifyUserFormAction implements Action{
 		MemberDAO dao = MemberDAO.getInstance();
 		MemberVO member = dao.getMember(user_num);
 		
-		request.setAttribute("member", member);
+		request.setAttribute("member", member); 
 		
 		return "/WEB-INF/views/member/modifyUserForm.jsp";
 	}
