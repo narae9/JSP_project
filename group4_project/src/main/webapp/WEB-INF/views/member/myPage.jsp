@@ -18,7 +18,7 @@
 			<div class="menu-title">마이페이지</div>
 			<ul class="menu">
 				<li><a class="active" href="${pageContext.request.contextPath}/member/myPage.do">마이 홈</a></li>
-				<li><a href="#">회원정보 수정</a></li>
+				<li><a href="${pageContext.request.contextPath}/member/modifyUserForm.do">회원정보 수정</a></li>
 				<li><a href="#">예매/등록 정보</a></li>
 			</ul>
 		</div>		
