@@ -38,7 +38,7 @@
 				<img src="${pageContext.request.contextPath}/images/poster/font2.png" style="width: 100%; height: 100%;">
 			</div>
 			<div class="slider_main_img2_box">
-				<img src="${pageContext.request.contextPath}/images/poster/slider_main_img2.jpg" class="slider_main_img2" style="width: 100%; height: 100%; border-radius: 0.5em;">
+				<img src="${pageContext.request.contextPath}/images/poster/slider_main_img2.jpg" class="slider_main_img2" style="width: 100%; height: 95%; border-radius: 0.5em;">
 			</div>
 			<div class="slider_main_font3">
 				<span>
@@ -88,6 +88,9 @@
 			</div>
 			<div class="content-main-font3">
 				<img src="${pageContext.request.contextPath}/images/poster/font4.png" style="width: 100%; height: 100%;">
+			</div>
+			<div class="content-main-font4">
+				<img src="${pageContext.request.contextPath}/images/poster/font7.png" style="width: 100%; height: 100%;">
 			</div>
 		</div>
 		<div class = "middle-line">

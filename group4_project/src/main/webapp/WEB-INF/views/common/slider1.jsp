@@ -89,9 +89,20 @@ li{
 	
 	slides.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
 	
+	setInterval('moveleft()',3000);
+
 	function moveSlide(num) {
 		slides.style.left = -num * 280 + 'px';
 		currentIdx = num;
+	}
+	
+	function moveleft() {
+		if(currentIdx < slideCount - 7){
+			moveSlide(currentIdx + 1);
+			console.log(currentIdx);
+		}else{
+			moveSlide(0);
+		}
 	}
 	
 	nextBtn.addEventListener('click',function(){
