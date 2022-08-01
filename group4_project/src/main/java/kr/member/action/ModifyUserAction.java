@@ -23,8 +23,7 @@ public class ModifyUserAction implements Action{
 		//전송된 데이터 인코딩 처리
 		request.setCharacterEncoding("utf-8");
 		
-		//자바빈(VO) 생성
-		//폼작성 후 수정 필요
+		//자바빈(VO) 생성		//폼작성 후 수정 필요
 		MemberVO member = new MemberVO();
 		member.setMe_key(user_num);
 		member.setMe_passwd(request.getParameter("passwd"));

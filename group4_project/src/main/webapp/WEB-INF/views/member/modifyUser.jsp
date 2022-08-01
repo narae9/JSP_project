@@ -2,5 +2,6 @@
     pageEncoding="UTF-8"%>
 <script type="text/javascript">
 	alert('회원정보 수정 완료!');
-	location.href='myPage.do';  
+	location.href='myPage.do'; 
+	
 </script>
