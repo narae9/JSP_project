@@ -199,8 +199,9 @@ body{
    position: fixed;
    left:50%;
    bottom: 10px;
+   z-index:1;
 }
-.page-main .arrow_logo2{
+.page-main-first .arrow_logo2{
    cursor: pointer;
    height: 35px;
    width: 35px;
@@ -208,8 +209,9 @@ body{
    background-size: contain;
    position: fixed;
    right:40px;
-   bottom: 20px;
+   bottom: 100px;
    display:none;
+   z-index:1;
 }
 /*footer*/
 .footer{
