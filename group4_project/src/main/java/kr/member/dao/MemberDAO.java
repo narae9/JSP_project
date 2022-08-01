@@ -1,5 +1,6 @@
 package kr.member.dao;
 
+import java.io.Console;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.member.vo.MemberVO;
+import kr.show.vo.ShowVO;
 import kr.util.DBUtil;
+import kr.util.StringUtil;
 
 public class MemberDAO {
 	// 싱글턴 패턴
@@ -195,7 +198,113 @@ public class MemberDAO {
 		}finally {
 			//자원 정리
 			DBUtil.executeClose(null, pstmt, conn);
-		}
+		}	
+	}
+	
+	//예매내역 검색
+	public int getBoardCount(String keyfield,String keyword,int me_key) throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		String sub_sql = "";
+		int count = 0;
+		int cnt = 0;
 		
+		try {
+			//JDBC 수행 1,2단계 : 커넥션풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			
+			if(keyword!=null && !"".equals(keyword)) {
+				if(keyfield.equals("0")) sub_sql = "and r.re_reserve = ?";
+				else if(keyfield.equals("1")) sub_sql = "and r.re_reserve = ?";
+				else if(keyfield.equals("2")) sub_sql = "";
+			}
+			
+			sql = "SELECT COUNT(*) FROM reserve r JOIN show s on s.sh_key = r.sh_key where r.me_key = ? " + sub_sql;
+			
+			//JDBC 수행 3단계 : PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(++cnt, me_key);
+			if(keyword!=null && !"".equals(keyword)) {
+				if(keyfield.equals("2")) {
+					
+				}
+				else{
+					pstmt.setString(++cnt, keyfield);
+				}
+			}
+			//JDBC 수행 4단계
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			//자원정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		return count;
+	}
+	//글목록(검색글 목록)
+	public List<ShowVO> getListBoard(int start, int end,
+			          String keyfield,String keyword,int me_key)
+	                                   throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<ShowVO> list = null;
+		String sql = null;
+		String sub_sql = "";
+		int cnt = 0;
+		
+		
+		try {
+			//JDBC 수행 1,2단계 : 커넥션풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			
+			if(keyword!=null && !"".equals(keyword)) {
+				if(keyfield.equals("0")) sub_sql = "and r.re_reserve = ?";
+				else if(keyfield.equals("1")) sub_sql = "and r.re_reserve = ?";
+				else if(keyfield.equals("2")) sub_sql = "";
+			}
+			
+			sql = "SELECT * FROM (SELECT a.*, rownum rnum FROM (SELECT * FROM reserve r JOIN show s on s.sh_key = r.sh_key where r.me_key = ? "+sub_sql+ " ORDER BY r.re_key DESC)a) WHERE rnum >= ? AND rnum <= ?";
+			
+			//JDBC 수행 3단계 : PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			//?에 데이터 바인딩
+			
+			pstmt.setInt(++cnt, me_key);
+			if(keyword!=null && !"".equals(keyword)) {
+				if(keyfield.equals("2")) {
+					
+				}
+				else{
+					pstmt.setString(++cnt, keyfield);
+				}
+			}
+			pstmt.setInt(++cnt, start);
+			pstmt.setInt(++cnt, end);
+			
+			//JDBC 수행 4단계
+			rs = pstmt.executeQuery();
+			list = new ArrayList<ShowVO>();
+			while(rs.next()) {
+				ShowVO show = new ShowVO();
+				show.setSh_title(rs.getString("sh_title"));
+				show.setSh_place(rs.getString("sh_place"));
+				show.setSh_date(rs.getString("sh_date"));
+				show.setSh_time(rs.getString("sh_time"));				
+				list.add(show);				
+			}
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			//자원정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		return list;
 	}
 }
