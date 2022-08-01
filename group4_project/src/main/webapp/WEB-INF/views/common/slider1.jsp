@@ -89,7 +89,7 @@ li{
 	
 	slides.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
 	
-	setInterval('moveleft()',3000);
+	setInterval('moveleft()',2500);
 
 	function moveSlide(num) {
 		slides.style.left = -num * 280 + 'px';

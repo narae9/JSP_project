@@ -11,7 +11,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/main.js"></script>
 </head>
-<body>
+<body style="overflow-x: hidden">
 <div class="contents">
 		<div class="main-slider" id="test3">
 			<div class="ticket_logo" id="test5"
