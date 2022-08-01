@@ -1,9 +1,5 @@
 package kr.show.action;
 
-
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,17 +22,12 @@ public class ShowInsertAction implements Action{
       Integer user_num = (Integer)session.getAttribute("user_num");
       Integer user_auth = (Integer)session.getAttribute("user_auth");
       
-      Map<String,String> mapAjax = new HashMap<String, String>();
-      
       if(user_num==null) {
-    	  mapAjax.put("result", "logout");
-         return "/WEB-INF/views/member/loginForm.jsp";
+         return "redirect/member/loginForm.do"; //.do는 redirect
       }
-      if(user_auth == 1) {
-    	 mapAjax.put("result", "notArtist");
-         return "/WEB-INF/main/main.do";
+      if(user_auth != null && user_auth == 1) {
+    	  return "/WEB-INF/views/common/notice.jsp"; //ajax로는 못띄우고 notice.jsp로 처리
       }
-      
       
       MultipartRequest multi = FileUtil.createFile(request);
 
