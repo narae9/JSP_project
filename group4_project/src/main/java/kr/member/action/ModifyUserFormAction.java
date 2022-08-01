@@ -28,5 +28,5 @@ public class ModifyUserFormAction implements Action{
 		
 		return "/WEB-INF/views/member/modifyUserForm.jsp";
 	}
-
+    
 }
