@@ -51,7 +51,7 @@ const Calendar = {
 			$(param.list).each(function(index,item){			
 				if(day == item.sh_date.substr(8,2)){
 	            output += `<div class="schedule flex aic jcsb">`;
-	            output += `<p>` + item.sh_title + ` / ` + item.sh_place +  ` / ` + item.sh_time + `</p>`;
+	            output += `<p style="font-weight: bold;">` + item.sh_title + ` / ` + item.sh_place +  ` / ` + item.sh_time + `</p>`;
 	            output += `<button class="btn btn-danger" onclick="location.href='/group4_project/show/showDetailForm.do?sh_key=`+item.sh_key+`'">예매하기</button>`;
 	            output += `</div>`
 				cnt++;
@@ -61,7 +61,7 @@ const Calendar = {
         	if(cnt==0){
 		        output += 
 		        `<div class="flex aic jcc" style="width: 100%; height: 100%;">
-		            <p style="width:100%;">해당일에는 공연이 없습니다.<br>
+		            <p style="width:100%; font-weight: bold;">해당일에는 공연이 없습니다.<br>
 		            감사합니다.</p> 
 		        </div>`;
 		    }	
@@ -126,7 +126,7 @@ const Calendar = {
 		           $(param.list).each(function(index,item){
 						if(i == item.sh_date.substr(8,2)){
 							if(cnt<3){
-								output += `<p class="day_item">` + item.sh_title + `</p>`;
+								output += `<p class="day_item" style="font-weight: bold;">` + item.sh_title + `</p>`;
 							}
 							if(cnt==3){
 								output += `<input type="button" class="day_item_add" value="더보기" onclick="$('#day${i}').trigger('click');"></button>`;
