@@ -1,25 +1,21 @@
 package kr.show.action;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.oreilly.servlet.MultipartRequest;
-
 import kr.controller.Action;
 import kr.show.dao.ShowDAO;
 import kr.show.vo.ShowVO;
-import kr.util.FileUtil;
+
 
 public class ShowDetailFormAction implements Action{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		Map<String, String> mapAjax = new HashMap<String,String>();
+//	    HttpSession session = request.getSession();
+//		Integer user_num = (Integer)session.getAttribute("user_num");
 		
 		int sh_key = Integer.parseInt(request.getParameter("sh_key"));
 		request.setCharacterEncoding("utf-8");
@@ -29,6 +25,7 @@ public class ShowDetailFormAction implements Action{
 		ShowVO show = dao.showDetail(sh_key);
 		
 		request.setAttribute("show", show);
+//		request.setAttribute("user_num", user_num);
 		
 		return "/WEB-INF/views/show/showDetailForm.jsp";
 	}

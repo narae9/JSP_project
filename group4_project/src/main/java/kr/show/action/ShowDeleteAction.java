@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.controller.Action;
 import kr.show.dao.ShowDAO;
-import kr.show.vo.ShowVO;
 
 public class ShowDeleteAction implements Action{
 

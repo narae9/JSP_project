@@ -35,7 +35,22 @@ $(function(){
 			$('#re_spon').val('0');
 		}
 		
+		$.ajax({
+			url:'reserveShow.do',
+			type:'post',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(param){
+				if(param.result=='logout'){
+					alert('로그인 후 예매하세요.');
+				}
+			}
+
+		});
+		
 	});
+	
 
 	
 

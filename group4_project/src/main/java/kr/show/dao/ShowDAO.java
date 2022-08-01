@@ -216,6 +216,7 @@ public class ShowDAO {
 				show.setSh_time(rs.getString("sh_time"));
 				show.setSh_date(rs.getString("sh_date"));
 				show.setSh_detail(rs.getString("sh_detail"));
+				show.setMe_key(rs.getInt("me_key"));
 			}
 			
 			
@@ -249,6 +250,7 @@ public class ShowDAO {
 			pstmt.setString(5, show.getSh_date());
 			pstmt.setString(6, show.getSh_time());
 			pstmt.setInt(7, show.getSh_key());
+			
 			
 			pstmt.executeUpdate();
 			
