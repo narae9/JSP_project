@@ -21,7 +21,10 @@
 		<div class="arrow_logo" id="test1">
 		</div>
 		</div>
+		
 		<div class="page-main-first" id="test2">
+		<div class="arrow_logo2" id="test4" onclick="location.href='main.do'">
+		</div>
 		<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 		<div class="slider_main">
 			<div class="slider_main_img1_box">
@@ -117,9 +120,7 @@
 				</video>
 			</div>
 		</div>
-		<div class="arrow_logo2" id="test4" onclick="location.href='main.do'">
-		</div>
-
+		
 	</div>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </div>

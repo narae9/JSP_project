@@ -25,9 +25,9 @@ public class ShowDetailFormAction implements Action{
 		request.setCharacterEncoding("utf-8");
 		
 		HttpSession session = request.getSession();
-		Integer me_num = (Integer)session.getAttribute("me_num");
+		Integer me_key = (Integer)session.getAttribute("me_key");
 //자바스크립트로 로그인 안되어있을 때 예매 버튼 비활성화
-//		if(me_num==null) {
+//		if(me_key==null) {
 //			mapAjax.put("result", "logout");
 //		}
 		

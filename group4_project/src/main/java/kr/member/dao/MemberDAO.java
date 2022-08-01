@@ -112,8 +112,7 @@ public class MemberDAO {
 				member.setMe_id(rs.getString("me_id"));
 				member.setMe_path(String.valueOf(rs.getInt("me_path")));
 				member.setMe_passwd(rs.getString("me_passwd"));
-				member.setMe_email(rs.getString("me_email"));
-
+				member.setMe_name(rs.getString("me_name"));
 			}
 
 		}catch(Exception e) {
