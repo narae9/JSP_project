@@ -465,6 +465,9 @@ public class CommunityDAO {
 				CommunityReplyVO reply = new CommunityReplyVO();
 				reply.setCom_key(rs.getInt("com_key"));
 				reply.setCom_date(DurationFromNow.getTimeDiffLabel(rs.getString("com_date")));
+				if(rs.getString("com_mod_date")!=null) {
+					reply.setCom_mod_date(DurationFromNow.getTimeDiffLabel(rs.getString("com_mod_date")));
+				}
 				reply.setCom_write(StringUtil.useBrNoHtml(rs.getString("com_write")));
 				reply.setCo_key(rs.getInt("co_key"));
 				reply.setMe_key(rs.getInt("me_key"));
