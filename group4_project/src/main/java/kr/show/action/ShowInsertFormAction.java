@@ -1,5 +1,8 @@
 package kr.show.action;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -11,12 +14,15 @@ public class ShowInsertFormAction implements Action{
    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
       
       HttpSession session = request.getSession();
-      Integer me_num = (Integer)session.getAttribute("me_num");
+      Integer me_key = (Integer)session.getAttribute("me_key");
+      Map<String,String> mapAjax = new HashMap<String, String>();
       
-      if(me_num==null) {
-         return "/WEB-INF/views/show/showInsertForm.jsp";
+      if(me_key==null) {
+    	 mapAjax.put("result", "logout");
+    	 return "redirect:/views/member/login.do";
       }
-      return "redirect:/views/member/login.do";
+      
+      return "/WEB-INF/views/show/showInsertForm.jsp";
       
    }
 }

@@ -15,9 +15,12 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<h1 style="color:white; float:right; margin-right: 20px; ">전체 공연 일정</h1>
+<div class = "middle-line3">
+	FOR A GOOD TIME CALL
+</div>
+	<h1 style="color:white; float:right; margin-right: 20px; ">Performance Schedule</h1>
 <div class="calendar_main">
-<span style="color:white; font-size:15px; margin: 20px;">* 자세한 공연일정은 날짜 선택시 확인하실 수 있습니다.</span>
+<span style="color:white; font-size:15px; margin: 20px; font-weight: bold;">* 자세한 공연일정은 날짜 선택시 확인하실 수 있습니다.</span>
     <div class="wrap col-flex jcc aic">
         <div class="flex aic" style="gap: 40px">
             <button onclick="Calendar.addMonth(-1)">◀</button>

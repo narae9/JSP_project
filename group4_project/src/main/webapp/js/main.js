@@ -4,7 +4,7 @@ $(function(){
 		document.getElementById("test5").style.display = "none";
 		document.getElementById("test4").style.display = "block";
 		  $('html, body').animate({
-  			scrollTop: $(".page-main").offset().top 
+  			scrollTop: $(".page-main-first").offset().top 
  			}, 'slow');
 	});
 	

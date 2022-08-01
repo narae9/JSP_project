@@ -21,13 +21,8 @@ public class ShowReservationFormAction implements Action{
 		String pageNum = request.getParameter("pageNum");
 		if(pageNum == null) pageNum ="1";
 		
-		HttpSession session = request.getSession();
-		Integer me_num = (Integer)session.getAttribute("me_num");
-//		if(me_num==null) {
-//			return "/WEB-INF/views/member/loginForm.jsp";
-//		}
-		ShowDAO dao = ShowDAO.getInstance();
 		
+		ShowDAO dao = ShowDAO.getInstance();
 		int count = dao.getShowCount(keyfield , keyword);
 
 		
