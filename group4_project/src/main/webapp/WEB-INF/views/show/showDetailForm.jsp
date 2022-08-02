@@ -14,7 +14,7 @@
 <style type="text/css">
 img{
 width:300px;
-height:200px;
+height:400px;
 }
 .modify{
 	float:right;
@@ -154,6 +154,7 @@ select{
 	
 	<br>
 	<div class="page-right">
+	<div style="margin:0 50px 0 0;">
 		<ul>			
 			<li>
 			 	<h1>${show.sh_title }</h1>
@@ -166,6 +167,7 @@ select{
 		<ul>
 			
 		</ul>
+	</div>
 	</div>
 	
 	</div>
