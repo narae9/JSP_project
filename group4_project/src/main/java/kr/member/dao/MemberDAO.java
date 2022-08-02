@@ -70,7 +70,7 @@ public class MemberDAO {
 			pstmt3.setString(6, member.getMe_zipcode());
 			pstmt3.setString(7, member.getMe_add1());
 			pstmt3.setString(8, member.getMe_add2());
-			pstmt3.setInt(9, num);	// 이부분 잘 모르겠단 말이지,,, 나중에 물어보기
+			pstmt3.setInt(9, num);
 			pstmt3.executeUpdate();
 
 			//SQL 실행 및 성공시 commit
@@ -179,16 +179,17 @@ public class MemberDAO {
 		
 		try {
 			conn = DBUtil.getConnection();
-			sql = "UPDATE MEMBER_DETAIL SET ME_NAME=?, ME_PHONE=?, ME_EMAIL=?, ME_ZIPCODE=?, ME_ADD1=?, ME_ADD2=? WHERE ME_KEY=?";
+			sql = "UPDATE MEMBER_DETAIL SET ME_NAME=?, ME_AGECODE=?, ME_PHONE=?, ME_EMAIL=?, ME_ZIPCODE=?, ME_ADD1=?, ME_ADD2=? WHERE ME_KEY=?";
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, member.getMe_name());
-			pstmt.setString(2, member.getMe_phone());
-			pstmt.setString(3, member.getMe_email());
-			pstmt.setString(4, member.getMe_zipcode());
-			pstmt.setString(5, member.getMe_add1());
-			pstmt.setString(6,member.getMe_add2());
-			pstmt.setInt(7, member.getMe_key());
+			pstmt.setString(2,member.getMe_agecode());
+			pstmt.setString(3, member.getMe_phone());
+			pstmt.setString(4, member.getMe_email());
+			pstmt.setString(5, member.getMe_zipcode());
+			pstmt.setString(6, member.getMe_add1());
+			pstmt.setString(7,member.getMe_add2());
+			pstmt.setInt(8, member.getMe_key());
 			
 			pstmt.executeUpdate();
 			

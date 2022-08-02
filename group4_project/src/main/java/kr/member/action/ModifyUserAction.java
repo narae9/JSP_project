@@ -26,8 +26,8 @@ public class ModifyUserAction implements Action{
 		//자바빈(VO) 생성		//폼작성 후 수정 필요
 		MemberVO member = new MemberVO();
 		member.setMe_key(user_num);
-		member.setMe_passwd(request.getParameter("passwd"));
 		member.setMe_name(request.getParameter("name"));
+		member.setMe_agecode(request.getParameter("agecode"));
 		member.setMe_phone(request.getParameter("phone"));
 		member.setMe_email(request.getParameter("email"));
 		member.setMe_zipcode(request.getParameter("zipcode"));

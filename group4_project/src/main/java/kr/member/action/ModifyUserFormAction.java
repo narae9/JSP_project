@@ -19,7 +19,6 @@ public class ModifyUserFormAction implements Action{
 			return "redirect:/member/loginForm.do";
 		}
 		
-		
 		//로그인 된 경우
 		MemberDAO dao = MemberDAO.getInstance();
 		MemberVO member = dao.getMember(user_num);
