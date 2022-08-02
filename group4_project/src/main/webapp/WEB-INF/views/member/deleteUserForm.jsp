@@ -20,11 +20,11 @@
 				<label for="id">아이디</label>
 				<input type="text" name="id" id="id" maxlength="12">
 			</div>
-			
+			<!-- 
 			<div class="sub_D">
 				<label for="email">이메일</label>
 				<input type="text" name="email" id="email" maxlength="50">
-			</div>
+			</div> -->
 			
 			<div class="sub_D">
 				<label for="passwd">비밀번호</label>

@@ -26,21 +26,31 @@ public class DeleteUserAction implements Action{
 		
 		//전송된 데이터 반환
 		String id = request.getParameter("id");
-		String email = request.getParameter("email");
+		//String email = request.getParameter("email");
 		String passwd = request.getParameter("passwd");
+		
+		//System.out.println(id+" "+email+" "+passwd);
 		
 		//로그인한 아이디
 		String user_id = (String)session.getAttribute("user_id");
+		
+		System.out.println(user_id);
 		
 		MemberDAO dao = MemberDAO.getInstance();
 		MemberVO db_member = dao.checkMember(id);
 		boolean check = false;
 		
+		System.out.println(db_member!=null);	//T
+		System.out.println(id.equals(user_id));	//T
+		//System.out.println(email.equals(db_member.getMe_email())); //F
+		System.out.println(db_member.getMe_email());
+		
 		//사용자가 입력한 아이디가 존재하고 로그인한 아이디와 일치하며
 		//입력한 이메일과 저장된 이메일 일치 여부 체크
-		if(db_member!=null && id.equals(user_id) && email.equals(db_member.getMe_email())) {
+		if(db_member!=null && id.equals(user_id)) {
 			//비밀번호 일치 여부 체크
 			check = db_member.isCheckedPassword(passwd);
+			System.out.println(check);
 		}
 		
 		if(check) {//인증 성공
