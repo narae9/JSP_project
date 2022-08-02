@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html> 
 <head>    
 	<meta charset="UTF-8">
 	<title>로그인</title>
@@ -14,7 +14,7 @@
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<div class="content"><br><br><br><br><br><br><br>
-		<form id="login_form" action="login.do" method="post">
+		<form id="login_form" action="login.do" method="post">  
 			<div class="input">
 				<input type="text" name="id" id="id" maxlength="12" placeholder="ID" autocomplete="off"><br>
 				<input type="password" name="passwd" id="passwd" placeholder="PassWord" maxlength="12"><br>

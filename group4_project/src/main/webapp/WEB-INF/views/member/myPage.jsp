@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
+	<jsp:include page="/WEB-INF/views/common/header.jsp"/>  
 	<div class="content-box">
 		<div class="menu-box">
 			<div class="menu-title">마이페이지</div>
