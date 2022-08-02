@@ -44,12 +44,17 @@
 	margin-bottom: 50px;
 	margin-top: 30px;
 }
+/**/
+
+/*WriteForm*/
 #co_title{
 	width:300px;
+	border-radius: 15px;
 }
 #co_write{
 	width: 302px;
 	height: 280px;
+	border-radius: 15px;
 }
 .com_cc{
 	text-align: center;
