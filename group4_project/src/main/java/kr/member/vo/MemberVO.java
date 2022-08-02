@@ -11,7 +11,7 @@ public class MemberVO {
 	private String me_agecode;	//생년월일
 	private String me_email;	//이메일
 	private String me_phone;	//전화번호
-	private int me_zipcode;		//우편번호
+	private String me_zipcode;	//우편번호
 	private String me_add1;		//기본주소
 	private String me_add2;		//상세주소
 	private Date me_date;		//가입일
@@ -90,12 +90,12 @@ public class MemberVO {
 		this.me_phone = me_phone;
 	}
 
-	public int getMe_zipcode() {
+	public String getMe_zipcode() {
 		return me_zipcode;
 	}
 
 	public void setMe_zipcode(String me_zipcode) {
-		this.me_zipcode = Integer.parseInt(me_zipcode);
+		this.me_zipcode = me_zipcode;
 	}
 
 	public String getMe_add1() {

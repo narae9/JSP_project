@@ -67,14 +67,14 @@ public class MemberDAO {
 			pstmt3.setString(3, member.getMe_agecode());
 			pstmt3.setString(4,member.getMe_email());
 			pstmt3.setString(5, member.getMe_phone());
-			pstmt3.setInt(6, member.getMe_zipcode());
+			pstmt3.setString(6, member.getMe_zipcode());
 			pstmt3.setString(7, member.getMe_add1());
 			pstmt3.setString(8, member.getMe_add2());
 			pstmt3.setInt(9, num);	// 이부분 잘 모르겠단 말이지,,, 나중에 물어보기
 			pstmt3.executeUpdate();
 
 			//SQL 실행 및 성공시 commit
-			conn.commit();			
+			conn.commit();	
 
 		}catch(Exception e) {
 			conn.rollback();
@@ -185,7 +185,7 @@ public class MemberDAO {
 			pstmt.setString(1, member.getMe_name());
 			pstmt.setString(2, member.getMe_phone());
 			pstmt.setString(3, member.getMe_email());
-			pstmt.setInt(4, member.getMe_zipcode());
+			pstmt.setString(4, member.getMe_zipcode());
 			pstmt.setString(5, member.getMe_add1());
 			pstmt.setString(6,member.getMe_add2());
 			pstmt.setInt(7, member.getMe_key());
