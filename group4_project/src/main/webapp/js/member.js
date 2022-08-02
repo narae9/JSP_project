@@ -155,10 +155,11 @@ $(function(){
 		}
 		
 		if($('#agecode').val().trim()==''){
-			alert('나머지 주소를 입력하세요!');
+			alert('생년월일을 입력하세요!');
 			$('#agecode').val('').focus();
 			return false;
 		}
+		
 	});
 	
 	//============= 회원탈퇴 ==============//
