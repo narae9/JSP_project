@@ -11,7 +11,7 @@
 	width: 100%;
 	margin-left: 105px;
 }
-#btn {
+#btn { 
 	box-shadow:inset 0px 0px 0px 0px #a6827e;
 	background:linear-gradient(to bottom, rgba(255,134,113) 5%, rgba(255,134,113) 100%);
 	background-color: rgba(255,134,113);
@@ -63,7 +63,7 @@
 		</div>		
 		<div class="reserve_form">
 		<h2 style="margin:20px;">예매내역</h2>
-		<div>
+		<div>  
 		<form id="search_form" action="reservationhistoryForm.do" method="get">
 			<div class="btn_main">
 					<input type="hidden" name="keyword" id="keyword" value="1">

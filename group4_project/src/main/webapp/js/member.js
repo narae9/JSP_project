@@ -102,9 +102,7 @@ $(function(){
 		}
 		
 	});
-	
-	
-	
+		
 	
 	//========== 로그인 ==========//
 	//로그인 이벤트 연결
@@ -121,4 +119,91 @@ $(function(){
 			return false;
 		}
 	})
+	
+	
+	//============= 회원정보수정 ==============//
+	$('#modify_form').submit(function(){
+		if($('#name').val().trim()==''){
+			alert('이름을 입력하세요!');
+			$('#name').val('').focus();
+			return false;
+		}
+		if($('#phone').val().trim()==''){
+			alert('전화번호를 입력하세요!');
+			$('#phone').val('').focus();
+			return false;
+		}
+		if($('#email').val().trim()==''){
+			alert('이메일을 입력하세요!');
+			$('#email').val('').focus();
+			return false;
+		}
+		if($('#zipcode').val().trim()==''){
+			alert('우편번호를 입력하세요!');
+			$('#zipcode').val('').focus();
+			return false;
+		}
+		if($('#add1').val().trim()==''){
+			alert('주소를 입력하세요!');
+			$('#add1').val('').focus();
+			return false;
+		}
+		if($('#add2').val().trim()==''){
+			alert('나머지 주소를 입력하세요!');
+			$('#add2').val('').focus();
+			return false;
+		}
+		
+		if($('#agecode').val().trim()==''){
+			alert('나머지 주소를 입력하세요!');
+			$('#agecode').val('').focus();
+			return false;
+		}
+	});
+	
+	//============= 회원탈퇴 ==============//
+	$('#delete_form').submit(function(){
+		if($('#id').val().trim()==''){
+			alert('아이디를 입력하세요!');
+			$('#id').val('').focus();
+			return false;
+		}
+		if($('#email').val().trim()==''){
+			alert('이메일을 입력하세요!');
+			$('#email').val('').focus();
+			return false;
+		}
+		if($('#passwd').val().trim()==''){
+			alert('비밀번호를 입력하세요!');
+			$('#passwd').val('').focus();
+			return false;
+		}
+		if($('#cpasswd').val().trim()==''){
+			alert('비밀번호 확인을 입력하세요!');
+			$('#cpasswd').val('').focus();
+			return false;
+		}
+		if($('#passwd').val()!=$('#cpasswd').val()){
+			alert('비밀번호와 비밀번호 확인 불일치');
+			$('#passwd').val('').focus();
+			$('#cpasswd').val('');
+			return false;
+		}
+	});//end of submit
+	
+	//비밀번호 확인까지 한 후 다시 비밀번호를 수정하면 비밀번호 확인 및
+	//메시지 초기화
+	$('#passwd').keyup(function(){
+		$('#cpasswd').val('');
+		$('#message_id').text('');
+	});
+	
+	//비밀번호와 비밀번호 확인 일치 여부 체크
+	$('#cpasswd').keyup(function(){
+		if($('#passwd').val()==$('#cpasswd').val()){
+			$('#message_id').text('비밀번호 일치');
+		}else{
+			$('#message_id').text('');
+		}
+	});
 })

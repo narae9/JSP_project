@@ -248,6 +248,46 @@ public class MemberDAO {
 		}
 		return count;
 	}
+	
+	
+	//회원탈퇴
+	public void deleteMember(int me_key)throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		PreparedStatement pstmt2 = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			conn.setAutoCommit(false);
+			
+			// MEMBER me_path 수정
+			sql = "UPDATE MEMBER SET me_path=0 WHERE me_key=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, me_key);
+			pstmt.executeUpdate();
+			
+			//MEMBER_DETAIL의 레코드 삭제
+			sql = "DELETE FROM MEMBER_DETAIL WHERE me_key=?";
+			pstmt2 = conn.prepareStatement(sql);
+			pstmt2.setInt(1, me_key);
+			pstmt2.executeUpdate();
+			
+			//모든 SQL문의 실행이 성공하면 커밋
+			conn.commit();
+		}catch(Exception e) {
+			//SQL문이 하나라도 실패하면 롤백
+			conn.rollback();
+			throw new Exception(e);
+		}finally {
+			//자원정리
+			DBUtil.executeClose(null, pstmt2, null);
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}
+	
+	
+	
 	//글목록(검색글 목록)
 	public List<ShowVO> getListBoard(int start, int end,
 			          String keyfield,String keyword,int me_key)
