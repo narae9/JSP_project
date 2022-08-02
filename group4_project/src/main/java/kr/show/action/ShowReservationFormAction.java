@@ -24,14 +24,12 @@ public class ShowReservationFormAction implements Action{
 		
 		ShowDAO dao = ShowDAO.getInstance();
 		int count = dao.getShowCount(keyfield , keyword);
-
 		
 		
 		PagingUtil page = new PagingUtil(keyfield,keyword,
 				Integer.parseInt(pageNum),count,5,10,"showListAction.do");
 		
 		List<ShowVO> list = dao.getListShow(keyfield, keyword, page.getStartRow(),  page.getEndRow() );
-		
 
 		request.setAttribute("count", count);
 		request.setAttribute("list", list);

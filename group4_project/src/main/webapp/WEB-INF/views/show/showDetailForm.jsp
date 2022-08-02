@@ -66,7 +66,28 @@ input[type=text] {
 h2{
 	color:white;
 }
+#showScoreForm{
+ border:none;
+ margin:0 auto;
+}
 
+select{
+	height:30px;
+	width:80px;
+	border-radius:20px 0 0 20px;
+	padding:0 0 0 10px;
+}
+#score_btn{
+	height:29px;
+	width:80px;
+	border-radius:0 20px 20px 0;
+	border:none;
+	margin-left:-5px;
+}
+
+#scoreDiv{
+	margin-left:40px;
+}
 
 </style>
 
@@ -75,9 +96,9 @@ h2{
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<h2>&nbsp;&nbsp;&nbsp;공연예매</h2>
-
 	<div>
 	<div class="page-left">
+
 		<ul>
 			<li class="align-center">
 			<c:if test="${!empty show.sh_img }">
@@ -94,7 +115,7 @@ h2{
 			<li class="page-left">
 			</li>
 		</ul>
-		
+		<div>
 		<form action="reserveShow.do" method="post" style="border:none;" id="reserve_btn">
 		    <input type="hidden" name="sh_key" value="${show.sh_key}">
 			<ul>
@@ -106,9 +127,23 @@ h2{
 					<button class="btnBlack" type="button"  onclick="location.href='${pageContext.request.contextPath}/show/showListAction.do'">목록으로</button>
 				</li>
 			</ul>
+			
 		</form>
-		
-		
+		</div>
+		<div id="scoreDiv">
+			<form  action="showScore.do" method="post" id="showScoreForm">
+			<input type="hidden" name="sh_key" value="${show.sh_key}">
+				<select name="score" form="showScoreForm" id="score">
+					<option value="1">1점</option>
+					<option value="2">2점</option>
+					<option value="3">3점</option>
+					<option value="4">4점</option>
+					<option value="5">5점</option>
+				</select>
+				<input type="submit" value="별점주기" id="score_btn">
+			</form>
+		</div>
+
 	</div>
 	<c:if test="${!empty user_num && user_num == show.me_key}">
 	<div id="mdifyDelete_btn">
@@ -135,6 +170,7 @@ h2{
 	
 	</div>
 <div>
+	
 		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </div>
 </div>
