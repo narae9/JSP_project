@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.show.vo.ReserveVO;
+import kr.show.vo.ShowReviewVO;
 import kr.show.vo.ShowVO;
 import kr.util.DBUtil;
 
@@ -169,13 +170,12 @@ public class ShowDAO {
 			while(rs.next()) {
 				ShowVO show = new ShowVO();
 				show.setSh_key(rs.getInt("sh_key"));
-				show.setSh_title(rs.getString("sh_title"));
+				show.setSh_title(rs.getString("sh_title"));  
 				show.setSh_place(rs.getString("sh_place"));
 				show.setSh_date(rs.getString("sh_date"));
 				show.setSh_time(rs.getString("sh_time"));
 				show.setSh_img(rs.getString("sh_img"));
-				
-				//show.setSre_gpa(rs.getInt("sh_gpa"));
+				//show.setSre_gpa(showSumGPA(rs.getInt("sh_key"))/(showAvgGPA(rs.getInt("sh_key"))));
 
 				list.add(show);
 			}
@@ -288,8 +288,90 @@ public class ShowDAO {
 	}
 	
 	//공연 평점
-	//공연 예매 취소
-	//페이지
+	public void showInsertGPA(ShowReviewVO showRe) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			
+			sql="INSERT INTO SHOW_REVIEW (sre_key, sre_gpa, sh_key, me_key)"
+					+ "VALUES(sre_seq.nextval,?,?,?)";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, showRe.getSre_gpa());
+			pstmt.setInt(2, showRe.getSh_key());
+			pstmt.setInt(3, showRe.getMe_key());
+			
+			pstmt.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+		
+	}
+	//공연 평점 평균
+	public int showAvgGPA(int sh_key) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		int count = 0;
+		
+		try {
+			conn = DBUtil.getConnection();
+			
+			sql="SELECT COUNT(*) FROM show_review WHERE sh_key=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, sh_key);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+		}catch(Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+		
+		return count;
+	}
+	//공연 평점 합
+		public int showSumGPA(int sh_key) throws Exception {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql = null;
+			int sum = 0;
+			
+			try {
+				conn = DBUtil.getConnection();
+				
+				sql="SELECT SUM(sre_gpa) FROM show_review WHERE sh_key=?";
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, sh_key);
+				
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					sum = rs.getInt(1);
+				}
+				
+			}catch(Exception e) {
+				throw new Exception(e);
+			}finally {
+				DBUtil.executeClose(null, pstmt, conn);
+			}
+			
+			return sum;
+		}
 
 	
 }

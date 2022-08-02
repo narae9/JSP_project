@@ -80,7 +80,7 @@ select{
 				<td><h3><a href="showDetailForm.do?sh_key=${show.sh_key }">${show.sh_title }</a></h3></td>
 				<td><h3>${show.sh_place }</h3></td>
 				<td><h3>${show.sh_date } 시간[${show.sh_time }]</h3></td>
-				<td> d<%-- ${show.sh_gpa } --%></td>
+				<td><h3>${show.sre_gpa }</h3></td>
 			</tr>
 			
 			</c:forEach>
