@@ -170,7 +170,7 @@ public class ShowDAO {
 			while(rs.next()) {
 				ShowVO show = new ShowVO();
 				show.setSh_key(rs.getInt("sh_key"));
-				show.setSh_title(rs.getString("sh_title"));
+				show.setSh_title(rs.getString("sh_title"));  
 				show.setSh_place(rs.getString("sh_place"));
 				show.setSh_date(rs.getString("sh_date"));
 				show.setSh_time(rs.getString("sh_time"));
