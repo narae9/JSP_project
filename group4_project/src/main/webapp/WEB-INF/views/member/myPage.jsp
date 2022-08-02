@@ -33,13 +33,14 @@
 			</div>
 			<div style="width: 400px"><hr></div>
 			<div class="profile-detail">
-				 생년월일 | ${member.me_agecode} <br>
-				 전화번호 | ${member.me_phone} <br>
-				 이메일 | ${member.me_email} <br>
-				 주소 | (${member.me_zipcode}) ${member.me_add1} ${member.me_add2}
+				 <label>생년월일</label><span>${member.me_agecode}</span><br>
+				 <label>전화번호</label><span>${member.me_phone}</span><br>
+				 <label>이메일</label><span>${member.me_email}</span><br>
+				 <label>주소</label><span style="display:inline-block; width: 320px; text-align:left">${member.me_add1} ${member.me_add2} (${member.me_zipcode})</span>
 			</div>
 			
 		</div>
 	</div>
+	<div style="margin: 50px 0 0;"><jsp:include page="/WEB-INF/views/common/footer.jsp"/></div>
 </body>
 </html>

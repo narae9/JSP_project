@@ -101,5 +101,6 @@
 	</div>
 </div>
 </div>
+<div style="margin: 50px 0 0;"><jsp:include page="/WEB-INF/views/common/footer.jsp"/></div>
 </body>
 </html>

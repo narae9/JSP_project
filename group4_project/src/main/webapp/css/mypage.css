@@ -99,7 +99,15 @@ li a.active {
 }
 
 .profile-detail {
+	width: 400px;
+	font-size: 18px;
 	text-align: left;
+}
+
+.profile-detail label{
+	width: 80px;
+	color: #c0c0c0;
+	font-weight: bold;
 }
   
 /* 회원정보 수정 */
@@ -113,14 +121,15 @@ li a.active {
 
 #modify_form {
 	width: 100%;
+	border: none;
 	display: flex;
 	align-items: center;
+	align-content: center;
 	justify-content: center;
 }
 
 .left, .right {
 	width: 300px;
-	height: 450px;
 	text-align: center;
 	margin: 0 30px;
 }

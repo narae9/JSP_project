@@ -182,6 +182,6 @@
 	</script>
 	<!-- 다음 우편번호 찾기 끝 -->
 </div>
-
+<div style="margin: 50px 0 0;"><jsp:include page="/WEB-INF/views/common/footer.jsp"/></div>
 </body>
 </html>

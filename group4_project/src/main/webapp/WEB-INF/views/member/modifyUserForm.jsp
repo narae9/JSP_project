@@ -24,7 +24,7 @@
 		
 		<div class="profile-box">
 			<div class="modify-title">회원 정보 수정</div>
-			
+			<div style="width:100%; margin: 0 auto;"><hr></div>
 			<form id="modify_form" action="modifyUser.do" method="post">
 				<div class="left">
 					<!-- ID -->
@@ -33,12 +33,6 @@
 						<div class="me_id">${member.me_id}</div>
 					</div>
 					
-					<!-- PW -->
-					<div style="margin-top: 5px;">
-						<div class="sub_title">PW |</div>
-						<!-- 비밀번호 설정 페이지로 넘어가게 버튼 만들기 -->
-						<input type="button" value="비밀번호 재설정" onclick="#">
-					</div>
 					
 					<!-- 이름 -->
 					<div style="margin-top: 5px;">
@@ -181,7 +175,7 @@
 	    }
 	</script>
 	<!-- 다음 우편번호 찾기 끝 -->
-		
 	</div>
+	<div style="margin: 50px 0 0;"><jsp:include page="/WEB-INF/views/common/footer.jsp"/></div>
 </body>
 </html>
