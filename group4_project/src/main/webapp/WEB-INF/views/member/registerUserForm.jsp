@@ -37,7 +37,7 @@
 			</div><br>
 			  
 			<!-- 이름 -->
-			<div class="form_text">
+			<div class="form_text"> 
 				<span class="text_f">이름</span>
 				<input type="text" id="name" name="name" maxlength="20">
 			</div><br>

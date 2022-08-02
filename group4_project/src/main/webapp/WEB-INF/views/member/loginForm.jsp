@@ -19,7 +19,7 @@
 				<input type="text" name="id" id="id" maxlength="12" placeholder="ID" autocomplete="off"><br>
 				<input type="password" name="passwd" id="passwd" placeholder="PassWord" maxlength="12"><br>
 				<input type="submit" value="로그인">
-			</div>			
+			</div> 
 		</form>
 	</div>
 </div>
