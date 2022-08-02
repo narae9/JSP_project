@@ -24,7 +24,7 @@
     <div class="wrap col-flex jcc aic">
         <div class="flex aic" style="gap: 40px">
             <button onclick="Calendar.addMonth(-1)">◀</button>
-            <h1 class="cur-date" style="color:white;">2022. 7.</h1>
+            <h1 class="cur-date" style="color:white;">2022. 8.</h1>
             <button onclick="Calendar.addMonth(1)">▶</button>
         </div>
 
