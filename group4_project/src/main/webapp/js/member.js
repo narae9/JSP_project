@@ -108,13 +108,13 @@ $(function(){
 	//로그인 이벤트 연결
 	$('#login_form').submit(function(){
 		if($('#id').val().trim()==''){
-			arlert('아이디를 입력하세요!');
+			alert('아이디를 입력하세요!');
 			$('#id').val('').focus();
 			return false;
 		}
 		
 		if($('#passwd').val().trim()==''){
-			arlert('비밀번호를 입력하세요!');
+			alert('비밀번호를 입력하세요!');
 			$('#passwd').val('').focus();
 			return false;
 		}
