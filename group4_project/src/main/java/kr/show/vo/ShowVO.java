@@ -11,7 +11,7 @@ public class ShowVO {
  private String sh_date;
  private String sh_time;
  private String sh_img;
- private int sre_gpa; //평점
+ private long sre_gpa; //평점
  private String sre_review; //리뷰
  
  
@@ -64,7 +64,7 @@ public String getSh_img() {
 public void setSh_img(String sh_img) {
 	this.sh_img = sh_img;
 }
-public int getSre_gpa() {
+public long getSre_gpa() {
 	return sre_gpa;
 }
 public void setSre_gpa(int sre_gpa) {

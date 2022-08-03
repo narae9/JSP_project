@@ -175,8 +175,11 @@ public class ShowDAO {
 				show.setSh_date(rs.getString("sh_date"));
 				show.setSh_time(rs.getString("sh_time"));
 				show.setSh_img(rs.getString("sh_img"));
-				//show.setSre_gpa(showSumGPA(rs.getInt("sh_key"))/(showAvgGPA(rs.getInt("sh_key"))));
-
+				if(showAvgGPA(rs.getInt("sh_key")) == 0) {
+				show.setSre_gpa(0);	
+				} else {
+				show.setSre_gpa(showSumGPA(rs.getInt("sh_key"))/(showAvgGPA(rs.getInt("sh_key"))));
+				}
 				list.add(show);
 			}
 			
