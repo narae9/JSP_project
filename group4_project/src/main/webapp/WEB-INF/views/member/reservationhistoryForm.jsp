@@ -44,6 +44,9 @@
 	padding: 5px;
 	font-weight: bold;
 }
+.re_table a:hover {
+	color : gray;
+}
 </style>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
@@ -87,8 +90,8 @@
 			</tr>
 			<c:forEach var="board" items="${list}">
 			<tr>
-				<td>${board.sh_title}</td>
-				<td><a href="#">${board.sh_place}</a></td>
+				<td><a href="/group4_project/show/showDetailForm.do?sh_key=${board.sh_key}">${board.sh_title}</a></td>
+				<td>${board.sh_place}</td>
 				<td>${board.sh_date}</td>
 				<td>${board.sh_time}</td>
 			</tr>
